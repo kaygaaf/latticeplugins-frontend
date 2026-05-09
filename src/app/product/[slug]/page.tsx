@@ -31,47 +31,47 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const variations = await getProductVariations(product.id);
 
   return (
-    <main className="min-h-screen p-8 max-w-4xl mx-auto">
-      <Link href="/shop" className="text-blue-600 hover:underline mb-4 inline-block">
+    <main style={{ minHeight: "100vh", padding: "2rem", maxWidth: "56rem", margin: "0 auto" }}>
+      <Link href="/shop" style={{ color: "#2563eb", textDecoration: "underline", marginBottom: "1rem", display: "inline-block" }}>
         ← Back to Shop
       </Link>
-
-      <div className="grid md:grid-cols-2 gap-8 mt-4">
+      
+      <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2rem", marginTop: "1rem" }}>
         <div>
           {product.images?.[0] && (
-            <Image
-              src={product.images[0].src}
+            <Image 
+              src={product.images[0].src} 
               alt={product.name}
               width={600}
               height={400}
-              className="w-full rounded-lg"
+              style={{ width: "100%", borderRadius: "0.5rem" }}
             />
           )}
         </div>
-
+        
         <div>
-          <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-          <p
-            className="text-gray-600 mb-6"
+          <h1 style={{ fontSize: "1.875rem", fontWeight: 700, marginBottom: "1rem" }}>{product.name}</h1>
+          <p 
+            style={{ color: "#4b5563", marginBottom: "1.5rem" }}
             dangerouslySetInnerHTML={{ __html: product.description }}
           />
-
-          <div className="text-3xl font-bold text-blue-600 mb-6">
+          
+          <div style={{ fontSize: "1.875rem", fontWeight: 700, color: "#2563eb", marginBottom: "1.5rem" }}>
             {formatPrice(product.price)}
           </div>
-
+          
           {variations.length > 0 && (
-            <div className="mb-6">
-              <h3 className="font-semibold mb-2">Available Options:</h3>
-              <div className="space-y-2">
+            <div style={{ marginBottom: "1.5rem" }}>
+              <h3 style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Available Options:</h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {variations.map((variation: any) => (
-                  <div key={variation.id} className="border p-3 rounded flex items-center justify-between">
-                    <span className="font-medium">{variation.attributes.map((a: any) => a.option).join(', ')}</span>
-                    <div className="flex items-center gap-4">
-                      <span className="text-blue-600 font-bold">{formatPrice(variation.price)}</span>
+                  <div key={variation.id} style={{ border: "1px solid #e5e7eb", padding: "0.75rem", borderRadius: "0.375rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <span style={{ fontWeight: 500 }}>{variation.attributes.map((a: any) => a.option).join(', ')}</span>
+                    <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                      <span style={{ color: "#2563eb", fontWeight: 700 }}>{formatPrice(variation.price)}</span>
                       <a
                         href={getCartUrl(product.id, variation.id)}
-                        className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 transition"
+                        style={{ backgroundColor: "#2563eb", color: "#ffffff", padding: "0.25rem 0.75rem", borderRadius: "0.25rem", textDecoration: "none", fontSize: "0.875rem" }}
                       >
                         Add to Cart
                       </a>
@@ -81,10 +81,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
           )}
-
-          <a
+          
+          <a 
             href={getCartUrl(product.id)}
-            className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition inline-block"
+            style={{ backgroundColor: "#16a34a", color: "#ffffff", padding: "0.75rem 2rem", borderRadius: "0.5rem", fontWeight: 600, textDecoration: "none", display: "inline-block" }}
           >
             {parseFloat(product.price) <= 0 ? "Download Free" : "Add to Cart"}
           </a>

@@ -12,37 +12,37 @@ export default async function ShopPage() {
   const products = await getProducts();
 
   return (
-    <main className="min-h-screen p-8 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-center">Shop</h1>
+    <main style={{ minHeight: "100vh", padding: "2rem", maxWidth: "72rem", margin: "0 auto" }}>
+      <h1 style={{ fontSize: "2.25rem", fontWeight: 700, marginBottom: "2rem", textAlign: "center" }}>Shop</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1.5rem" }}>
         {products.map((product: any) => (
-          <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition bg-white">
+          <div key={product.id} style={{ border: "1px solid #e5e7eb", borderRadius: "0.5rem", padding: "1.5rem", backgroundColor: "#ffffff", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
             {product.images?.[0] && (
               <Image
                 src={product.images[0].src}
                 alt={product.name}
                 width={300}
                 height={200}
-                className="w-full h-48 object-cover rounded mb-4"
+                style={{ width: "100%", height: "12rem", objectFit: "cover", borderRadius: "0.375rem", marginBottom: "1rem" }}
               />
             )}
-            <h2 className="text-xl font-semibold mb-2">
-              <Link href={`/product/${product.slug}`} className="hover:text-blue-600 transition">
+            <h2 style={{ fontSize: "1.25rem", fontWeight: 600, marginBottom: "0.5rem" }}>
+              <Link href={`/product/${product.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
                 {product.name}
               </Link>
             </h2>
             <p
-              className="text-gray-600 mb-4 line-clamp-2"
+              style={{ color: "#4b5563", marginBottom: "1rem", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}
               dangerouslySetInnerHTML={{ __html: product.short_description }}
             />
-            <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold text-blue-600">
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <span style={{ fontSize: "1.5rem", fontWeight: 700, color: "#2563eb" }}>
                 {formatPrice(product.price)}
               </span>
               <Link
                 href={`/product/${product.slug}`}
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                style={{ backgroundColor: "#2563eb", color: "#ffffff", padding: "0.5rem 1rem", borderRadius: "0.375rem", textDecoration: "none", fontWeight: 500 }}
               >
                 View Details
               </Link>
