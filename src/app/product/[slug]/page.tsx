@@ -7,9 +7,23 @@ interface ProductPageProps {
   params: { slug: string };
 }
 
+function formatPrice(price: string | number): string {
+  const num = typeof price === "string" ? parseFloat(price) : price;
+  if (isNaN(num) || num <= 0) return "Free";
+  return `€${num.toFixed(2)}`;
+}
+
+function getCartUrl(productId: number, variationId?: number): string {
+  const base = "https://latticeplugins.com";
+  if (variationId) {
+    return `${base}/cart/?add-to-cart=${productId}&variation_id=${variationId}`;
+  }
+  return `${base}/cart/?add-to-cart=${productId}`;
+}
+
 export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProductBySlug(params.slug);
-  
+
   if (!product) {
     notFound();
   }
@@ -21,12 +35,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <Link href="/shop" className="text-blue-600 hover:underline mb-4 inline-block">
         ← Back to Shop
       </Link>
-      
+
       <div className="grid md:grid-cols-2 gap-8 mt-4">
         <div>
           {product.images?.[0] && (
-            <Image 
-              src={product.images[0].src} 
+            <Image
+              src={product.images[0].src}
               alt={product.name}
               width={600}
               height={400}
@@ -34,37 +48,45 @@ export default async function ProductPage({ params }: ProductPageProps) {
             />
           )}
         </div>
-        
+
         <div>
           <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-          <p 
+          <p
             className="text-gray-600 mb-6"
             dangerouslySetInnerHTML={{ __html: product.description }}
           />
-          
+
           <div className="text-3xl font-bold text-blue-600 mb-6">
-            {product.price === '0' ? 'Free' : `€${product.price}`}
+            {formatPrice(product.price)}
           </div>
-          
+
           {variations.length > 0 && (
             <div className="mb-6">
               <h3 className="font-semibold mb-2">Available Options:</h3>
               <div className="space-y-2">
                 {variations.map((variation: any) => (
-                  <div key={variation.id} className="border p-3 rounded">
+                  <div key={variation.id} className="border p-3 rounded flex items-center justify-between">
                     <span className="font-medium">{variation.attributes.map((a: any) => a.option).join(', ')}</span>
-                    <span className="ml-4 text-blue-600 font-bold">€{variation.price}</span>
+                    <div className="flex items-center gap-4">
+                      <span className="text-blue-600 font-bold">{formatPrice(variation.price)}</span>
+                      <a
+                        href={getCartUrl(product.id, variation.id)}
+                        className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 transition"
+                      >
+                        Add to Cart
+                      </a>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           )}
-          
-          <a 
-            href={`https://latticeplugins.com/wp/checkout/?add-to-cart=${product.id}`}
+
+          <a
+            href={getCartUrl(product.id)}
             className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition inline-block"
           >
-            Buy Now
+            {parseFloat(product.price) <= 0 ? "Download Free" : "Add to Cart"}
           </a>
         </div>
       </div>

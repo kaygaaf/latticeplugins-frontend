@@ -3,6 +3,12 @@ import Image from "next/image";
 import { getProducts } from "@/lib/woocommerce";
 import { getPosts } from "@/lib/wordpress";
 
+function formatPrice(price: string | number): string {
+  const num = typeof price === "string" ? parseFloat(price) : price;
+  if (isNaN(num) || num <= 0) return "Free";
+  return `€${num.toFixed(2)}`;
+}
+
 export default async function Home() {
   const [products, posts] = await Promise.all([
     getProducts(),
@@ -15,9 +21,9 @@ export default async function Home() {
       <section className="text-center py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl mb-12">
         <h1 className="text-5xl font-bold mb-4">Lattice Plugins</h1>
         <p className="text-xl mb-8">Premium WordPress plugins for your business</p>
-        <Link 
-          href="/shop" 
-          className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+        <Link
+          href="/shop"
+          className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
         >
           Browse Plugins
         </Link>
@@ -28,10 +34,10 @@ export default async function Home() {
         <h2 className="text-3xl font-bold mb-8 text-center">Our Plugins</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product: any) => (
-            <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition">
+            <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition bg-white">
               {product.images?.[0] && (
-                <Image 
-                  src={product.images[0].src} 
+                <Image
+                  src={product.images[0].src}
                   alt={product.name}
                   width={300}
                   height={200}
@@ -39,19 +45,19 @@ export default async function Home() {
                 />
               )}
               <h3 className="text-xl font-semibold mb-2">
-                <Link href={`/product/${product.slug}`} className="hover:text-blue-600">
+                <Link href={`/product/${product.slug}`} className="hover:text-blue-600 transition">
                   {product.name}
                 </Link>
               </h3>
-              <p 
+              <p
                 className="text-gray-600 mb-4 line-clamp-2"
                 dangerouslySetInnerHTML={{ __html: product.short_description }}
               />
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold text-blue-600">
-                  {product.price === '0' ? 'Free' : `€${product.price}`}
+                  {formatPrice(product.price)}
                 </span>
-                <Link 
+                <Link
                   href={`/product/${product.slug}`}
                   className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
                 >
@@ -69,13 +75,13 @@ export default async function Home() {
           <h2 className="text-3xl font-bold mb-8 text-center">Latest from the Blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {posts.map((post: any) => (
-              <article key={post.id} className="border rounded-lg p-6">
+              <article key={post.id} className="border rounded-lg p-6 bg-white">
                 <h3 className="text-xl font-semibold mb-2">
-                  <Link href={`/blog/${post.slug}`} className="hover:text-blue-600">
+                  <Link href={`/blog/${post.slug}`} className="hover:text-blue-600 transition">
                     {post.title.rendered}
                   </Link>
                 </h3>
-                <p 
+                <p
                   className="text-gray-600 line-clamp-3"
                   dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                 />
