@@ -34,7 +34,7 @@ export default async function ShopPage() {
             </h2>
             <p
               style={{ color: "#4b5563", marginBottom: "1rem", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}
-              dangerouslySetInnerHTML={{ __html: product.short_description }}
+              dangerouslySetInnerHTML={{ __html: product.short_description || product.description || "" }}
             />
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <span style={{ fontSize: "1.5rem", fontWeight: 700, color: "#2563eb" }}>

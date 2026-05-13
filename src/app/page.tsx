@@ -51,7 +51,7 @@ export default async function Home() {
               </h3>
               <p
                 className="text-gray-600 mb-4 line-clamp-2"
-                dangerouslySetInnerHTML={{ __html: product.short_description }}
+                dangerouslySetInnerHTML={{ __html: product.short_description || product.description || "" }}
               />
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold text-blue-600">
