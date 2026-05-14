@@ -32,9 +32,9 @@ export default async function Home() {
       {/* Products Grid */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Our Plugins</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
           {products.map((product: any) => (
-            <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition bg-white">
+            <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition bg-white w-full max-w-sm">
               {product.images?.[0] && (
                 <Image
                   src={product.images[0].src}
