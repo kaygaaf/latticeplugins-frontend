@@ -14,11 +14,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-ENV NEXT_TELEMETRY_DISABLED 1
-ENV NODE_ENV production
-ENV NEXT_PUBLIC_WORDPRESS_URL https://latticeplugins.com/wp
-ENV WC_CONSUMER_KEY ck_4feddca1d3784764f30b5aec31eaac61d1e5e503
-ENV WC_CONSUMER_SECRET cs_243...2b88
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+ENV NEXT_PUBLIC_WORDPRESS_URL=https://latticeplugins.com/wp
+ENV WP_CONSUMER_KEY=e60b613724e448a03af3896ed1f5c260febe8eaa9d5e8c385251dcfdb03ddfc7
+ENV WP_CONSUMER_SECRET=cs_2435e70d2e6e68c8b0b1c8f8b0b1c8f8b0b1c8f8
 
 RUN npm run build
 
@@ -26,10 +26,10 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
