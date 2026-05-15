@@ -1,4 +1,4 @@
-const WP_REST_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://latticeplugins.com/wp';
+const WP_REST_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://latticeplugins.com';
 const WC_API_URL = `${WP_REST_URL}/wp-json/wc/v3`;
 const CONSUMER_KEY = process.env.WC_CONSUMER_KEY || process.env.WP_CONSUMER_KEY || '';
 const CONSUMER_SECRET = process.env.WC_CONSUMER_SECRET || process.env.WP_CONSUMER_SECRET || '';

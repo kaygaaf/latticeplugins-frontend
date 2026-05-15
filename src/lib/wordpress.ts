@@ -1,4 +1,4 @@
-const WP_REST_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://latticeplugins.com/wp';
+const WP_REST_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://latticeplugins.com';
 const WP_API_URL = `${WP_REST_URL}/wp-json/wp/v2`;
 
 export async function getPosts(per_page = 10) {
