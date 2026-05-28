@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getPosts } from "@/lib/wordpress";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogPage() {
   const posts = await getPosts(10);
 

@@ -3,6 +3,8 @@ import Image from "next/image";
 import { getProducts } from "@/lib/woocommerce";
 import { getPosts } from "@/lib/wordpress";
 
+export const dynamic = "force-dynamic";
+
 function formatPrice(price: string | number): string {
   const num = typeof price === "string" ? parseFloat(price) : price;
   if (isNaN(num) || num <= 0) return "Free";
