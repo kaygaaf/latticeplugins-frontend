@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getProducts } from "@/lib/woocommerce";
+import { stripHtml } from "@/lib/text";
 
 export const dynamic = "force-dynamic";
 
@@ -34,10 +35,9 @@ export default async function ShopPage() {
                 {product.name}
               </Link>
             </h2>
-            <p
-              className="text-gray-600 mb-4 line-clamp-2"
-              dangerouslySetInnerHTML={{ __html: product.short_description || product.description || "" }}
-            />
+            <p className="text-gray-600 mb-4 line-clamp-2">
+              {stripHtml(product.short_description || product.description)}
+            </p>
             <div className="flex items-center justify-between">
               <span className="text-2xl font-bold text-blue-600">
                 {formatPrice(product.price)}

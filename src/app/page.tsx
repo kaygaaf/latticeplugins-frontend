@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getProducts } from "@/lib/woocommerce";
 import { getPosts } from "@/lib/wordpress";
+import { stripHtml } from "@/lib/text";
 
 export const dynamic = "force-dynamic";
 
@@ -51,10 +52,9 @@ export default async function Home() {
                   {product.name}
                 </Link>
               </h3>
-              <p
-                className="text-gray-600 mb-4 line-clamp-2"
-                dangerouslySetInnerHTML={{ __html: product.short_description || product.description || "" }}
-              />
+              <p className="text-gray-600 mb-4 line-clamp-2">
+                {stripHtml(product.short_description || product.description)}
+              </p>
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold text-blue-600">
                   {formatPrice(product.price)}
@@ -83,10 +83,9 @@ export default async function Home() {
                     {post.title.rendered}
                   </Link>
                 </h3>
-                <p
-                  className="text-gray-600 line-clamp-3"
-                  dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-                />
+                <p className="text-gray-600 line-clamp-3">
+                  {stripHtml(post.excerpt.rendered)}
+                </p>
               </article>
             ))}
           </div>
