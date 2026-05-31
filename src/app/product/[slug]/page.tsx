@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, getProductVariations } from "@/lib/woocommerce";
+
+const SITE_URL = "https://latticeplugins.com";
 
 interface ProductPageProps {
   params: { slug: string };
@@ -127,11 +130,49 @@ function formatPrice(price: string | number): string {
 }
 
 function getCartUrl(productId: number, variationId?: number): string {
-  const base = "https://latticeplugins.com";
   if (variationId) {
-    return `${base}/cart/?add-to-cart=${productId}&variation_id=${variationId}`;
+    return `${SITE_URL}/cart/?add-to-cart=${productId}&variation_id=${variationId}`;
   }
-  return `${base}/cart/?add-to-cart=${productId}`;
+  return `${SITE_URL}/cart/?add-to-cart=${productId}`;
+}
+
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+  const product = await getProductBySlug(params.slug);
+
+  if (!product) {
+    return {
+      title: "Product not found — Lattice Plugins",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const meta = PRODUCT_META[params.slug];
+  const description = (meta?.headline || stripHtml(product.short_description || product.description || "")).slice(0, 155);
+  const title = `${product.name} — Lattice Plugins`;
+  const canonical = `${SITE_URL}/product/${params.slug}`;
+  const image = product.images?.[0]?.src;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: "Lattice Plugins",
+      type: "website",
+      images: image ? [{ url: image, alt: product.name }] : undefined,
+    },
+    twitter: {
+      card: image ? "summary_large_image" : "summary",
+      title,
+      description,
+      images: image ? [image] : undefined,
+    },
+  };
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
