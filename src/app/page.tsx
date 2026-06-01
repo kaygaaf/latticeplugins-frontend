@@ -24,12 +24,20 @@ export default async function Home() {
       <section className="text-center py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl mb-12">
         <h1 className="text-5xl font-bold mb-4">Lattice Plugins</h1>
         <p className="text-xl mb-8">Premium WordPress plugins for your business</p>
-        <Link
-          href="/shop"
-          className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
-        >
-          Browse Plugins
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/woocommerce-eu-vat-invoices"
+            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
+          >
+            EU Invoice Workflow
+          </Link>
+          <Link
+            href="/shop"
+            className="bg-white/10 border border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/15 transition inline-block"
+          >
+            Browse Plugins
+          </Link>
+        </div>
       </section>
 
       {/* Products Grid */}
