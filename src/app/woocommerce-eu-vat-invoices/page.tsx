@@ -29,6 +29,41 @@ const checklist = [
   "Keep order, invoice, and tax data connected for bookkeeping exports",
 ];
 
+const setupSteps = [
+  {
+    title: "1. Capture the right checkout fields",
+    text: "Add company name, VAT/BTW number, PO reference, and invoice email fields to WooCommerce billing so business customers do not need to send details after payment.",
+  },
+  {
+    title: "2. Generate invoice numbers from order status",
+    text: "Use a predictable prefix and sequence such as INV-2026-000148 when an order is paid, then keep that number attached to the WooCommerce order record.",
+  },
+  {
+    title: "3. Attach PDFs to the right emails",
+    text: "Send invoices with processing/completed order emails and credit notes with refund emails, while also storing files for customer downloads later.",
+  },
+  {
+    title: "4. Keep accounting export clean",
+    text: "Store VAT rate, VAT amount, invoice date, customer VAT number, refund relationship, and order total as separate fields so bookkeeping export is not a manual cleanup job.",
+  },
+];
+
+const buyerSignals = [
+  "You sell to EU B2B customers and get repeated invoice correction emails",
+  "Your WooCommerce checkout accepts payment but does not collect VAT/BTW data cleanly",
+  "Refunds require manual credit notes outside WooCommerce",
+  "Customers ask for invoices long after the original order email",
+  "Your accountant needs order-level VAT evidence instead of screenshots and spreadsheets",
+];
+
+const comparisonRows = [
+  ["VAT/BTW checkout fields", "Generic billing notes or add-on fields", "Dedicated business billing fields tied to the order"],
+  ["Invoice PDF", "Manual export or separate PDF plugin", "Generated from WooCommerce order data"],
+  ["Credit notes", "Created manually after refunds", "Refund-linked credit-note workflow"],
+  ["Customer access", "Support ticket when invoice is lost", "Download from My Account"],
+  ["Sales friction", "Unclear whether B2B checkout is supported", "Clear EU invoice promise before purchase"],
+];
+
 const features = [
   {
     title: "EU VAT/BTW customer fields",
@@ -61,11 +96,41 @@ const faqs = [
     q: "What should I buy today?",
     a: "The public checkout currently sells the official Lattice products. If you need the invoice workflow specifically, use the early-access CTA so the product can be matched to your WooCommerce setup before purchase.",
   },
+  {
+    q: "Can this be used with the existing WooCommerce tax settings?",
+    a: "That is the intended product direction: invoices should reuse the VAT rates and totals already calculated by WooCommerce instead of asking the store owner to enter tax data twice.",
+  },
+  {
+    q: "What information should I send for early access?",
+    a: "Send your store URL, country, whether you sell B2B/B2C, required VAT fields, invoice-number format, and whether you need credit notes for refunds. That is enough to qualify the setup.",
+  },
 ];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Lattice Invoices",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "WordPress, WooCommerce",
+  description:
+    "WooCommerce EU VAT invoice workflow for VAT/BTW checkout fields, invoice PDFs, credit notes, customer downloads, and email attachments.",
+  offers: {
+    "@type": "Offer",
+    price: "49",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/PreOrder",
+    url: `${SITE_URL}/woocommerce-eu-vat-invoices`,
+  },
+  featureList: checklist,
+};
 
 export default function WooCommerceEuVatInvoicesPage() {
   return (
     <main className="min-h-screen bg-slate-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-900 text-white">
         <div className="max-w-6xl mx-auto px-6 py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
@@ -160,6 +225,72 @@ export default function WooCommerceEuVatInvoicesPage() {
                     <span className="text-slate-800">{item}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8">
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.25em] text-blue-600 font-semibold mb-2">Setup guide</p>
+                  <h2 className="text-3xl font-bold">How the WooCommerce invoice workflow should run</h2>
+                </div>
+                <a
+                  href="mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20setup%20guide&body=Hi%20Lattice%2C%0A%0APlease%20send%20me%20the%20WooCommerce%20EU%20VAT%20invoice%20setup%20guide.%20My%20store%20URL%20is%3A%20"
+                  className="inline-flex justify-center bg-slate-900 text-white px-5 py-3 rounded-xl font-semibold hover:bg-slate-800 transition"
+                >
+                  Ask for setup help
+                </a>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {setupSteps.map((step) => (
+                  <div key={step.title} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                    <h3 className="font-bold text-lg mb-2">{step.title}</h3>
+                    <p className="text-slate-700 leading-relaxed">{step.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8">
+              <h2 className="text-3xl font-bold mb-4">When a WooCommerce store is ready for this</h2>
+              <p className="text-slate-700 leading-relaxed mb-5">
+                This landing page now qualifies buyers before they reach checkout. These are the strongest signals
+                that a store owner is not just browsing plugins, but has a real invoice problem worth solving.
+              </p>
+              <div className="space-y-3">
+                {buyerSignals.map((signal) => (
+                  <div key={signal} className="flex gap-3 rounded-xl bg-green-50 border border-green-100 p-4">
+                    <span className="text-green-700 font-bold">→</span>
+                    <span className="text-slate-800">{signal}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8 overflow-hidden">
+              <h2 className="text-3xl font-bold mb-4">Manual invoices vs. Lattice Invoices</h2>
+              <p className="text-slate-700 leading-relaxed mb-6">
+                The offer is strongest when the buyer sees exactly what changes in their day-to-day WooCommerce process.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-slate-100 text-slate-700">
+                      <th className="p-4 rounded-l-xl">Need</th>
+                      <th className="p-4">Without a workflow</th>
+                      <th className="p-4 rounded-r-xl">With Lattice Invoices</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonRows.map(([need, manual, lattice]) => (
+                      <tr key={need} className="border-b border-slate-100">
+                        <td className="p-4 font-semibold text-slate-900">{need}</td>
+                        <td className="p-4 text-slate-600">{manual}</td>
+                        <td className="p-4 text-slate-800">{lattice}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
 
