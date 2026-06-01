@@ -12,6 +12,15 @@ function formatPrice(price: string | number): string {
   return `€${num.toFixed(2)}`;
 }
 
+function isFree(price: string | number): boolean {
+  const num = typeof price === "string" ? parseFloat(price) : price;
+  return isNaN(num) || num <= 0;
+}
+
+function getCartUrl(productId: number): string {
+  return `https://latticeplugins.com/cart/?add-to-cart=${productId}`;
+}
+
 export default async function Home() {
   const [products, posts] = await Promise.all([
     getProducts(),
@@ -63,16 +72,24 @@ export default async function Home() {
               <p className="text-gray-600 mb-4 line-clamp-2">
                 {stripHtml(product.short_description || product.description)}
               </p>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
                 <span className="text-2xl font-bold text-blue-600">
                   {formatPrice(product.price)}
                 </span>
-                <Link
-                  href={`/product/${product.slug}`}
-                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-                >
-                  View Details
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <a
+                    href={getCartUrl(product.id)}
+                    className="bg-green-600 text-white px-4 py-2 rounded text-center font-semibold hover:bg-green-700 transition"
+                  >
+                    {isFree(product.price) ? "Download Free" : "Add to Cart"}
+                  </a>
+                  <Link
+                    href={`/product/${product.slug}`}
+                    className="border border-slate-200 px-4 py-2 rounded text-center hover:border-blue-500 hover:text-blue-600 transition"
+                  >
+                    Details
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
