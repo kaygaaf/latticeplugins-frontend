@@ -49,6 +49,19 @@ export default async function BlogPage() {
             PDF delivery, and Lattice Invoices early-access qualification.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-purple-50 border-purple-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-purple-700 font-semibold mb-2">Reverse-charge invoice guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-reverse-charge-invoices" className="hover:text-blue-600">
+              WooCommerce reverse-charge invoices for EU VAT
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for EU B2B stores that need reverse-charge wording, VAT/BTW metadata,
+            invoice PDFs, customer downloads, and credit notes.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
