@@ -335,6 +335,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Read setup guide
               </Link>
               <Link
+                href="/blog/woocommerce-vat-invoice-plugin-eu"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Compare invoice plugin requirements
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
