@@ -246,6 +246,12 @@ export default function WooCommerceCreditNotesRefundsPage() {
                 Compare invoice plugin requirements
               </Link>
               <Link
+                href="/blog/woocommerce-vat-number-checkout-field"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                VAT number field guide
+              </Link>
+              <Link
                 href="/woocommerce-eu-vat-invoices"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
