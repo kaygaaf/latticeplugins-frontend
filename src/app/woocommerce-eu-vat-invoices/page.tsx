@@ -83,6 +83,50 @@ const features = [
   },
 ];
 
+const roiCards = [
+  {
+    metric: "5–10 min",
+    label: "saved per invoice request",
+    text: "No more copying order totals into a separate PDF tool when a customer asks for a business invoice.",
+  },
+  {
+    metric: "0 inbox loops",
+    label: "for missing VAT details",
+    text: "The checkout collects company, VAT/BTW, and invoice email details before the payment is placed.",
+  },
+  {
+    metric: "1 workflow",
+    label: "for invoices and refunds",
+    text: "Paid orders create invoices; refunded orders get credit-note records tied back to the original order.",
+  },
+];
+
+const demoScreens = [
+  {
+    title: "B2B checkout fields",
+    eyebrow: "Before payment",
+    bullets: ["Company name", "VAT/BTW number", "Invoice email", "PO/reference field"],
+  },
+  {
+    title: "Invoice admin panel",
+    eyebrow: "Inside the order",
+    bullets: ["Invoice number", "Invoice date", "PDF status", "Regenerate action"],
+  },
+  {
+    title: "Customer downloads",
+    eyebrow: "After purchase",
+    bullets: ["My Account invoice link", "Email attachment", "Refund credit note", "Private file access"],
+  },
+];
+
+const paidDeliverables = [
+  "WooCommerce plugin license for the invoice workflow",
+  "EU VAT/BTW checkout-field setup checklist",
+  "Invoice numbering format review before activation",
+  "PDF invoice and credit-note workflow validation",
+  "One store-specific setup reply for early-access buyers",
+];
+
 const faqs = [
   {
     q: "Is this aimed at Dutch and EU WooCommerce stores?",
@@ -229,6 +273,49 @@ export default function WooCommerceEuVatInvoicesPage() {
             </div>
 
             <div className="bg-white rounded-2xl border shadow-sm p-8">
+              <p className="text-sm uppercase tracking-[0.25em] text-green-700 font-semibold mb-2">Revenue argument</p>
+              <h2 className="text-3xl font-bold mb-4">Why this is worth fixing before the next B2B order</h2>
+              <p className="text-slate-700 leading-relaxed mb-6">
+                The sales pitch is simple: if even a few business buyers need corrected invoices each month, a €49 invoice workflow pays for itself by removing manual support work and making the checkout feel trustworthy.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {roiCards.map((card) => (
+                  <div key={card.metric} className="rounded-xl border border-green-100 bg-green-50 p-5">
+                    <div className="text-3xl font-bold text-green-700 mb-1">{card.metric}</div>
+                    <div className="font-semibold text-slate-900 mb-3">{card.label}</div>
+                    <p className="text-sm text-slate-700 leading-relaxed">{card.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8">
+              <p className="text-sm uppercase tracking-[0.25em] text-blue-600 font-semibold mb-2">Product demo</p>
+              <h2 className="text-3xl font-bold mb-4">What the buyer gets inside WooCommerce</h2>
+              <p className="text-slate-700 leading-relaxed mb-6">
+                Until real screenshots are captured from the production plugin UI, these interface cards explain the three screens the paid workflow must deliver. They make the offer concrete enough for early-access buyers to understand the outcome.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {demoScreens.map((screen) => (
+                  <div key={screen.title} className="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50">
+                    <div className="bg-slate-900 text-white p-4">
+                      <p className="text-xs uppercase tracking-widest text-blue-200 mb-1">{screen.eyebrow}</p>
+                      <h3 className="font-bold text-lg">{screen.title}</h3>
+                    </div>
+                    <div className="p-4 space-y-2">
+                      {screen.bullets.map((bullet) => (
+                        <div key={bullet} className="flex items-center gap-2 rounded-lg bg-white border border-slate-100 px-3 py-2 text-sm text-slate-700">
+                          <span className="h-2 w-2 rounded-full bg-blue-500" />
+                          <span>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8">
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
                 <div>
                   <p className="text-sm uppercase tracking-[0.25em] text-blue-600 font-semibold mb-2">Setup guide</p>
@@ -318,15 +405,33 @@ export default function WooCommerceEuVatInvoicesPage() {
 
           <aside className="space-y-6">
             <div className="bg-white rounded-2xl border shadow-sm p-6 sticky top-6">
+              <div className="rounded-2xl bg-slate-900 text-white p-5 mb-6">
+                <p className="text-sm uppercase tracking-widest text-blue-200 mb-2">Early-access price</p>
+                <div className="flex items-end gap-2 mb-2">
+                  <span className="text-4xl font-bold">€49</span>
+                  <span className="text-slate-300 mb-1">one-time</span>
+                </div>
+                <p className="text-sm text-slate-200 leading-relaxed">
+                  Qualified stores get a clear paid path before public catalog listing. No subscription promise, no vague “contact us” enterprise pricing.
+                </p>
+              </div>
               <h2 className="text-2xl font-bold mb-3">Early-access offer</h2>
-              <p className="text-slate-700 mb-5">
+              <p className="text-slate-700 mb-4">
                 Need EU VAT/BTW invoices in WooCommerce? Send the store URL and required invoice fields. The next autonomous step is to turn qualified demand into the paid product listing.
               </p>
+              <ul className="space-y-2 mb-5 text-sm text-slate-700">
+                {paidDeliverables.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="text-green-600 font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
               <a
-                href="mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20early%20access&body=Hi%20Lattice%2C%0A%0AI%20want%20early%20access%20to%20Lattice%20Invoices.%20My%20WooCommerce%20store%20is%3A%20"
+                href="mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20early%20access%20-%20%E2%82%AC49%20license&body=Hi%20Lattice%2C%0A%0AI%20want%20early%20access%20to%20Lattice%20Invoices%20at%20the%20%E2%82%AC49%20license%20price.%0A%0AStore%20URL%3A%20%0ACountry%3A%20%0AB2B%20or%20B2C%3A%20%0AVAT%2FBTW%20fields%20needed%3A%20%0AInvoice%20number%20format%3A%20%0ACredit%20notes%20needed%3A%20"
                 className="block text-center bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition mb-3"
               >
-                Request early access
+                Request €49 early access
               </a>
               <Link
                 href="/docs/woocommerce-eu-vat-invoice-setup"
