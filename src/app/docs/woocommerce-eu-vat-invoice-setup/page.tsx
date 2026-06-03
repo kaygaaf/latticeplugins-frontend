@@ -303,9 +303,15 @@ export default function WooCommerceEuVatInvoiceSetupGuide() {
               </Link>
               <Link
                 href="/blog/woocommerce-proforma-invoice"
-                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >
                 Proforma invoice guide
+              </Link>
+              <Link
+                href="/blog/woocommerce-bank-transfer-invoice"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
+              >
+                Bank transfer invoice guide
               </Link>
               <div className="border-t mt-6 pt-6 space-y-3 text-sm text-slate-600">
                 <div>✓ Buyer-intent guide for WooCommerce invoice searches</div>

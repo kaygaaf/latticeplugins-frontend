@@ -16,6 +16,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-invoice-numbering',
   '/blog/woocommerce-pdf-invoice-email-attachments',
   '/blog/woocommerce-proforma-invoice',
+  '/blog/woocommerce-bank-transfer-invoice',
 ];
 
 function normalizeUrl(path: string) {

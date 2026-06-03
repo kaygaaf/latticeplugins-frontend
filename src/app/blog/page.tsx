@@ -101,6 +101,19 @@ export default async function BlogPage() {
             final VAT invoices after payment, clean numbering, and credit-note handling.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-amber-50 border-amber-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-amber-700 font-semibold mb-2">Bank transfer invoice guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-bank-transfer-invoice" className="hover:text-blue-600">
+              WooCommerce bank transfer invoice workflow for EU B2B stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that accept bank transfer payments and need VAT/BTW fields,
+            proforma payment requests, final invoice PDFs, and credit-note handling.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
