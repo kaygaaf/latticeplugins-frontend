@@ -476,6 +476,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 PDF email attachment guide
               </Link>
               <Link
+                href="/blog/woocommerce-proforma-invoice"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Proforma invoice workflow guide
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
