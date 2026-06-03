@@ -18,6 +18,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-proforma-invoice',
   '/blog/woocommerce-bank-transfer-invoice',
   '/blog/woocommerce-invoice-payment-reminders',
+  '/blog/woocommerce-customer-invoice-downloads',
 ];
 
 function normalizeUrl(path: string) {

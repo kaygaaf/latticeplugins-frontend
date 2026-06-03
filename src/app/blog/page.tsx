@@ -127,6 +127,19 @@ export default async function BlogPage() {
             bank-transfer payment requests, and final VAT invoice PDFs.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-cyan-50 border-cyan-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-2">Customer invoice downloads</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-customer-invoice-downloads" className="hover:text-blue-600">
+              WooCommerce customer invoice downloads for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need protected My Account invoice PDFs, VAT/BTW metadata,
+            email attachments, proforma handling, and refund credit-note downloads.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
