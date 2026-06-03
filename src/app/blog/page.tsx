@@ -114,6 +114,19 @@ export default async function BlogPage() {
             proforma payment requests, final invoice PDFs, and credit-note handling.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">Payment reminder workflow</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-payment-reminders" className="hover:text-blue-600">
+              WooCommerce invoice payment reminders for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need unpaid invoice follow-ups, proforma reminders,
+            bank-transfer payment requests, and final VAT invoice PDFs.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
