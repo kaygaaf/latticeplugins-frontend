@@ -140,6 +140,19 @@ export default async function BlogPage() {
             email attachments, proforma handling, and refund credit-note downloads.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Invoice due-date guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-due-dates" className="hover:text-blue-600">
+              WooCommerce invoice due dates and payment terms for EU B2B stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need Net 14/30 payment terms, bank-transfer deadlines,
+            proforma timing, overdue reminders, and final VAT invoice control.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
