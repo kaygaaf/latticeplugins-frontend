@@ -30,6 +30,7 @@
   - Both pages contain all 7 official product names.
   - Both pages contain none of the removed/merged product names checked.
   - `/shop/` HTML currently contains 14 `href="/product/` occurrences because each product has two product-detail links. The spec must count only the title links: `main h2 a[href^="/product/"]`.
+- Live WooCommerce Store API catalog hygiene check returned `200 application/json` for `/wp-json/wc/store/v1/products?per_page=100` with exactly 7 products: `Lattice SEO`, `Lattice Subscribify`, `Lattice Stripe Payments`, `Lattice Migrate`, `Lattice CRM`, `Lattice Core`, `Lattice Commerce Suite`.
 - Existing shop markup verified in `src/app/shop/page.tsx`:
   - Product title links are rendered inside `h2` at lines 42–45.
   - Secondary "Learn More" links are rendered at lines 61–64, so broad `a[href^="/product/"]` counts double.
