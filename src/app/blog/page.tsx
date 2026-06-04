@@ -166,6 +166,19 @@ export default async function BlogPage() {
             final VAT invoices, credit notes, and customer PDF downloads.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-slate-50 border-slate-200">
+          <p className="text-sm uppercase tracking-[0.2em] text-slate-700 font-semibold mb-2">Invoice PDF template guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-pdf-template" className="hover:text-blue-600">
+              WooCommerce invoice PDF template checklist for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores choosing invoice PDF templates with VAT/BTW fields, reverse-charge wording,
+            bank-transfer details, due dates, credit notes, and customer downloads.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
