@@ -20,6 +20,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-invoice-payment-reminders',
   '/blog/woocommerce-customer-invoice-downloads',
   '/blog/woocommerce-invoice-due-dates',
+  '/blog/woocommerce-partial-payment-invoices',
 ];
 
 function normalizeUrl(path: string) {

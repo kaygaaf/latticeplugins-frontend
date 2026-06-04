@@ -153,6 +153,19 @@ export default async function BlogPage() {
             proforma timing, overdue reminders, and final VAT invoice control.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">Partial payment invoices</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-partial-payment-invoices" className="hover:text-blue-600">
+              WooCommerce partial payment invoices for deposits and split payments
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that sell with deposits, milestones, or balance payments and need proformas,
+            final VAT invoices, credit notes, and customer PDF downloads.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
