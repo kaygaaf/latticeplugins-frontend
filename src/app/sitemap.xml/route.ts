@@ -23,6 +23,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-partial-payment-invoices',
   '/blog/woocommerce-invoice-pdf-template',
   '/blog/woocommerce-vat-exempt-invoices',
+  '/blog/woocommerce-peppol-e-invoices',
 ];
 
 function normalizeUrl(path: string) {

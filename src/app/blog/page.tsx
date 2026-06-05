@@ -192,6 +192,19 @@ export default async function BlogPage() {
             stored exemption reasons, VAT checkout fields, and credit-note handling.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Peppol e-invoice guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-peppol-e-invoices" className="hover:text-blue-600">
+              WooCommerce Peppol e-invoices and EU B2B invoice readiness
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores preparing Peppol/e-invoicing workflows, buyer references,
+            VAT metadata, PDF invoices, credit notes, and accounting handoff.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
