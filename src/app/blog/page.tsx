@@ -205,6 +205,19 @@ export default async function BlogPage() {
             VAT metadata, PDF invoices, credit notes, and accounting handoff.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-slate-50 border-slate-200">
+          <p className="text-sm uppercase tracking-[0.2em] text-slate-700 font-semibold mb-2">Accounting export guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-export-accounting" className="hover:text-blue-600">
+              WooCommerce invoice export for accounting and EU VAT handoff
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need cleaner invoice exports for accountants, VAT evidence,
+            credit notes, PDF invoice links, and B2B finance workflows.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
