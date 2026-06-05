@@ -179,6 +179,19 @@ export default async function BlogPage() {
             bank-transfer details, due dates, credit notes, and customer downloads.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">VAT exempt invoice guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-vat-exempt-invoices" className="hover:text-blue-600">
+              WooCommerce VAT exempt invoices for EU B2B and reverse charge
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need VAT exempt PDF invoices, reverse-charge wording,
+            stored exemption reasons, VAT checkout fields, and credit-note handling.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">

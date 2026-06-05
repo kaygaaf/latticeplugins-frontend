@@ -22,6 +22,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-invoice-due-dates',
   '/blog/woocommerce-partial-payment-invoices',
   '/blog/woocommerce-invoice-pdf-template',
+  '/blog/woocommerce-vat-exempt-invoices',
 ];
 
 function normalizeUrl(path: string) {
