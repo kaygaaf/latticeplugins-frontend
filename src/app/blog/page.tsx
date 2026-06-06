@@ -218,6 +218,19 @@ export default async function BlogPage() {
             credit notes, PDF invoice links, and B2B finance workflows.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">B2B approval workflow</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-approval-workflow" className="hover:text-blue-600">
+              WooCommerce invoice approval workflow for B2B stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need PO references, proforma PDFs, bank-transfer payment terms,
+            VAT evidence, accounts-payable routing, and accountant-ready handoff.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">

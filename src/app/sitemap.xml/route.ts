@@ -25,6 +25,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-vat-exempt-invoices',
   '/blog/woocommerce-peppol-e-invoices',
   '/blog/woocommerce-invoice-export-accounting',
+  '/blog/woocommerce-invoice-approval-workflow',
 ];
 
 function normalizeUrl(path: string) {
