@@ -7,6 +7,7 @@
     "build": "next build",
     "lint": "next lint",
     "start": "next start",
+    "health:prod": "node scripts/prod-health.mjs",
     "test:seo": "node scripts/check-product-seo.mjs",
     "test:e2e": "playwright test --pass-with-no-tests",
     "test:e2e:headed": "playwright test --pass-with-no-tests --headed"
