@@ -231,6 +231,19 @@ export default async function BlogPage() {
             VAT evidence, accounts-payable routing, and accountant-ready handoff.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">Recurring subscription invoices</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-recurring-invoices-subscriptions" className="hover:text-blue-600">
+              WooCommerce recurring invoices for subscriptions and EU VAT
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need renewal invoice PDFs, VAT/BTW evidence,
+            failed-payment handling, credit notes, customer downloads, and accounting export.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">

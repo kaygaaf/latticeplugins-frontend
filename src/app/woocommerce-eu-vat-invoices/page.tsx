@@ -518,6 +518,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 B2B invoice approval workflow guide
               </Link>
               <Link
+                href="/blog/woocommerce-recurring-invoices-subscriptions"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Recurring subscription invoice guide
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >

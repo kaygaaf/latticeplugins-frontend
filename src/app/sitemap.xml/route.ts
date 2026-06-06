@@ -26,6 +26,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-peppol-e-invoices',
   '/blog/woocommerce-invoice-export-accounting',
   '/blog/woocommerce-invoice-approval-workflow',
+  '/blog/woocommerce-recurring-invoices-subscriptions',
 ];
 
 function normalizeUrl(path: string) {
