@@ -244,6 +244,19 @@ export default async function BlogPage() {
             failed-payment handling, credit notes, customer downloads, and accounting export.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Multi-currency invoices</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-multi-currency-invoices" className="hover:text-blue-600">
+              WooCommerce multi-currency invoices for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need exchange-rate evidence, base-currency totals,
+            VAT metadata, credit notes, invoice PDFs, and accountant-ready exports.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
