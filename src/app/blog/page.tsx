@@ -283,6 +283,19 @@ export default async function BlogPage() {
             VAT totals, refund credit notes, customer PDFs, and accountant exports.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Invoice compliance checklist</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-compliance-checklist" className="hover:text-blue-600">
+              WooCommerce invoice compliance checklist for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A practical buyer checklist for invoice numbers, VAT IDs, reverse charge, credit notes,
+            PDF delivery, audit trail, customer downloads, and accountant export.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
