@@ -29,6 +29,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-recurring-invoices-subscriptions',
   '/blog/woocommerce-multi-currency-invoices',
   '/blog/woocommerce-invoice-audit-trail',
+  '/blog/woocommerce-invoice-reconciliation',
 ];
 
 function normalizeUrl(path: string) {

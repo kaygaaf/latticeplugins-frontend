@@ -270,6 +270,19 @@ export default async function BlogPage() {
             VAT metadata, credit notes, correction logs, and accountant-ready exports.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">Invoice reconciliation guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-reconciliation" className="hover:text-blue-600">
+              WooCommerce invoice reconciliation for payments, VAT, refunds, and credit notes
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for stores that need to match paid/unpaid invoices, bank transfers,
+            VAT totals, refund credit notes, customer PDFs, and accountant exports.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
