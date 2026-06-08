@@ -322,6 +322,19 @@ export default async function BlogPage() {
             reverse charge, bank transfer, credit notes, invoice numbers, and accountant exports.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">Invoice automation guide</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-automation" className="hover:text-blue-600">
+              WooCommerce invoice automation for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent automation checklist for invoice timing, BACS proformas,
+            credit notes, VAT evidence, customer downloads, reminders, and accountant exports.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
