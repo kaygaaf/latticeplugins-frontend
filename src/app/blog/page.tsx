@@ -296,6 +296,19 @@ export default async function BlogPage() {
             PDF delivery, audit trail, customer downloads, and accountant export.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">Invoice plugin comparison</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-plugin-comparison" className="hover:text-blue-600">
+              WooCommerce invoice plugin comparison for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-focused comparison for PDF invoice plugins, VAT add-ons, accounting connectors,
+            and Lattice Invoices early access.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
