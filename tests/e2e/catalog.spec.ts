@@ -52,3 +52,15 @@ test("shop page shows exactly the official 7-product Lattice catalog", async ({ 
     ).toHaveCount(0);
   }
 });
+
+for (const product of OFFICIAL_PRODUCTS) {
+  test(`product detail page renders conversion sections for ${product.name}`, async ({ page }) => {
+    await page.goto(`/product/${product.slug}/`, { waitUntil: "domcontentloaded" });
+
+    await expect(page).toHaveURL(new RegExp(`/product/${product.slug}/?$`));
+    await expect(page.getByRole("heading", { name: product.name, exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "What it does", exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Key features", exact: true })).toBeVisible();
+    await expect(page.getByRole("link", { name: /add to cart|download free/i }).first()).toBeVisible();
+  });
+}
