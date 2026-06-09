@@ -36,6 +36,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-invoice-automation',
   '/blog/woocommerce-invoice-data-retention',
   '/blog/woocommerce-invoice-plugin-migration',
+  '/blog/woocommerce-invoice-correction-workflow',
 ];
 
 function normalizeUrl(path: string) {

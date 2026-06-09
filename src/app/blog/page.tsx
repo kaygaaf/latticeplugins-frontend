@@ -361,6 +361,19 @@ export default async function BlogPage() {
             invoice numbers, retained PDFs, VAT evidence, credit notes, and accounting exports.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-cyan-50 border-cyan-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-2">Invoice correction workflow</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-correction-workflow" className="hover:text-blue-600">
+              WooCommerce invoice correction workflow for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent correction workflow for credit notes, replacement invoices,
+            VAT evidence, retained PDFs, customer delivery, and accountant exports.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
