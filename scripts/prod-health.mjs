@@ -58,6 +58,29 @@ async function checkHttp(path, expectedContentType) {
   return { url, status: response.status, contentType, body };
 }
 
+async function checkRedirect(path, expectedStatus, expectedLocation) {
+  const url = `${BASE_URL}${path}`;
+  const response = await fetch(url, {
+    redirect: 'manual',
+    headers: {
+      'user-agent': 'Lattice-Prod-Health/1.0',
+      accept: 'text/html,application/json',
+    },
+  });
+  const location = response.headers.get('location') || '';
+
+  assert(
+    response.status === expectedStatus,
+    `${url} returned HTTP ${response.status}; expected redirect status ${expectedStatus}`,
+  );
+  assert(
+    location === expectedLocation,
+    `${url} redirected to ${location || '(empty)'}; expected ${expectedLocation}`,
+  );
+
+  return { url, status: response.status, location };
+}
+
 async function main() {
   const home = await checkHttp('/', 'text/html');
   assert(home.body.includes('Lattice'), 'Homepage HTML does not include the Lattice brand');
@@ -85,8 +108,16 @@ async function main() {
   const posts = JSON.parse(wpPosts.body);
   assert(Array.isArray(posts), 'WP REST posts endpoint did not return a JSON array');
 
+  const sitemap = await checkHttp('/sitemap.xml', 'application/xml');
+  assert(
+    sitemap.body.includes('<urlset') && sitemap.body.includes('https://latticeplugins.com'),
+    'Sitemap XML is missing the urlset root or canonical site URL',
+  );
+
   const cart = await checkHttp('/cart/', 'text/html');
   assert(cart.body.includes('data-page="cart"'), 'Cart route did not serve the WooCommerce cart page');
+
+  const emptyCheckout = await checkRedirect('/checkout/', 302, 'https://latticeplugins.com/cart/');
 
   const wpAdmin = await fetchText('/wp-admin/');
   assert(
@@ -103,7 +134,9 @@ async function main() {
       officialProducts: OFFICIAL_PRODUCTS.length,
       productLinks: uniqueProductLinks.size,
       wpPosts: posts.length,
+      sitemap: sitemap.status,
       cart: cart.status,
+      emptyCheckoutRedirect: emptyCheckout.location,
       wpAdmin: wpAdmin.response.status,
     },
   }, null, 2));
