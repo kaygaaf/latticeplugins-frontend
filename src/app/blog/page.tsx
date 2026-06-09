@@ -4,7 +4,7 @@ import { getPosts } from "@/lib/wordpress";
 export const dynamic = "force-dynamic";
 
 export default async function BlogPage() {
-  const posts = await getPosts(10);
+  const posts = (await getPosts(10)).filter((post: any) => post?.slug !== "hello-world");
 
   return (
     <main className="min-h-screen p-8 max-w-6xl mx-auto">
