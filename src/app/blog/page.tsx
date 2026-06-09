@@ -348,6 +348,19 @@ export default async function BlogPage() {
             credit notes, customer downloads, audit trail, and accountant-ready exports.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Invoice plugin migration</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-plugin-migration" className="hover:text-blue-600">
+              WooCommerce invoice plugin migration checklist for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent migration checklist for switching invoice plugins while preserving
+            invoice numbers, retained PDFs, VAT evidence, credit notes, and accounting exports.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
