@@ -335,6 +335,19 @@ export default async function BlogPage() {
             credit notes, VAT evidence, customer downloads, reminders, and accountant exports.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-cyan-50 border-cyan-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-2">Invoice data retention</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-data-retention" className="hover:text-blue-600">
+              WooCommerce invoice data retention for EU VAT stores
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent retention checklist for issued invoice PDFs, VAT evidence,
+            credit notes, customer downloads, audit trail, and accountant-ready exports.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
