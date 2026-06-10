@@ -387,6 +387,19 @@ export default async function BlogPage() {
             failed-send evidence, resend controls, and customer download fallbacks.
           </p>
         </article>
+
+        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-amber-50 border-amber-100">
+          <p className="text-sm uppercase tracking-[0.2em] text-amber-700 font-semibold mb-2">Invoice late-fee workflow</p>
+          <h2 className="text-2xl font-semibold mb-2">
+            <Link href="/blog/woocommerce-invoice-late-fees" className="hover:text-blue-600">
+              WooCommerce invoice late fees and overdue payment terms
+            </Link>
+          </h2>
+          <p className="text-gray-600 line-clamp-3">
+            A buyer-intent guide for B2B stores that need due dates, overdue reminders,
+            late-fee evidence, retained VAT PDFs, customer downloads, and accounting exports.
+          </p>
+        </article>
       </div>
       
       <div className="space-y-8">
