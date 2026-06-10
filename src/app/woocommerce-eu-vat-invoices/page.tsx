@@ -578,6 +578,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Invoice correction workflow guide
               </Link>
               <Link
+                href="/blog/woocommerce-invoice-email-deliverability"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Invoice email delivery guide
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
