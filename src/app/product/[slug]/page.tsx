@@ -129,6 +129,12 @@ function formatPrice(price: string | number): string {
   return `€${num.toFixed(2)}`;
 }
 
+function formatSchemaPrice(price: string | number | undefined): string {
+  const num = typeof price === "string" ? parseFloat(price) : price || 0;
+  if (isNaN(num) || num < 0) return "0.00";
+  return num.toFixed(2);
+}
+
 function getCartUrl(productId: number, variationId?: number): string {
   if (variationId) {
     return `${SITE_URL}/cart/?add-to-cart=${productId}&variation_id=${variationId}`;
@@ -185,9 +191,41 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const variations = await getProductVariations(product.id);
   const meta = PRODUCT_META[params.slug];
   const fallbackDescription = stripHtml(product.short_description || product.description || "");
+  const productUrl = `${SITE_URL}/product/${params.slug}`;
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: meta?.headline || fallbackDescription || `${product.name} by Lattice Plugins`,
+    image: product.images?.map((image: any) => image.src).filter(Boolean),
+    url: productUrl,
+    brand: {
+      "@type": "Brand",
+      name: "Lattice Plugins",
+    },
+    offers: variations.length > 0
+      ? variations.map((variation: any) => ({
+          "@type": "Offer",
+          url: getCartUrl(product.id, variation.id),
+          "priceCurrency": "EUR",
+          price: formatSchemaPrice(variation.price),
+          "availability": variation.purchasable === false ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
+        }))
+      : {
+          "@type": "Offer",
+          url: getCartUrl(product.id),
+          "priceCurrency": "EUR",
+          price: formatSchemaPrice(product.price),
+          "availability": product.purchasable === false ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
+        },
+  };
 
   return (
     <main className="min-h-screen bg-slate-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <section className="bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 text-white">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <Link href="/shop" className="text-blue-100 hover:text-white underline underline-offset-4 mb-8 inline-block">

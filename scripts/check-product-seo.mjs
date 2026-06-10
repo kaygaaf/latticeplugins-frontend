@@ -27,6 +27,14 @@ if (!source.includes('alternates')) {
   failures.push('product detail metadata must include canonical alternates');
 }
 
+if (!source.includes('application/ld+json') || !source.includes('"@type": "Product"')) {
+  failures.push('product detail route must render Product JSON-LD structured data');
+}
+
+if (!source.includes('"availability"') || !source.includes('"priceCurrency"')) {
+  failures.push('Product JSON-LD must include offer availability and price currency');
+}
+
 for (const slug of officialSlugs) {
   if (!source.includes(`"${slug}"`)) {
     failures.push(`missing official product SEO/catalog entry for ${slug}`);
