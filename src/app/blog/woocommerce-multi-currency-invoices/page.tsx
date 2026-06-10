@@ -136,7 +136,7 @@ export default function WooCommerceMultiCurrencyInvoicesPage() {
             <div className="bg-white rounded-2xl border shadow-sm p-8">
               <h2 className="text-3xl font-bold mb-4">The multi-currency invoice problem</h2>
               <p className="text-slate-700 leading-relaxed mb-4">
-                A single-currency invoice can usually be checked by eye. A multi-currency WooCommerce store needs a stronger trail: order currency, base currency, VAT treatment, exchange-rate evidence, PDF delivery, refunds, and export columns that match the bookkeeper's expectations.
+                A single-currency invoice can usually be checked by eye. A multi-currency WooCommerce store needs a stronger trail: order currency, base currency, VAT treatment, exchange-rate evidence, PDF delivery, refunds, and export columns that match the bookkeeper&apos;s expectations.
               </p>
               <p className="text-slate-700 leading-relaxed">
                 Lattice Invoices is being positioned around that commercial pain: reduce month-end spreadsheet cleanup for EU WooCommerce stores that sell cross-border and need cleaner invoice packets for customers and accountants.
