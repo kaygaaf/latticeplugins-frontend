@@ -24,15 +24,17 @@ npm run test:e2e -- --list
 
 ## Current coverage
 
-As of the 2026-06-09 PM verification run, discovery should show exactly 10 tests in 3 files:
+As of the 2026-06-10 PM verification run, discovery should show exactly 11 tests in 4 files:
 
 - `tests/e2e/catalog.spec.ts` — verifies `/shop/` renders exactly the 7 official Lattice products, no removed/merged product names, and all 7 product detail pages render conversion sections plus CTA links.
+- `tests/e2e/blog.spec.ts` — verifies `/blog/` renders curated invoice-guide content while hiding the default WordPress `hello-world` starter post.
 - `tests/e2e/checkout-routing.spec.ts` — verifies `/cart/?add-to-cart=14` keeps the cart session and reaches the classic `/checkout/` form.
 - `tests/e2e/checkout-payment-methods.spec.ts` — verifies checkout exposes `Manual invoice / bank transfer` while Stripe remains absent until live keys are configured.
 
 Expected list command excerpt:
 
 ```text
+[chromium] › blog.spec.ts:3:5 › blog page shows curated invoice guides without default starter posts
 [chromium] › catalog.spec.ts:27:5 › shop page shows exactly the official 7-product Lattice catalog
 [chromium] › catalog.spec.ts:57:7 › product detail page renders conversion sections for Lattice Commerce Suite
 [chromium] › catalog.spec.ts:57:7 › product detail page renders conversion sections for Lattice Core
@@ -43,12 +45,12 @@ Expected list command excerpt:
 [chromium] › catalog.spec.ts:57:7 › product detail page renders conversion sections for Lattice SEO
 [chromium] › checkout-payment-methods.spec.ts:8:5 › checkout exposes invoice and bank transfer methods while Stripe remains unavailable without live keys
 [chromium] › checkout-routing.spec.ts:8:5 › cart add-to-cart session reaches the classic WooCommerce checkout page
-Total: 10 tests in 3 files
+Total: 11 tests in 4 files
 ```
 
-## Next planned smoke coverage
+## Next planned smoke/maintainability coverage
 
-The next PM handoff is `docs/issues/2026-06-09-blog-default-post-cleanup.md`: hide the default WordPress `hello-world` starter post from `/blog/` and add one read-only `tests/e2e/blog.spec.ts` guard. After that ships, discovery should become `Total: 11 tests in 4 files`.
+The next PM handoff is `docs/issues/2026-06-10-blog-guide-card-data-extraction.md`: extract the 28 hardcoded `/blog/` guide cards from `src/app/blog/page.tsx` into typed guide-card data and keep the existing 11-test smoke suite green. After that ships, add a small integrity assertion for the guide-card count and unique `/blog/...` hrefs if needed.
 
 ## Payment-method note
 
