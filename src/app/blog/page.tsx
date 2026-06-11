@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getPosts } from "@/lib/wordpress";
+import { blogGuideCards, guideCardThemeClasses } from "./guide-cards";
 
 export const dynamic = "force-dynamic";
 
@@ -11,397 +12,28 @@ export default async function BlogPage() {
       <h1 className="text-4xl font-bold mb-8 text-center">Blog</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">WooCommerce invoice buyer guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-vat-invoice-plugin-eu" className="hover:text-blue-600">
-              Best WooCommerce EU VAT invoice plugin: what to check before buying
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent checklist for EU stores that need VAT/BTW checkout fields, invoice PDFs, credit notes,
-            customer downloads, and a clear path to Lattice Invoices early access.
-          </p>
-        </article>
+        {blogGuideCards.map((card) => {
+          const [backgroundClasses, borderClass, eyebrowClass] = guideCardThemeClasses[card.theme].split(" ");
 
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-green-50 border-green-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-green-700 font-semibold mb-2">Refund credit-note guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-credit-notes-refunds" className="hover:text-blue-600">
-              WooCommerce credit notes for refunds: EU VAT workflow guide
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A conversion-focused guide for stores that need refund-linked credit notes, VAT corrections,
-            customer downloads, and Lattice Invoices early-access qualification.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">VAT field checkout guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-vat-number-checkout-field" className="hover:text-blue-600">
-              WooCommerce VAT number checkout field for EU B2B invoices
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A high-intent guide for stores that need VAT/BTW fields before payment, invoice-ready order metadata,
-            PDF delivery, and Lattice Invoices early-access qualification.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-purple-50 border-purple-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-purple-700 font-semibold mb-2">Reverse-charge invoice guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-reverse-charge-invoices" className="hover:text-blue-600">
-              WooCommerce reverse-charge invoices for EU VAT
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for EU B2B stores that need reverse-charge wording, VAT/BTW metadata,
-            invoice PDFs, customer downloads, and credit notes.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-cyan-50 border-cyan-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-2">Invoice numbering guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-numbering" className="hover:text-blue-600">
-              WooCommerce invoice numbering for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A high-intent guide for stores that need sequential invoice numbers, VAT/BTW metadata,
-            refund credit notes, customer downloads, and a cleaner accounting audit trail.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-sky-50 border-sky-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-sky-700 font-semibold mb-2">PDF email attachment guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-pdf-invoice-email-attachments" className="hover:text-blue-600">
-              WooCommerce PDF invoice email attachments for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need invoice PDFs attached to WooCommerce emails,
-            secure My Account downloads, VAT/BTW metadata, and refund credit notes.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-teal-50 border-teal-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-teal-700 font-semibold mb-2">Proforma invoice guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-proforma-invoice" className="hover:text-blue-600">
-              WooCommerce proforma invoice workflow for EU B2B stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need proforma payment requests before purchase,
-            final VAT invoices after payment, clean numbering, and credit-note handling.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-amber-50 border-amber-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-amber-700 font-semibold mb-2">Bank transfer invoice guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-bank-transfer-invoice" className="hover:text-blue-600">
-              WooCommerce bank transfer invoice workflow for EU B2B stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that accept bank transfer payments and need VAT/BTW fields,
-            proforma payment requests, final invoice PDFs, and credit-note handling.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">Payment reminder workflow</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-payment-reminders" className="hover:text-blue-600">
-              WooCommerce invoice payment reminders for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need unpaid invoice follow-ups, proforma reminders,
-            bank-transfer payment requests, and final VAT invoice PDFs.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-cyan-50 border-cyan-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-2">Customer invoice downloads</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-customer-invoice-downloads" className="hover:text-blue-600">
-              WooCommerce customer invoice downloads for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need protected My Account invoice PDFs, VAT/BTW metadata,
-            email attachments, proforma handling, and refund credit-note downloads.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Invoice due-date guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-due-dates" className="hover:text-blue-600">
-              WooCommerce invoice due dates and payment terms for EU B2B stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need Net 14/30 payment terms, bank-transfer deadlines,
-            proforma timing, overdue reminders, and final VAT invoice control.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">Partial payment invoices</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-partial-payment-invoices" className="hover:text-blue-600">
-              WooCommerce partial payment invoices for deposits and split payments
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that sell with deposits, milestones, or balance payments and need proformas,
-            final VAT invoices, credit notes, and customer PDF downloads.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-slate-50 border-slate-200">
-          <p className="text-sm uppercase tracking-[0.2em] text-slate-700 font-semibold mb-2">Invoice PDF template guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-pdf-template" className="hover:text-blue-600">
-              WooCommerce invoice PDF template checklist for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores choosing invoice PDF templates with VAT/BTW fields, reverse-charge wording,
-            bank-transfer details, due dates, credit notes, and customer downloads.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">VAT exempt invoice guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-vat-exempt-invoices" className="hover:text-blue-600">
-              WooCommerce VAT exempt invoices for EU B2B and reverse charge
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need VAT exempt PDF invoices, reverse-charge wording,
-            stored exemption reasons, VAT checkout fields, and credit-note handling.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Peppol e-invoice guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-peppol-e-invoices" className="hover:text-blue-600">
-              WooCommerce Peppol e-invoices and EU B2B invoice readiness
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores preparing Peppol/e-invoicing workflows, buyer references,
-            VAT metadata, PDF invoices, credit notes, and accounting handoff.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-slate-50 border-slate-200">
-          <p className="text-sm uppercase tracking-[0.2em] text-slate-700 font-semibold mb-2">Accounting export guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-export-accounting" className="hover:text-blue-600">
-              WooCommerce invoice export for accounting and EU VAT handoff
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need cleaner invoice exports for accountants, VAT evidence,
-            credit notes, PDF invoice links, and B2B finance workflows.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">B2B approval workflow</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-approval-workflow" className="hover:text-blue-600">
-              WooCommerce invoice approval workflow for B2B stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need PO references, proforma PDFs, bank-transfer payment terms,
-            VAT evidence, accounts-payable routing, and accountant-ready handoff.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">Recurring subscription invoices</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-recurring-invoices-subscriptions" className="hover:text-blue-600">
-              WooCommerce recurring invoices for subscriptions and EU VAT
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need renewal invoice PDFs, VAT/BTW evidence,
-            failed-payment handling, credit notes, customer downloads, and accounting export.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Multi-currency invoices</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-multi-currency-invoices" className="hover:text-blue-600">
-              WooCommerce multi-currency invoices for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need exchange-rate evidence, base-currency totals,
-            VAT metadata, credit notes, invoice PDFs, and accountant-ready exports.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">Invoice audit trail</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-audit-trail" className="hover:text-blue-600">
-              WooCommerce invoice audit trail for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need invoice evidence, PDF history,
-            VAT metadata, credit notes, correction logs, and accountant-ready exports.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-emerald-50 border-emerald-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2">Invoice reconciliation guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-reconciliation" className="hover:text-blue-600">
-              WooCommerce invoice reconciliation for payments, VAT, refunds, and credit notes
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for stores that need to match paid/unpaid invoices, bank transfers,
-            VAT totals, refund credit notes, customer PDFs, and accountant exports.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Invoice compliance checklist</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-compliance-checklist" className="hover:text-blue-600">
-              WooCommerce invoice compliance checklist for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A practical buyer checklist for invoice numbers, VAT IDs, reverse charge, credit notes,
-            PDF delivery, audit trail, customer downloads, and accountant export.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">Invoice plugin comparison</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-plugin-comparison" className="hover:text-blue-600">
-              WooCommerce invoice plugin comparison for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-focused comparison for PDF invoice plugins, VAT add-ons, accounting connectors,
-            and Lattice Invoices early access.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">B2B invoice plugin</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-b2b-invoice-plugin" className="hover:text-blue-600">
-              WooCommerce B2B invoice plugin for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent checklist for B2B WooCommerce stores that need VAT IDs,
-            reverse charge, bank transfer, credit notes, invoice numbers, and accountant exports.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">Invoice automation guide</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-automation" className="hover:text-blue-600">
-              WooCommerce invoice automation for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent automation checklist for invoice timing, BACS proformas,
-            credit notes, VAT evidence, customer downloads, reminders, and accountant exports.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-cyan-50 border-cyan-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-2">Invoice data retention</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-data-retention" className="hover:text-blue-600">
-              WooCommerce invoice data retention for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent retention checklist for issued invoice PDFs, VAT evidence,
-            credit notes, customer downloads, audit trail, and accountant-ready exports.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-blue-50 border-blue-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-700 font-semibold mb-2">Invoice plugin migration</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-plugin-migration" className="hover:text-blue-600">
-              WooCommerce invoice plugin migration checklist for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent migration checklist for switching invoice plugins while preserving
-            invoice numbers, retained PDFs, VAT evidence, credit notes, and accounting exports.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-cyan-50 border-cyan-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-2">Invoice correction workflow</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-correction-workflow" className="hover:text-blue-600">
-              WooCommerce invoice correction workflow for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent correction workflow for credit notes, replacement invoices,
-            VAT evidence, retained PDFs, customer delivery, and accountant exports.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-indigo-50 border-indigo-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-2">Invoice email deliverability</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-email-deliverability" className="hover:text-blue-600">
-              WooCommerce invoice email deliverability checklist for EU VAT stores
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent checklist for PDF invoice attachments, BACS/proforma delivery,
-            failed-send evidence, resend controls, and customer download fallbacks.
-          </p>
-        </article>
-
-        <article className="border rounded-lg p-6 hover:shadow-lg transition bg-amber-50 border-amber-100">
-          <p className="text-sm uppercase tracking-[0.2em] text-amber-700 font-semibold mb-2">Invoice late-fee workflow</p>
-          <h2 className="text-2xl font-semibold mb-2">
-            <Link href="/blog/woocommerce-invoice-late-fees" className="hover:text-blue-600">
-              WooCommerce invoice late fees and overdue payment terms
-            </Link>
-          </h2>
-          <p className="text-gray-600 line-clamp-3">
-            A buyer-intent guide for B2B stores that need due dates, overdue reminders,
-            late-fee evidence, retained VAT PDFs, customer downloads, and accounting exports.
-          </p>
-        </article>
+          return (
+            <article
+              key={card.href}
+              className={`border rounded-lg p-6 hover:shadow-lg transition ${backgroundClasses} ${borderClass}`}
+            >
+              <p className={`text-sm uppercase tracking-[0.2em] ${eyebrowClass} font-semibold mb-2`}>
+                {card.eyebrow}
+              </p>
+              <h2 className="text-2xl font-semibold mb-2">
+                <Link href={card.href} className="hover:text-blue-600">
+                  {card.title}
+                </Link>
+              </h2>
+              <p className="text-gray-600 line-clamp-3">{card.description}</p>
+            </article>
+          );
+        })}
       </div>
-      
+
       <div className="space-y-8">
         {posts.map((post: any) => (
           <article key={post.id} className="border rounded-lg p-6 hover:shadow-lg transition">
@@ -413,7 +45,7 @@ export default async function BlogPage() {
             <p className="text-gray-500 text-sm mb-3">
               {new Date(post.date).toLocaleDateString()}
             </p>
-            <p 
+            <p
               className="text-gray-600 line-clamp-3"
               dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
             />
