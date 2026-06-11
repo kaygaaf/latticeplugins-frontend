@@ -270,4 +270,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for B2B stores that need due dates, overdue reminders, late-fee evidence, retained VAT PDFs, customer downloads, and accounting exports.",
     theme: "amber",
   },
+  {
+    href: "/blog/woocommerce-invoice-reminder-email-template",
+    eyebrow: "Reminder email templates",
+    title: "WooCommerce invoice reminder email template for B2B stores",
+    description:
+      "A buyer-intent template guide for stores that need BACS/proforma reminder emails, invoice PDF links, due-date evidence, resend logs, and accounting handoff.",
+    theme: "cyan",
+  },
 ];
