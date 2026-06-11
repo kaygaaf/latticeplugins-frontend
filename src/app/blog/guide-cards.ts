@@ -278,4 +278,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent template guide for stores that need BACS/proforma reminder emails, invoice PDF links, due-date evidence, resend logs, and accounting handoff.",
     theme: "cyan",
   },
+  {
+    href: "/blog/woocommerce-invoice-write-off-workflow",
+    eyebrow: "Invoice write-off workflow",
+    title: "WooCommerce invoice write-off workflow for unpaid B2B invoices",
+    description:
+      "A buyer-intent guide for stores that need bad-debt evidence, retained VAT invoice PDFs, reminder history, credit-note decisions, and accountant-ready exports.",
+    theme: "indigo",
+  },
 ];
