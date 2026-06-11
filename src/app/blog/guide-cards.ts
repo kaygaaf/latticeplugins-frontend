@@ -286,4 +286,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for stores that need bad-debt evidence, retained VAT invoice PDFs, reminder history, credit-note decisions, and accountant-ready exports.",
     theme: "indigo",
   },
+  {
+    href: "/blog/woocommerce-purchase-order-invoices",
+    eyebrow: "Purchase order invoice workflow",
+    title: "WooCommerce purchase order invoices for B2B EU VAT stores",
+    description:
+      "A buyer-intent guide for stores that need PO numbers on invoice PDFs, proforma approvals, VAT metadata, correction evidence, and accountant-ready exports.",
+    theme: "cyan",
+  },
 ];

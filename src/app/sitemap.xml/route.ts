@@ -41,6 +41,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-invoice-late-fees',
   '/blog/woocommerce-invoice-reminder-email-template',
   '/blog/woocommerce-invoice-write-off-workflow',
+  '/blog/woocommerce-purchase-order-invoices',
 ];
 
 function normalizeUrl(path: string) {
