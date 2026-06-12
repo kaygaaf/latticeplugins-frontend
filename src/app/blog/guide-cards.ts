@@ -31,6 +31,14 @@ export const guideCardThemeClasses: Record<BlogGuideCard["theme"], string> = {
 
 export const blogGuideCards: BlogGuideCard[] = [
   {
+    href: "/blog/woocommerce-btw-factuur-plugin-nederland",
+    eyebrow: "Nederlandse BTW facturen",
+    title: "WooCommerce BTW factuur plugin Nederland: checklist voor webshops",
+    description:
+      "Een Nederlandse buyer-intent gids voor WooCommerce webshops die BTW-nummer velden, factuurnummers, PDF facturen, creditnota's en boekhouder-export nodig hebben.",
+    theme: "amber",
+  },
+  {
     href: "/blog/woocommerce-vat-invoice-plugin-eu",
     eyebrow: "WooCommerce invoice buyer guide",
     title: "Best WooCommerce EU VAT invoice plugin: what to check before buying",
