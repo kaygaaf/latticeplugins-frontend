@@ -42,6 +42,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-invoice-reminder-email-template',
   '/blog/woocommerce-invoice-write-off-workflow',
   '/blog/woocommerce-purchase-order-invoices',
+  '/blog/woocommerce-sepa-direct-debit-invoices',
 ];
 
 function normalizeUrl(path: string) {

@@ -294,4 +294,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for stores that need PO numbers on invoice PDFs, proforma approvals, VAT metadata, correction evidence, and accountant-ready exports.",
     theme: "cyan",
   },
+  {
+    href: "/blog/woocommerce-sepa-direct-debit-invoices",
+    eyebrow: "SEPA invoice workflow",
+    title: "WooCommerce SEPA direct debit invoices for EU VAT stores",
+    description:
+      "A buyer-intent guide for stores that need mandate references, failed-debit evidence, VAT invoice PDFs, credit notes, reminders, and accountant-ready exports.",
+    theme: "emerald",
+  },
 ];
