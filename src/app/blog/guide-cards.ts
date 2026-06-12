@@ -310,4 +310,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for stores that need mandate references, failed-debit evidence, VAT invoice PDFs, credit notes, reminders, and accountant-ready exports.",
     theme: "emerald",
   },
+  {
+    href: "/blog/woocommerce-stripe-invoice-workflow",
+    eyebrow: "Stripe invoice workflow",
+    title: "WooCommerce Stripe invoice workflow for EU VAT stores",
+    description:
+      "A buyer-intent guide for Stripe-powered stores that need VAT/BTW fields, paid invoice PDFs, refund credit notes, customer downloads, and accountant-ready exports.",
+    theme: "blue",
+  },
 ];
