@@ -24,7 +24,7 @@ npm run test:e2e -- --list
 
 ## Current coverage
 
-As of the 2026-06-10 PM verification run, discovery should show exactly 11 tests in 4 files:
+As of the 2026-06-12 PM verification run, discovery shows exactly 11 tests in 4 files:
 
 - `tests/e2e/catalog.spec.ts` — verifies `/shop/` renders exactly the 7 official Lattice products, no removed/merged product names, and all 7 product detail pages render conversion sections plus CTA links.
 - `tests/e2e/blog.spec.ts` — verifies `/blog/` renders curated invoice-guide content while hiding the default WordPress `hello-world` starter post.
@@ -50,7 +50,7 @@ Total: 11 tests in 4 files
 
 ## Next planned smoke/maintainability coverage
 
-The next PM handoff is `docs/issues/2026-06-10-blog-guide-card-data-extraction.md`: extract the 28 hardcoded `/blog/` guide cards from `src/app/blog/page.tsx` into typed guide-card data and keep the existing 11-test smoke suite green. After that ships, add a small integrity assertion for the guide-card count and unique `/blog/...` hrefs if needed.
+The next PM handoff is `docs/issues/2026-06-12-blog-guide-card-integrity-smoke.md`: add a read-only Playwright assertion that `/blog/` renders exactly 33 curated guide links and that all `/blog/...` guide hrefs are unique. After that ships, update this document to expect 12 tests in 4 files.
 
 ## Payment-method note
 
