@@ -18,6 +18,7 @@ export default async function BlogPage() {
           return (
             <article
               key={card.href}
+              data-testid="blog-guide-card"
               className={`border rounded-lg p-6 hover:shadow-lg transition ${backgroundClasses} ${borderClass}`}
             >
               <p className={`text-sm uppercase tracking-[0.2em] ${eyebrowClass} font-semibold mb-2`}>

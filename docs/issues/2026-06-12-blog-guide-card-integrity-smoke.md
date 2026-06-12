@@ -4,6 +4,8 @@
 
 **Goal:** Add a small production-safe Playwright assertion that protects the `/blog/` curated guide-card list from accidental duplicate links or missing cards.
 
+**Status:** ✅ Implemented on 2026-06-12 by adding rendered-card test IDs, a Playwright count/unique-href smoke test, and updated testing docs.
+
 **Architecture:** The guide-card data now lives in `src/app/blog/guide-cards.ts` and the `/blog/` route maps over that typed array. Extend the existing blog smoke spec to assert the rendered curated guide links match the current source-of-truth count and remain unique. This is test-only coverage: do not change WordPress posts, WooCommerce catalog data, checkout/payment settings, Stripe settings, or article route content.
 
 **Tech Stack:** Next.js 14 App Router, TypeScript, Playwright Chromium smoke tests, production-safe read-only assertions against `https://latticeplugins.com` by default.

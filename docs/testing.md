@@ -24,10 +24,10 @@ npm run test:e2e -- --list
 
 ## Current coverage
 
-As of the 2026-06-12 PM verification run, discovery shows exactly 11 tests in 4 files:
+As of the 2026-06-12 developer verification run, discovery shows exactly 12 tests in 4 files:
 
 - `tests/e2e/catalog.spec.ts` — verifies `/shop/` renders exactly the 7 official Lattice products, no removed/merged product names, and all 7 product detail pages render conversion sections plus CTA links.
-- `tests/e2e/blog.spec.ts` — verifies `/blog/` renders curated invoice-guide content while hiding the default WordPress `hello-world` starter post.
+- `tests/e2e/blog.spec.ts` — verifies `/blog/` renders curated invoice-guide content while hiding the default WordPress `hello-world` starter post, and guards the 33-card curated guide set against duplicate or missing `/blog/...` links.
 - `tests/e2e/checkout-routing.spec.ts` — verifies `/cart/?add-to-cart=14` keeps the cart session and reaches the classic `/checkout/` form.
 - `tests/e2e/checkout-payment-methods.spec.ts` — verifies checkout exposes `Manual invoice / bank transfer` while Stripe remains absent until live keys are configured.
 
@@ -35,6 +35,7 @@ Expected list command excerpt:
 
 ```text
 [chromium] › blog.spec.ts:3:5 › blog page shows curated invoice guides without default starter posts
+[chromium] › blog.spec.ts:18:5 › blog guide cards keep the curated 33-guide set unique
 [chromium] › catalog.spec.ts:27:5 › shop page shows exactly the official 7-product Lattice catalog
 [chromium] › catalog.spec.ts:57:7 › product detail page renders conversion sections for Lattice Commerce Suite
 [chromium] › catalog.spec.ts:57:7 › product detail page renders conversion sections for Lattice Core
@@ -45,12 +46,12 @@ Expected list command excerpt:
 [chromium] › catalog.spec.ts:57:7 › product detail page renders conversion sections for Lattice SEO
 [chromium] › checkout-payment-methods.spec.ts:8:5 › checkout exposes invoice and bank transfer methods while Stripe remains unavailable without live keys
 [chromium] › checkout-routing.spec.ts:8:5 › cart add-to-cart session reaches the classic WooCommerce checkout page
-Total: 11 tests in 4 files
+Total: 12 tests in 4 files
 ```
 
 ## Next planned smoke/maintainability coverage
 
-The next PM handoff is `docs/issues/2026-06-12-blog-guide-card-integrity-smoke.md`: add a read-only Playwright assertion that `/blog/` renders exactly 33 curated guide links and that all `/blog/...` guide hrefs are unique. After that ships, update this document to expect 12 tests in 4 files.
+The next small read-only smoke/maintainability task is to add coverage for the documentation landing page or footer navigation, without submitting forms or changing WooCommerce state.
 
 ## Payment-method note
 
