@@ -318,4 +318,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for Stripe-powered stores that need VAT/BTW fields, paid invoice PDFs, refund credit notes, customer downloads, and accountant-ready exports.",
     theme: "blue",
   },
+  {
+    href: "/blog/woocommerce-paypal-invoice-workflow",
+    eyebrow: "PayPal invoice workflow",
+    title: "WooCommerce PayPal invoice workflow for EU VAT stores",
+    description:
+      "A buyer-intent guide for PayPal-powered stores that need VAT/BTW fields, paid invoice PDFs, refund credit notes, customer downloads, and accountant-ready exports.",
+    theme: "slate",
+  },
 ];
