@@ -620,6 +620,18 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Stripe invoice workflow guide
               </Link>
               <Link
+                href="/blog/woocommerce-paypal-invoice-workflow"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                PayPal invoice workflow guide
+              </Link>
+              <Link
+                href="/blog/woocommerce-mollie-invoice-workflow"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Mollie invoice workflow guide
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >

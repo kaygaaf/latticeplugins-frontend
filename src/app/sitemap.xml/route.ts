@@ -46,6 +46,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-sepa-direct-debit-invoices',
   '/blog/woocommerce-stripe-invoice-workflow',
   '/blog/woocommerce-paypal-invoice-workflow',
+  '/blog/woocommerce-mollie-invoice-workflow',
 ];
 
 function normalizeUrl(path: string) {

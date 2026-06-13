@@ -326,4 +326,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for PayPal-powered stores that need VAT/BTW fields, paid invoice PDFs, refund credit notes, customer downloads, and accountant-ready exports.",
     theme: "slate",
   },
+  {
+    href: "/blog/woocommerce-mollie-invoice-workflow",
+    eyebrow: "Mollie invoice workflow",
+    title: "WooCommerce Mollie invoice workflow for EU VAT stores",
+    description:
+      "A buyer-intent guide for Mollie-powered stores that need iDEAL, SEPA, VAT/BTW fields, paid invoice PDFs, refund credit notes, customer downloads, and accountant-ready exports.",
+    theme: "emerald",
+  },
 ];
