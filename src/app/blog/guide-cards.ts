@@ -223,6 +223,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "indigo",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-cost",
+    eyebrow: "Invoice plugin pricing",
+    title: "WooCommerce invoice plugin cost: what EU VAT stores should budget",
+    description:
+      "A buyer-intent pricing guide for plugin license cost, hidden setup time, VAT fields, credit notes, accountant export, and Lattice Invoices early access.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-b2b-invoice-plugin",
     eyebrow: "B2B invoice plugin",
     title: "WooCommerce B2B invoice plugin for EU VAT stores",

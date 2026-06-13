@@ -554,6 +554,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Invoice plugin comparison guide
               </Link>
               <Link
+                href="/blog/woocommerce-invoice-plugin-cost"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Invoice plugin cost guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-b2b-invoice-plugin"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >
