@@ -34,7 +34,7 @@ const readinessChecklist = [
     buyerQuestion: "Which order status triggers final invoice numbering for PayPal standard, PayPal Payments, and express checkout payments?",
   },
   {
-    title: "3. Keep PayPal charge and invoice evidence together",
+    title: "3. Keep PayPal transaction and invoice evidence together",
     detail:
       "Support and accounting need one place to see invoice number, PayPal transaction ID, payer email, payment method, VAT totals, payment date, customer VAT number, and PDF delivery status.",
     buyerQuestion: "Can the export include invoice number and PayPal transaction reference in the same row?",
@@ -55,7 +55,7 @@ const readinessChecklist = [
 
 const scenarios = [
   {
-    title: "Card payment succeeds immediately",
+    title: "PayPal payment succeeds immediately",
     trigger: "PayPal confirms payment and WooCommerce marks the order as processing or completed.",
     workflow:
       "Generate the final invoice number, attach the PDF to the customer email, store the PayPal transaction ID, and expose the invoice in My Account.",
