@@ -350,4 +350,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for Klarna-powered stores that need pay-later invoice timing, VAT/BTW fields, capture evidence, refund credit notes, customer downloads, and accountant-ready exports.",
     theme: "purple",
   },
+  {
+    href: "/blog/woocommerce-net-terms-invoice-plugin",
+    eyebrow: "Net terms invoice plugin",
+    title: "WooCommerce Net terms invoice plugin for EU B2B stores",
+    description:
+      "A buyer-intent guide for stores offering Net 14, Net 30, or pay-by-invoice terms that need VAT/BTW fields, proformas, due dates, reminders, credit notes, and exports.",
+    theme: "emerald",
+  },
 ];

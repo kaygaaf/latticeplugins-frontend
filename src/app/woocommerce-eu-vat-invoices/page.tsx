@@ -644,6 +644,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Klarna invoice workflow guide
               </Link>
               <Link
+                href="/blog/woocommerce-net-terms-invoice-plugin"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Net terms invoice plugin guide
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
