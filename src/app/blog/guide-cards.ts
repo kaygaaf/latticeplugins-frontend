@@ -342,4 +342,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for Mollie-powered stores that need iDEAL, SEPA, VAT/BTW fields, paid invoice PDFs, refund credit notes, customer downloads, and accountant-ready exports.",
     theme: "emerald",
   },
+  {
+    href: "/blog/woocommerce-klarna-invoice-workflow",
+    eyebrow: "Klarna invoice workflow",
+    title: "WooCommerce Klarna invoice workflow for EU VAT stores",
+    description:
+      "A buyer-intent guide for Klarna-powered stores that need pay-later invoice timing, VAT/BTW fields, capture evidence, refund credit notes, customer downloads, and accountant-ready exports.",
+    theme: "purple",
+  },
 ];

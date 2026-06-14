@@ -47,6 +47,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-stripe-invoice-workflow',
   '/blog/woocommerce-paypal-invoice-workflow',
   '/blog/woocommerce-mollie-invoice-workflow',
+  '/blog/woocommerce-klarna-invoice-workflow',
 ];
 
 function normalizeUrl(path: string) {
