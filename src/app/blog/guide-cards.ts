@@ -358,4 +358,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for stores offering Net 14, Net 30, or pay-by-invoice terms that need VAT/BTW fields, proformas, due dates, reminders, credit notes, and exports.",
     theme: "emerald",
   },
+  {
+    href: "/blog/woocommerce-qr-code-invoice-payment",
+    eyebrow: "QR invoice payments",
+    title: "WooCommerce QR code invoice payment workflow for EU VAT stores",
+    description:
+      "A buyer-intent guide for stores adding bank-transfer QR payment codes to invoice PDFs with IBAN details, payment references, reminders, credit notes, and exports.",
+    theme: "blue",
+  },
 ];
