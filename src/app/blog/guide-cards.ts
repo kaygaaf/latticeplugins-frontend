@@ -382,4 +382,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for stores that need VIES VAT number validation, reverse-charge invoice evidence, checkout fallback rules, credit notes, and exports.",
     theme: "blue",
   },
+  {
+    href: "/blog/woocommerce-oss-vat-invoices",
+    eyebrow: "OSS VAT invoices",
+    title: "WooCommerce OSS VAT invoices for EU cross-border stores",
+    description:
+      "A buyer-intent guide for stores that need OSS VAT country evidence, invoice PDFs, credit notes, customer downloads, and accountant-ready exports.",
+    theme: "cyan",
+  },
 ];
