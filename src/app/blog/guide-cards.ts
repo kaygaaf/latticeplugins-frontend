@@ -366,4 +366,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for stores adding bank-transfer QR payment codes to invoice PDFs with IBAN details, payment references, reminders, credit notes, and exports.",
     theme: "blue",
   },
+  {
+    href: "/blog/woocommerce-invoice-after-payment",
+    eyebrow: "Invoice timing workflow",
+    title: "WooCommerce invoice after payment workflow for EU VAT stores",
+    description:
+      "A buyer-intent guide for stores deciding when to issue final invoice PDFs after payment, with proformas, VAT numbering, credit notes, customer downloads, and exports.",
+    theme: "emerald",
+  },
 ];

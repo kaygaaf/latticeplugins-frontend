@@ -656,6 +656,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 QR code invoice payment guide
               </Link>
               <Link
+                href="/blog/woocommerce-invoice-after-payment"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Invoice after payment workflow guide
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
