@@ -10,6 +10,16 @@ const OFFICIAL_PRODUCTS = [
   'Lattice SEO',
 ];
 
+const OFFICIAL_PRODUCT_SLUGS = [
+  'lattice-commerce-suite',
+  'lattice-core',
+  'lattice-crm',
+  'lattice-migrate',
+  'lattice-stripe-payments',
+  'lattice-subscribify',
+  'lattice-seo',
+];
+
 const REMOVED_OR_MERGED_PRODUCTS = [
   'Lattice Abandoned Cart',
   'Lattice Analytics',
@@ -55,7 +65,29 @@ async function checkHttp(path, expectedContentType) {
     contentType.includes(expectedContentType),
     `${url} content-type was ${contentType}, expected ${expectedContentType}`,
   );
-  return { url, status: response.status, contentType, body };
+  return { url, status: response.status, contentType, responseHeaders: response.headers, body };
+}
+
+async function checkProductRestCatalog() {
+  const products = await checkHttp('/wp-json/wp/v2/product?per_page=100', 'application/json');
+  const total = products.responseHeaders.get('x-wp-total');
+  const body = JSON.parse(products.body);
+
+  assert(Array.isArray(body), 'Product REST endpoint did not return a JSON array');
+  assert(total === String(OFFICIAL_PRODUCT_SLUGS.length), `Product REST total header was ${total}; expected ${OFFICIAL_PRODUCT_SLUGS.length}`);
+  assert(body.length === OFFICIAL_PRODUCT_SLUGS.length, `Product REST returned ${body.length} products; expected ${OFFICIAL_PRODUCT_SLUGS.length}`);
+
+  const slugs = body.map((product) => product.slug).filter(Boolean).sort();
+  const uniqueSlugs = new Set(slugs);
+  assert(uniqueSlugs.size === slugs.length, `Product REST contains a duplicate product slug: ${slugs.join(', ')}`);
+
+  const expected = [...OFFICIAL_PRODUCT_SLUGS].sort();
+  assert(
+    JSON.stringify(slugs) === JSON.stringify(expected),
+    `Product REST slugs were ${slugs.join(', ')}; expected ${expected.join(', ')}`,
+  );
+
+  return { status: products.status, total, slugs };
 }
 
 async function checkRedirect(path, expectedStatus, expectedLocation) {
@@ -108,6 +140,8 @@ async function main() {
   const posts = JSON.parse(wpPosts.body);
   assert(Array.isArray(posts), 'WP REST posts endpoint did not return a JSON array');
 
+  const productRestCatalog = await checkProductRestCatalog();
+
   const sitemap = await checkHttp('/sitemap.xml', 'application/xml');
   assert(
     sitemap.body.includes('<urlset') && sitemap.body.includes('https://latticeplugins.com'),
@@ -134,6 +168,7 @@ async function main() {
       officialProducts: OFFICIAL_PRODUCTS.length,
       productLinks: uniqueProductLinks.size,
       wpPosts: posts.length,
+      productRestProducts: Number(productRestCatalog.total),
       sitemap: sitemap.status,
       cart: cart.status,
       emptyCheckoutRedirect: emptyCheckout.location,
