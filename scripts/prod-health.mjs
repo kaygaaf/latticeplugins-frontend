@@ -1,4 +1,8 @@
+import tls from 'node:tls';
+
 const BASE_URL = (process.env.BASE_URL || 'https://latticeplugins.com').replace(/\/$/, '');
+const BASE_HOSTNAME = new URL(BASE_URL).hostname;
+const MIN_TLS_DAYS_REMAINING = 14;
 
 const OFFICIAL_PRODUCTS = [
   'Lattice Commerce Suite',
@@ -68,6 +72,46 @@ async function checkHttp(path, expectedContentType) {
   return { url, status: response.status, contentType, responseHeaders: response.headers, body };
 }
 
+async function checkTlsCertificate() {
+  const certificate = await new Promise((resolve, reject) => {
+    const socket = tls.connect(
+      {
+        host: BASE_HOSTNAME,
+        servername: BASE_HOSTNAME,
+        port: 443,
+        rejectUnauthorized: true,
+      },
+      () => {
+        const peerCertificate = socket.getPeerCertificate();
+        socket.end();
+        resolve(peerCertificate);
+      },
+    );
+
+    socket.setTimeout(10000, () => {
+      socket.destroy(new Error(`TLS check timed out for ${BASE_HOSTNAME}`));
+    });
+    socket.on('error', reject);
+  });
+
+  assert(certificate && certificate.valid_to, `No valid TLS certificate returned for ${BASE_HOSTNAME}`);
+
+  const expiresAt = new Date(certificate.valid_to);
+  const daysRemaining = Math.floor((expiresAt.getTime() - Date.now()) / 86400000);
+
+  assert(
+    daysRemaining >= MIN_TLS_DAYS_REMAINING,
+    `TLS certificate expires too soon: ${daysRemaining} days remaining, valid_to=${certificate.valid_to}`,
+  );
+
+  return {
+    subject: certificate.subject?.CN || '',
+    issuer: certificate.issuer?.O || certificate.issuer?.CN || '',
+    validTo: certificate.valid_to,
+    daysRemaining,
+  };
+}
+
 async function checkProductRestCatalog() {
   const products = await checkHttp('/wp-json/wp/v2/product?per_page=100', 'application/json');
   const total = products.responseHeaders.get('x-wp-total');
@@ -114,6 +158,8 @@ async function checkRedirect(path, expectedStatus, expectedLocation) {
 }
 
 async function main() {
+  const tlsCertificate = await checkTlsCertificate();
+
   const home = await checkHttp('/', 'text/html');
   assert(home.body.includes('Lattice'), 'Homepage HTML does not include the Lattice brand');
 
@@ -164,6 +210,7 @@ async function main() {
     baseUrl: BASE_URL,
     checks: {
       home: home.status,
+      tlsCertificate,
       shop: shop.status,
       officialProducts: OFFICIAL_PRODUCTS.length,
       productLinks: uniqueProductLinks.size,
