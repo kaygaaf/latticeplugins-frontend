@@ -374,4 +374,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for stores deciding when to issue final invoice PDFs after payment, with proformas, VAT numbering, credit notes, customer downloads, and exports.",
     theme: "emerald",
   },
+  {
+    href: "/blog/woocommerce-vies-vat-validation",
+    eyebrow: "VIES VAT validation",
+    title: "WooCommerce VIES VAT validation for EU B2B invoices",
+    description:
+      "A buyer-intent guide for stores that need VIES VAT number validation, reverse-charge invoice evidence, checkout fallback rules, credit notes, and exports.",
+    theme: "blue",
+  },
 ];
