@@ -55,6 +55,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-receipt-vs-invoice',
   '/blog/woocommerce-vies-vat-validation',
   '/blog/woocommerce-oss-vat-invoices',
+  '/blog/woocommerce-digital-product-vat-invoices',
 ];
 
 function normalizeUrl(path: string) {

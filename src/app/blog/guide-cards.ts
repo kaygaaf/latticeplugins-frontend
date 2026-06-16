@@ -406,4 +406,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for stores that need OSS VAT country evidence, invoice PDFs, credit notes, customer downloads, and accountant-ready exports.",
     theme: "cyan",
   },
+  {
+    href: "/blog/woocommerce-digital-product-vat-invoices",
+    eyebrow: "Digital product VAT invoices",
+    title: "WooCommerce digital product VAT invoices for EU stores",
+    description:
+      "A buyer-intent guide for digital-product stores that need EU VAT evidence, paid invoice PDFs, credit notes, customer downloads, OSS reporting, and accountant exports.",
+    theme: "indigo",
+  },
 ];
