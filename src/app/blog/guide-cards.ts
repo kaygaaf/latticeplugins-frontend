@@ -375,6 +375,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "emerald",
   },
   {
+    href: "/blog/woocommerce-invoice-payment-link",
+    eyebrow: "Invoice payment links",
+    title: "WooCommerce invoice payment link workflow for EU VAT stores",
+    description:
+      "A buyer-intent guide for stores sending pay-by-link invoices with VAT evidence, proformas, final invoice timing, reminders, credit notes, and accountant exports.",
+    theme: "indigo",
+  },
+  {
     href: "/blog/woocommerce-vies-vat-validation",
     eyebrow: "VIES VAT validation",
     title: "WooCommerce VIES VAT validation for EU B2B invoices",

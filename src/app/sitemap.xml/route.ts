@@ -51,6 +51,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-net-terms-invoice-plugin',
   '/blog/woocommerce-qr-code-invoice-payment',
   '/blog/woocommerce-invoice-after-payment',
+  '/blog/woocommerce-invoice-payment-link',
   '/blog/woocommerce-vies-vat-validation',
   '/blog/woocommerce-oss-vat-invoices',
 ];
