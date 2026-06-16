@@ -383,6 +383,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "indigo",
   },
   {
+    href: "/blog/woocommerce-receipt-vs-invoice",
+    eyebrow: "Receipt vs invoice",
+    title: "WooCommerce receipt vs invoice workflow for EU VAT stores",
+    description:
+      "A buyer-intent guide for stores deciding when a payment receipt is not enough and when VAT invoice PDFs, credit notes, customer downloads, and exports are required.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-vies-vat-validation",
     eyebrow: "VIES VAT validation",
     title: "WooCommerce VIES VAT validation for EU B2B invoices",
