@@ -7,6 +7,7 @@
     "build": "next build",
     "lint": "next lint",
     "start": "next start",
+    "test": "npm run lint && npm run test:health && npm run test:seo",
     "health:prod": "node scripts/prod-health.mjs",
     "health:infra": "node scripts/prod-infra-health.mjs",
     "test:health": "node scripts/check-prod-health-coverage.mjs",
