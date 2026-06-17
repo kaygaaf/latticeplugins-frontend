@@ -422,4 +422,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for digital-product stores that need EU VAT evidence, paid invoice PDFs, credit notes, customer downloads, OSS reporting, and accountant exports.",
     theme: "indigo",
   },
+  {
+    href: "/blog/woocommerce-invoice-custom-fields",
+    eyebrow: "Invoice custom fields",
+    title: "WooCommerce invoice custom fields for EU VAT workflows",
+    description:
+      "A buyer-intent guide for B2B stores that need VAT IDs, PO numbers, cost centres, project references, invoice emails, and review notes on PDFs and accountant exports.",
+    theme: "cyan",
+  },
 ];
