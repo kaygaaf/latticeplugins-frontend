@@ -430,4 +430,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent guide for B2B stores that need VAT IDs, PO numbers, cost centres, project references, invoice emails, and review notes on PDFs and accountant exports.",
     theme: "cyan",
   },
+  {
+    href: "/blog/woocommerce-invoice-plugin-for-accountants",
+    eyebrow: "Accountant invoice workflow",
+    title: "WooCommerce invoice plugin for accountants and bookkeepers",
+    description:
+      "A buyer-intent accountant checklist for EU VAT invoice numbers, retained PDFs, refund credit notes, payment reconciliation, and exports that reduce bookkeeping cleanup.",
+    theme: "slate",
+  },
 ];
