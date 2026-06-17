@@ -99,6 +99,17 @@ function findProxy(inspected) {
     || [...inspected.values()].find((container) => /traefik/i.test(container.Config.Image));
 }
 
+function findStaleLegacyContainers(inspected) {
+  const legacyNames = new Set(['/lattice-wp', '/lattice-db', '/lattice-next']);
+  return [...inspected.values()]
+    .filter((container) => legacyNames.has(container.Name))
+    .map((container) => ({
+      name: container.Name.slice(1),
+      image: container.Config.Image,
+      status: container.State.Status,
+    }));
+}
+
 function networkNames(container) {
   return Object.keys(container.NetworkSettings.Networks || {});
 }
@@ -196,12 +207,18 @@ function main() {
   const wordpress = findLatticeWordPress(inspected);
   const database = findLatticeDatabase(inspected, wordpress);
   const proxy = findProxy(inspected);
+  const staleLegacyContainers = findStaleLegacyContainers(inspected);
+  assert(
+    staleLegacyContainers.length === 0,
+    `Stale legacy Lattice containers found: ${staleLegacyContainers.map((container) => `${container.name}:${container.status}`).join(', ')}`,
+  );
 
   const result = {
     ok: true,
     dockerContext: DOCKER_CONTEXT,
     domain: DOMAIN,
     checks: {
+      staleLegacyContainers,
       frontend: checkFrontend(frontend),
       wordpress: checkWordPress(wordpress),
       database: checkDatabase(database),
