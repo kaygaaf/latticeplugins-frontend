@@ -41,6 +41,14 @@ for (const slug of officialSlugs) {
   }
 }
 
+const sitemapSource = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
+for (const slug of officialSlugs) {
+  const productPath = `/product/${slug}`;
+  if (!sitemapSource.includes(`'${productPath}'`) && !sitemapSource.includes(`"${productPath}"`)) {
+    failures.push(`sitemap is missing official product URL: ${productPath}`);
+  }
+}
+
 const removedSlugs = [
   'lattice-abandoned-cart',
   'lattice-checkout-upsell',

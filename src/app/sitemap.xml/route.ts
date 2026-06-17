@@ -6,6 +6,13 @@ const SITE_URL = 'https://latticeplugins.com';
 const FRONTEND_URLS = [
   '/',
   '/shop',
+  '/product/lattice-commerce-suite',
+  '/product/lattice-core',
+  '/product/lattice-crm',
+  '/product/lattice-migrate',
+  '/product/lattice-stripe-payments',
+  '/product/lattice-subscribify',
+  '/product/lattice-seo',
   '/woocommerce-eu-vat-invoices',
   '/docs/woocommerce-eu-vat-invoice-setup',
   '/blog',
