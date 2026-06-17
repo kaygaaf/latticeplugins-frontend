@@ -40,6 +40,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-invoice-reconciliation',
   '/blog/woocommerce-invoice-compliance-checklist',
   '/blog/woocommerce-invoice-plugin-comparison',
+  '/blog/woocommerce-invoice-plugin-for-agencies',
   '/blog/woocommerce-b2b-invoice-plugin',
   '/blog/woocommerce-invoice-automation',
   '/blog/woocommerce-invoice-data-retention',

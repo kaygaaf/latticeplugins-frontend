@@ -223,6 +223,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "indigo",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-for-agencies",
+    eyebrow: "Agency invoice workflow",
+    title: "WooCommerce invoice plugin for agencies managing EU stores",
+    description:
+      "A buyer-intent agency checklist for repeatable WooCommerce EU VAT invoice workflows, client handoff, credit notes, customer downloads, and accountant exports.",
+    theme: "purple",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-cost",
     eyebrow: "Invoice plugin pricing",
     title: "WooCommerce invoice plugin cost: what EU VAT stores should budget",
