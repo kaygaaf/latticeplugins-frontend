@@ -454,4 +454,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for German/EU stores that need VAT invoice fields, reverse-charge evidence, PDF delivery, credit notes, and accountant export.",
     theme: "indigo",
   },
+  {
+    href: "/blog/woocommerce-french-vat-invoices",
+    eyebrow: "French VAT invoices",
+    title: "WooCommerce French VAT invoices: mentions obligatoires checklist",
+    description:
+      "A buyer-intent checklist for French/EU stores that need TVA invoice fields, reverse-charge evidence, PDF delivery, credit notes, and accountant export.",
+    theme: "blue",
+  },
 ];
