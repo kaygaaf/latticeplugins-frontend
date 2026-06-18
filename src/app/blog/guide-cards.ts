@@ -438,4 +438,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent accountant checklist for EU VAT invoice numbers, retained PDFs, refund credit notes, payment reconciliation, and exports that reduce bookkeeping cleanup.",
     theme: "slate",
   },
+  {
+    href: "/blog/woocommerce-invoice-plugin-setup-checklist",
+    eyebrow: "Invoice setup checklist",
+    title: "WooCommerce invoice plugin setup checklist before launch",
+    description:
+      "A pre-purchase checklist for WooCommerce stores choosing an invoice plugin: VAT fields, invoice numbers, PDFs, refunds, emails, downloads, and accountant export.",
+    theme: "blue",
+  },
 ];

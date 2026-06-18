@@ -692,6 +692,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Invoice custom fields guide
               </Link>
               <Link
+                href="/blog/woocommerce-invoice-plugin-setup-checklist"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Pre-launch setup checklist
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
