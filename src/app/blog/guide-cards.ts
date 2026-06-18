@@ -446,4 +446,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A pre-purchase checklist for WooCommerce stores choosing an invoice plugin: VAT fields, invoice numbers, PDFs, refunds, emails, downloads, and accountant export.",
     theme: "blue",
   },
+  {
+    href: "/blog/woocommerce-german-vat-invoices",
+    eyebrow: "German VAT invoices",
+    title: "WooCommerce German VAT invoices: Pflichtangaben checklist",
+    description:
+      "A buyer-intent checklist for German/EU stores that need VAT invoice fields, reverse-charge evidence, PDF delivery, credit notes, and accountant export.",
+    theme: "indigo",
+  },
 ];

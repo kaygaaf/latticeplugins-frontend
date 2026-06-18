@@ -698,6 +698,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Pre-launch setup checklist
               </Link>
               <Link
+                href="/blog/woocommerce-german-vat-invoices"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                German VAT invoice guide
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
