@@ -462,4 +462,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for French/EU stores that need TVA invoice fields, reverse-charge evidence, PDF delivery, credit notes, and accountant export.",
     theme: "blue",
   },
+  {
+    href: "/blog/woocommerce-spanish-vat-invoices",
+    eyebrow: "Spanish VAT invoices",
+    title: "WooCommerce Spanish VAT invoices: IVA invoice plugin checklist",
+    description:
+      "A buyer-intent checklist for Spanish/EU stores that need IVA invoice fields, NIF/CIF or VAT numbers, reverse-charge evidence, PDF delivery, corrections, and accountant export.",
+    theme: "amber",
+  },
 ];
