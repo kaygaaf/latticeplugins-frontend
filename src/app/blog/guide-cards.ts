@@ -439,6 +439,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "slate",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-for-freelancers",
+    eyebrow: "Freelancer invoice workflow",
+    title: "WooCommerce invoice plugin for freelancers and solo stores",
+    description:
+      "A buyer-intent freelancer checklist for VAT/BTW fields, invoice PDFs, customer downloads, refunds, and accountant handoff without enterprise billing complexity.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-setup-checklist",
     eyebrow: "Invoice setup checklist",
     title: "WooCommerce invoice plugin setup checklist before launch",
