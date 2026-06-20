@@ -494,4 +494,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Italian/EU stores that need IVA invoice fields, Codice Fiscale, Partita IVA, SDI/PEC readiness, credit notes, and accountant export.",
     theme: "emerald",
   },
+  {
+    href: "/blog/woocommerce-belgian-vat-invoices",
+    eyebrow: "Belgian VAT invoices",
+    title: "WooCommerce Belgian VAT invoices: BTW/TVA checklist",
+    description:
+      "A buyer-intent checklist for Belgian/EU stores that need BTW/TVA invoice fields, VAT-number evidence, reverse charge, credit notes, and accountant export.",
+    theme: "amber",
+  },
 ];
