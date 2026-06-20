@@ -478,4 +478,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Spanish/EU stores that need IVA invoice fields, NIF/CIF or VAT numbers, reverse-charge evidence, PDF delivery, corrections, and accountant export.",
     theme: "amber",
   },
+  {
+    href: "/blog/woocommerce-italian-vat-invoices",
+    eyebrow: "Italian VAT invoices",
+    title: "WooCommerce Italian VAT invoices: Fattura IVA checklist",
+    description:
+      "A buyer-intent checklist for Italian/EU stores that need IVA invoice fields, Codice Fiscale, Partita IVA, SDI/PEC readiness, credit notes, and accountant export.",
+    theme: "emerald",
+  },
 ];
