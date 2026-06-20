@@ -233,6 +233,7 @@ export default function WooCommerceRecurringInvoicesSubscriptionsPage() {
             <div className="bg-blue-50 rounded-2xl border border-blue-100 p-6">
               <h3 className="text-xl font-bold mb-3">Related invoice guides</h3>
               <ul className="space-y-3 text-blue-900 font-medium">
+                <li><Link href="/blog/woocommerce-invoice-plugin-for-saas" className="hover:underline">SaaS invoice plugin checklist</Link></li>
                 <li><Link href="/blog/woocommerce-invoice-due-dates" className="hover:underline">Due dates and payment terms</Link></li>
                 <li><Link href="/blog/woocommerce-invoice-payment-reminders" className="hover:underline">Payment reminder workflow</Link></li>
                 <li><Link href="/blog/woocommerce-partial-payment-invoices" className="hover:underline">Partial payment invoices</Link></li>

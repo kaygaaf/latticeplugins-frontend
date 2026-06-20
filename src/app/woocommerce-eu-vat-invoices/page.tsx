@@ -572,6 +572,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Accountant invoice workflow guide
               </Link>
               <Link
+                href="/blog/woocommerce-invoice-plugin-for-saas"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                SaaS subscription invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-invoice-plugin-cost"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >

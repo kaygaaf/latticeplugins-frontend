@@ -439,6 +439,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "slate",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-for-saas",
+    eyebrow: "SaaS invoice workflow",
+    title: "WooCommerce invoice plugin for SaaS and subscription stores",
+    description:
+      "A buyer-intent checklist for SaaS and subscription WooCommerce stores that need renewal invoice PDFs, failed-payment evidence, VAT/BTW data, credit notes, and accountant exports.",
+    theme: "cyan",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-for-freelancers",
     eyebrow: "Freelancer invoice workflow",
     title: "WooCommerce invoice plugin for freelancers and solo stores",
