@@ -518,4 +518,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Polish/EU stores that need NIP fields, VAT invoice data, KSeF-ready exports, reverse charge, corrections, and accountant handoff.",
     theme: "purple",
   },
+  {
+    href: "/blog/woocommerce-danish-vat-invoices",
+    eyebrow: "Danish VAT invoices",
+    title: "WooCommerce Danish VAT invoices: moms / CVR checklist",
+    description:
+      "A buyer-intent checklist for Danish/EU stores that need moms invoice fields, CVR numbers, reverse-charge evidence, credit notes, and accountant export.",
+    theme: "indigo",
+  },
 ];
