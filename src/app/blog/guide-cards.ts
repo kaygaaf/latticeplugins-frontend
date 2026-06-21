@@ -510,4 +510,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Austrian/EU stores that need USt invoice fields, UID evidence, reverse charge, credit notes, customer downloads, and accountant export.",
     theme: "slate",
   },
+  {
+    href: "/blog/woocommerce-polish-vat-invoices",
+    eyebrow: "Polish VAT invoices",
+    title: "WooCommerce Polish VAT invoices: NIP / KSeF checklist",
+    description:
+      "A buyer-intent checklist for Polish/EU stores that need NIP fields, VAT invoice data, KSeF-ready exports, reverse charge, corrections, and accountant handoff.",
+    theme: "purple",
+  },
 ];

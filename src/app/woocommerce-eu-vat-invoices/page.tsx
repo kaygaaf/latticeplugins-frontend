@@ -752,6 +752,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Austrian VAT invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-polish-vat-invoices"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Polish VAT invoice guide
+              </Link>
+              <Link
                 href="/shop"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
