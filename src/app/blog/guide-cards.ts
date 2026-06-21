@@ -502,4 +502,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Belgian/EU stores that need BTW/TVA invoice fields, VAT-number evidence, reverse charge, credit notes, and accountant export.",
     theme: "amber",
   },
+  {
+    href: "/blog/woocommerce-austrian-vat-invoices",
+    eyebrow: "Austrian VAT invoices",
+    title: "WooCommerce Austrian VAT invoices: USt/UID checklist",
+    description:
+      "A buyer-intent checklist for Austrian/EU stores that need USt invoice fields, UID evidence, reverse charge, credit notes, customer downloads, and accountant export.",
+    theme: "slate",
+  },
 ];
