@@ -439,6 +439,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "slate",
   },
   {
+    href: "/blog/woocommerce-marketplace-vat-invoices",
+    eyebrow: "Marketplace VAT invoices",
+    title: "WooCommerce marketplace VAT invoices for multi-vendor stores",
+    description:
+      "A buyer-intent marketplace checklist for seller-of-record rules, vendor VAT evidence, customer invoice PDFs, refund credit notes, payout references, and accountant exports.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-for-saas",
     eyebrow: "SaaS invoice workflow",
     title: "WooCommerce invoice plugin for SaaS and subscription stores",
