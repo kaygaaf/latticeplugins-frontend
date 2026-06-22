@@ -542,4 +542,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Swedish/EU stores that need moms invoice fields, organisationsnummer, reverse-charge evidence, credit notes, and accountant export.",
     theme: "blue",
   },
+  {
+    href: "/blog/woocommerce-finnish-vat-invoices",
+    eyebrow: "Finnish VAT invoices",
+    title: "WooCommerce Finnish VAT invoices: ALV / Y-tunnus checklist",
+    description:
+      "A buyer-intent checklist for Finnish/EU stores that need ALV invoice fields, Y-tunnus, reverse-charge evidence, credit notes, and accountant export.",
+    theme: "cyan",
+  },
 ];
