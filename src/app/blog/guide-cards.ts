@@ -526,4 +526,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Danish/EU stores that need moms invoice fields, CVR numbers, reverse-charge evidence, credit notes, and accountant export.",
     theme: "indigo",
   },
+  {
+    href: "/blog/woocommerce-swedish-vat-invoices",
+    eyebrow: "Swedish VAT invoices",
+    title: "WooCommerce Swedish VAT invoices: moms / organisationsnummer checklist",
+    description:
+      "A buyer-intent checklist for Swedish/EU stores that need moms invoice fields, organisationsnummer, reverse-charge evidence, credit notes, and accountant export.",
+    theme: "blue",
+  },
 ];
