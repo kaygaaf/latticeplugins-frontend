@@ -566,4 +566,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Irish/EU stores that need VAT-number fields, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
     theme: "green",
   },
+  {
+    href: "/blog/woocommerce-czech-vat-invoices",
+    eyebrow: "Czech DPH invoices",
+    title: "WooCommerce Czech VAT invoices: DPH / DIČ checklist",
+    description:
+      "A buyer-intent checklist for Czech/EU stores that need DPH invoice fields, DIČ/VAT numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "cyan",
+  },
 ];
