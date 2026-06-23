@@ -11,7 +11,7 @@
     "health:prod": "node scripts/prod-health.mjs",
     "health:infra": "node scripts/prod-infra-health.mjs",
     "test:health": "node scripts/check-prod-health-coverage.mjs",
-    "test:seo": "node scripts/check-product-seo.mjs",
+    "test:seo": "node scripts/check-product-seo.mjs && node scripts/check-sitemap-route-origin.mjs",
     "test:e2e": "playwright test --pass-with-no-tests",
     "test:e2e:headed": "playwright test --pass-with-no-tests --headed"
   },

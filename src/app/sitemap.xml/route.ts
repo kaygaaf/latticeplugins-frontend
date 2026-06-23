@@ -1,7 +1,22 @@
 export const dynamic = 'force-dynamic';
 
-const WORDPRESS_ORIGIN = process.env.WORDPRESS_INTERNAL_URL || 'http://lattice-wp';
+const DEFAULT_WORDPRESS_ORIGIN = 'https://latticeplugins.com/wp';
+const WORDPRESS_ORIGIN = resolveWordPressOrigin();
 const SITE_URL = 'https://latticeplugins.com';
+
+function resolveWordPressOrigin(env: NodeJS.ProcessEnv = process.env) {
+  return (
+    env.WORDPRESS_INTERNAL_URL ||
+    env.NEXT_PUBLIC_WORDPRESS_URL ||
+    DEFAULT_WORDPRESS_ORIGIN
+  ).replace(/\/$/, '');
+}
+
+function buildWordPressSitemapUrl(origin = WORDPRESS_ORIGIN) {
+  const sitemapUrl = new URL(`${origin.replace(/\/$/, '')}/index.php`);
+  sitemapUrl.searchParams.set('lattice_seo_sitemap', '1');
+  return sitemapUrl;
+}
 
 const FRONTEND_URLS = [
   '/',
@@ -113,8 +128,7 @@ ${entries}
 }
 
 export async function GET() {
-  const sitemapUrl = new URL('/index.php', WORDPRESS_ORIGIN);
-  sitemapUrl.searchParams.set('lattice_seo_sitemap', '1');
+  const sitemapUrl = buildWordPressSitemapUrl();
 
   try {
     const upstream = await fetch(sitemapUrl, {
