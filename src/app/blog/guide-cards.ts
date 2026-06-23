@@ -558,4 +558,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Portuguese/EU stores that need IVA invoice fields, NIF identifiers, reverse-charge evidence, credit notes, and accountant export.",
     theme: "emerald",
   },
+  {
+    href: "/blog/woocommerce-irish-vat-invoices",
+    eyebrow: "Irish VAT invoices",
+    title: "WooCommerce Irish VAT invoices: VAT number plugin checklist",
+    description:
+      "A buyer-intent checklist for Irish/EU stores that need VAT-number fields, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "green",
+  },
 ];
