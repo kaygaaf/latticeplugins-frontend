@@ -550,4 +550,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Finnish/EU stores that need ALV invoice fields, Y-tunnus, reverse-charge evidence, credit notes, and accountant export.",
     theme: "cyan",
   },
+  {
+    href: "/blog/woocommerce-portuguese-vat-invoices",
+    eyebrow: "Portuguese VAT invoices",
+    title: "WooCommerce Portuguese VAT invoices: IVA / NIF checklist",
+    description:
+      "A buyer-intent checklist for Portuguese/EU stores that need IVA invoice fields, NIF identifiers, reverse-charge evidence, credit notes, and accountant export.",
+    theme: "emerald",
+  },
 ];
