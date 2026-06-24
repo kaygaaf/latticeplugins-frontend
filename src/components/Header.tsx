@@ -27,10 +27,10 @@ export default function Header() {
               Shop
             </Link>
             <Link
-              href="/woocommerce-eu-vat-invoices"
+              href="/product/lattice-seo"
               className="text-gray-700 hover:text-blue-600 font-medium transition"
             >
-              EU Invoices
+              Lattice SEO
             </Link>
             <Link
               href="/blog"

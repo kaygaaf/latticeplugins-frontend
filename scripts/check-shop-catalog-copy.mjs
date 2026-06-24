@@ -1,6 +1,9 @@
 import { readFileSync } from 'node:fs';
 
-const shopSource = readFileSync('src/app/shop/page.tsx', 'utf8');
+const shopSource = [
+  'src/app/shop/page.tsx',
+  'src/components/Header.tsx',
+].map((path) => readFileSync(path, 'utf8')).join('\n');
 
 const disallowedShopPromoTerms = [
   'Lattice Invoices',
