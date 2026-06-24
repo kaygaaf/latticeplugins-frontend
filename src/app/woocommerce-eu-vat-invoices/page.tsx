@@ -64,6 +64,52 @@ const comparisonRows = [
   ["Sales friction", "Unclear whether B2B checkout is supported", "Clear EU invoice promise before purchase"],
 ];
 
+const qualificationRows = [
+  {
+    signal: "B2B buyers ask for corrected VAT/BTW invoices",
+    score: "+2",
+    action: "Prioritize checkout VAT fields and locked invoice metadata before public launch.",
+  },
+  {
+    signal: "Support manually creates PDFs after payment",
+    score: "+2",
+    action: "Move PDF generation, email attachment, and My Account downloads into the order workflow.",
+  },
+  {
+    signal: "Refunds or partial refunds need credit notes",
+    score: "+2",
+    action: "Require refund-linked credit notes before the store relies on the plugin for accounting handoff.",
+  },
+  {
+    signal: "Accountant needs VAT totals, VAT ID, invoice number, and PDF link",
+    score: "+1",
+    action: "Treat export-ready fields as part of the setup, not a later reporting feature.",
+  },
+  {
+    signal: "The store only sells low-volume B2C orders",
+    score: "0",
+    action: "Use the free setup guide first; early access is strongest when invoice support costs are already visible.",
+  },
+];
+
+const objectionCards = [
+  {
+    title: "“I already have WooCommerce tax settings.”",
+    answer:
+      "Good. Lattice Invoices is positioned around the document workflow that tax settings do not solve alone: VAT fields, invoice numbers, PDFs, downloads, and credit notes.",
+  },
+  {
+    title: "“I only get a few invoice requests.”",
+    answer:
+      "If each request takes 5–10 minutes, even a handful of B2B buyers can justify a €49 one-time workflow by reducing correction emails and improving purchase trust.",
+  },
+  {
+    title: "“I need to know what happens before paying.”",
+    answer:
+      "The early-access email now asks for store URL, country, B2B/B2C mix, VAT fields, numbering format, and credit-note needs so the fit can be confirmed before purchase.",
+  },
+];
+
 const features = [
   {
     title: "EU VAT/BTW customer fields",
@@ -388,6 +434,61 @@ export default function WooCommerceEuVatInvoicesPage() {
                   <p className="text-slate-700 leading-relaxed">{feature.text}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8 overflow-hidden">
+              <p className="text-sm uppercase tracking-[0.25em] text-green-700 font-semibold mb-2">Buyer qualification</p>
+              <h2 className="text-3xl font-bold mb-4">Should this store request €49 early access?</h2>
+              <p className="text-slate-700 leading-relaxed mb-6">
+                This scorecard turns the page from “interesting plugin idea” into a purchase decision. A store with 3+ points is already losing time or trust to invoice handling and should request the paid early-access workflow.
+              </p>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-green-50 text-slate-800">
+                      <th className="p-4 rounded-l-xl">Store signal</th>
+                      <th className="p-4">Score</th>
+                      <th className="p-4 rounded-r-xl">What Lattice should solve first</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {qualificationRows.map((row) => (
+                      <tr key={row.signal} className="border-b border-slate-100">
+                        <td className="p-4 font-semibold text-slate-900">{row.signal}</td>
+                        <td className="p-4 text-green-700 font-bold whitespace-nowrap">{row.score}</td>
+                        <td className="p-4 text-slate-700">{row.action}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="rounded-2xl bg-slate-950 text-white p-6 flex flex-col lg:flex-row gap-5 lg:items-center lg:justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Score 3+ points?</h3>
+                  <p className="text-slate-200 leading-relaxed">
+                    Send the checklist answers now. The reply can become a qualified €49 license conversation instead of another vague plugin inquiry.
+                  </p>
+                </div>
+                <a
+                  href="mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20qualification%20score%203%2B&body=Hi%20Lattice%2C%0A%0AMy%20WooCommerce%20invoice%20fit%20score%20is%203%2B.%0A%0AStore%20URL%3A%20%0ACountry%3A%20%0AB2B%2FB2C%20mix%3A%20%0AInvoice%20requests%20per%20month%3A%20%0AVAT%2FBTW%20fields%20needed%3A%20%0ACredit%20notes%20needed%3A%20%0AAccounting%20export%20needs%3A%20"
+                  className="shrink-0 bg-green-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-400 transition text-center"
+                >
+                  Send my fit score
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8">
+              <p className="text-sm uppercase tracking-[0.25em] text-blue-600 font-semibold mb-2">Purchase objections</p>
+              <h2 className="text-3xl font-bold mb-6">Answers that reduce hesitation before the CTA</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {objectionCards.map((card) => (
+                  <div key={card.title} className="rounded-xl border border-blue-100 bg-blue-50 p-5">
+                    <h3 className="font-bold text-slate-900 mb-3">{card.title}</h3>
+                    <p className="text-sm text-slate-700 leading-relaxed">{card.answer}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="bg-white rounded-2xl border shadow-sm p-8">
