@@ -574,4 +574,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Czech/EU stores that need DPH invoice fields, DIČ/VAT numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
     theme: "cyan",
   },
+  {
+    href: "/blog/woocommerce-romanian-vat-invoices",
+    eyebrow: "Romanian TVA invoices",
+    title: "WooCommerce Romanian VAT invoices: TVA / CUI checklist",
+    description:
+      "A buyer-intent checklist for Romanian/EU stores that need TVA invoice fields, CUI/VAT numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "sky",
+  },
 ];
