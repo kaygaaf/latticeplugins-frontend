@@ -67,6 +67,34 @@ const mistakes = [
   "Making customers email support because invoice downloads are not available in My Account.",
 ];
 
+const auditRows = [
+  {
+    area: "B2B billing fields",
+    pass: "Company, VAT/BTW number, invoice email, and PO/reference are captured before payment.",
+    fail: "Buyer pays first, then support has to chase or correct invoice details later.",
+  },
+  {
+    area: "Invoice creation trigger",
+    pass: "A paid order creates a locked invoice number, invoice date, and private PDF record.",
+    fail: "Invoices are created manually only when the buyer asks for one.",
+  },
+  {
+    area: "Customer delivery",
+    pass: "Invoice PDFs are attached to order emails and available in My Account downloads.",
+    fail: "Customers reply to old order emails because they cannot find their invoice.",
+  },
+  {
+    area: "Refund handling",
+    pass: "Refunds generate separate credit notes linked to the original invoice and order.",
+    fail: "Refunds overwrite the original invoice or require an external spreadsheet/PDF tool.",
+  },
+  {
+    area: "Accounting handoff",
+    pass: "VAT rate, VAT amount, invoice number, customer VAT number, and credit-note relationship are exportable.",
+    fail: "The accountant receives screenshots or mixed order notes instead of structured invoice data.",
+  },
+];
+
 const implementationPlan = [
   {
     step: "1",
@@ -214,6 +242,49 @@ export default function WooCommerceEuVatInvoiceSetupGuide() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8 overflow-hidden">
+              <p className="text-sm uppercase tracking-[0.25em] text-green-700 font-semibold mb-2">15-minute audit</p>
+              <h2 className="text-3xl font-bold mb-4">Score the store before buying an invoice plugin</h2>
+              <p className="text-slate-700 leading-relaxed mb-6">
+                This quick audit turns the guide into a purchase decision. If two or more rows are in the “not ready” column,
+                the store is already losing time to invoice support and is a fit for the Lattice Invoices early-access workflow.
+              </p>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-slate-100 text-slate-700">
+                      <th className="p-4 rounded-l-xl">Area</th>
+                      <th className="p-4">Invoice-ready</th>
+                      <th className="p-4 rounded-r-xl">Not ready yet</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {auditRows.map((row) => (
+                      <tr key={row.area} className="border-b border-slate-100 align-top">
+                        <td className="p-4 font-semibold text-slate-900">{row.area}</td>
+                        <td className="p-4 text-slate-700">{row.pass}</td>
+                        <td className="p-4 text-slate-700">{row.fail}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="rounded-2xl bg-blue-50 border border-blue-100 p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Want Lattice to review the result?</h3>
+                  <p className="text-slate-700 leading-relaxed">
+                    Send the five audit answers with the store URL. That creates a concrete setup brief instead of a vague plugin inquiry.
+                  </p>
+                </div>
+                <a
+                  href="mailto:support@latticeplugins.com?subject=Lattice%20Invoices%2015-minute%20audit&body=Hi%20Lattice%2C%0A%0AI%20completed%20the%2015-minute%20invoice%20audit.%0A%0AStore%20URL%3A%20%0AB2B%20billing%20fields%3A%20%0AInvoice%20creation%20trigger%3A%20%0ACustomer%20delivery%3A%20%0ARefund%20handling%3A%20%0AAccounting%20handoff%3A%20"
+                  className="shrink-0 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition text-center"
+                >
+                  Send audit for review
+                </a>
               </div>
             </div>
 
