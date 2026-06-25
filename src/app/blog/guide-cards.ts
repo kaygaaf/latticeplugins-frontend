@@ -590,4 +590,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Hungarian/EU stores that need ÁFA invoice fields, tax numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
     theme: "indigo",
   },
+  {
+    href: "/blog/woocommerce-greek-vat-invoices",
+    eyebrow: "Greek ΦΠΑ invoices",
+    title: "WooCommerce Greek VAT invoices: ΦΠΑ / AFM checklist",
+    description:
+      "A buyer-intent checklist for Greek/EU stores that need ΦΠΑ invoice fields, AFM tax numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "blue",
+  },
 ];
