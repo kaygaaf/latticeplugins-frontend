@@ -99,6 +99,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-irish-vat-invoices',
   '/blog/woocommerce-czech-vat-invoices',
   '/blog/woocommerce-romanian-vat-invoices',
+  '/blog/woocommerce-hungarian-vat-invoices',
 ];
 
 function normalizeUrl(path: string) {

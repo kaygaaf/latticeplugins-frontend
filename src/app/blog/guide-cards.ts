@@ -582,4 +582,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Romanian/EU stores that need TVA invoice fields, CUI/VAT numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
     theme: "sky",
   },
+  {
+    href: "/blog/woocommerce-hungarian-vat-invoices",
+    eyebrow: "Hungarian ÁFA invoices",
+    title: "WooCommerce Hungarian VAT invoices: ÁFA / tax-number checklist",
+    description:
+      "A buyer-intent checklist for Hungarian/EU stores that need ÁFA invoice fields, tax numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "indigo",
+  },
 ];
