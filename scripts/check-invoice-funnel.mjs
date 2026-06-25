@@ -3,7 +3,6 @@ import { readFileSync } from 'node:fs';
 
 const landing = readFileSync('src/app/woocommerce-eu-vat-invoices/page.tsx', 'utf8');
 const docs = readFileSync('src/app/docs/woocommerce-eu-vat-invoice-setup/page.tsx', 'utf8');
-const home = readFileSync('src/app/page.tsx', 'utf8');
 
 const failures = [];
 
@@ -44,10 +43,6 @@ if (!docs.includes('Request invoice setup help') || !docs.includes('View Lattice
   failures.push('invoice setup guide must link back to both setup-help and Lattice Invoices offer CTAs');
 }
 
-if (!home.includes('href="/woocommerce-eu-vat-invoices"') || !home.includes('EU Invoice Workflow')) {
-  failures.push('homepage hero must keep the EU invoice workflow CTA visible');
-}
-
 if (failures.length) {
   console.error('Invoice funnel smoke check failed:');
   for (const failure of failures) console.error(`- ${failure}`);
@@ -63,7 +58,6 @@ console.log(JSON.stringify({
     'price visible',
     'early access CTA visible',
     'fit-score CTA visible',
-    'homepage CTA visible',
     'setup guide back-links visible',
   ],
 }, null, 2));

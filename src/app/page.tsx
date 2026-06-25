@@ -35,10 +35,10 @@ export default async function Home() {
         <p className="text-xl mb-8">Premium WordPress plugins for your business</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/woocommerce-eu-vat-invoices"
+            href="/product/lattice-seo"
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
           >
-            EU Invoice Workflow
+            View Lattice SEO
           </Link>
           <Link
             href="/shop"
