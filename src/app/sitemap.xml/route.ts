@@ -55,6 +55,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-invoice-reconciliation',
   '/blog/woocommerce-invoice-compliance-checklist',
   '/blog/woocommerce-invoice-plugin-comparison',
+  '/blog/woocommerce-pdf-invoices-packing-slips-alternative',
   '/blog/woocommerce-invoice-plugin-for-agencies',
   '/blog/woocommerce-b2b-invoice-plugin',
   '/blog/woocommerce-invoice-automation',

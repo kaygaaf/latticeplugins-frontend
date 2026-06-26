@@ -21,6 +21,7 @@ const requiredLandingTerms = [
   '/docs/woocommerce-eu-vat-invoice-setup',
   '/blog/woocommerce-btw-factuur-plugin-nederland',
   '/blog/woocommerce-vat-invoice-plugin-eu',
+  '/blog/woocommerce-pdf-invoices-packing-slips-alternative',
 ];
 
 for (const term of requiredLandingTerms) {

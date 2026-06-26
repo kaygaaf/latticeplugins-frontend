@@ -655,6 +655,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Invoice plugin comparison guide
               </Link>
               <Link
+                href="/blog/woocommerce-pdf-invoices-packing-slips-alternative"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                PDF invoice alternative guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-invoice-plugin-for-agencies"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >

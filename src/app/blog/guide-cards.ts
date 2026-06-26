@@ -223,6 +223,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "indigo",
   },
   {
+    href: "/blog/woocommerce-pdf-invoices-packing-slips-alternative",
+    eyebrow: "PDF invoice alternative",
+    title: "WooCommerce PDF Invoices & Packing Slips alternative for EU VAT stores",
+    description:
+      "A buyer-intent alternative checklist for stores that outgrow basic PDF invoices and need VAT/BTW fields, credit notes, reverse charge, downloads, and accountant exports.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-for-agencies",
     eyebrow: "Agency invoice workflow",
     title: "WooCommerce invoice plugin for agencies managing EU stores",
