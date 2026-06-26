@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 import { readFileSync } from 'node:fs';
 
-const homeSource = readFileSync('src/app/page.tsx', 'utf8');
+const homeSource = [
+  'src/app/page.tsx',
+  'src/components/Header.tsx',
+  'src/components/Footer.tsx',
+].map((path) => readFileSync(path, 'utf8')).join('\n');
 
 const disallowedHomepageTerms = [
   'EU Invoice Workflow',

@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 const shopSource = [
   'src/app/shop/page.tsx',
   'src/components/Header.tsx',
+  'src/components/Footer.tsx',
 ].map((path) => readFileSync(path, 'utf8')).join('\n');
 
 const disallowedShopPromoTerms = [

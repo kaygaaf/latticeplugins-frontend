@@ -35,8 +35,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/docs/woocommerce-eu-vat-invoice-setup" className="hover:text-white transition">
-                  EU VAT invoice setup guide
+                <Link href="/product/lattice-seo" className="hover:text-white transition">
+                  Lattice SEO
                 </Link>
               </li>
             </ul>
