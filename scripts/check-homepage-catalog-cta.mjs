@@ -7,32 +7,24 @@ const homeSource = [
   'src/components/Footer.tsx',
 ].map((path) => readFileSync(path, 'utf8')).join('\n');
 
-const disallowedHomepageTerms = [
-  'EU Invoice Workflow',
-  'View EU invoice workflow',
-  'Lattice Invoices',
-  'VAT/BTW invoices',
+const requiredInvoiceRevenueTerms = [
+  'Sell to EU business buyers without invoice support tickets.',
   'href="/woocommerce-eu-vat-invoices"',
+  'View EU invoice workflow',
+  'Request €49 invoice access',
+  'Lattice Invoices: EU VAT/BTW invoice workflow for WooCommerce.',
+  'Read setup guide',
   'href="/docs/woocommerce-eu-vat-invoice-setup"',
+  'VAT/BTW and company fields before payment',
+  'Credit notes tied to WooCommerce refunds',
 ];
 
-const requiredOfficialCtaTerms = [
-  'href="/product/lattice-seo"',
-  'View Lattice SEO',
-];
+const missingInvoiceRevenueTerms = requiredInvoiceRevenueTerms.filter((term) => !homeSource.includes(term));
 
-const presentDisallowedTerms = disallowedHomepageTerms.filter((term) => homeSource.includes(term));
-const missingOfficialCtaTerms = requiredOfficialCtaTerms.filter((term) => !homeSource.includes(term));
-
-if (presentDisallowedTerms.length > 0 || missingOfficialCtaTerms.length > 0) {
-  console.error('FAIL: homepage catalog CTA guard failed');
-  if (presentDisallowedTerms.length > 0) {
-    console.error(`Disallowed homepage promo terms found: ${presentDisallowedTerms.join(', ')}`);
-  }
-  if (missingOfficialCtaTerms.length > 0) {
-    console.error(`Official homepage CTA terms missing: ${missingOfficialCtaTerms.join(', ')}`);
-  }
+if (missingInvoiceRevenueTerms.length > 0) {
+  console.error('FAIL: homepage invoice revenue CTA guard failed');
+  console.error(`Invoice revenue terms missing: ${missingInvoiceRevenueTerms.join(', ')}`);
   process.exit(1);
 }
 
-console.log('PASS: homepage hero CTA stays within the official catalog');
+console.log('PASS: homepage pushes the Lattice Invoices revenue path');

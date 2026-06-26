@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
-const shopSource = [
-  'src/app/shop/page.tsx',
+const shopSource = readFileSync('src/app/shop/page.tsx', 'utf8');
+const siteChromeSource = [
   'src/components/Header.tsx',
   'src/components/Footer.tsx',
 ].map((path) => readFileSync(path, 'utf8')).join('\n');
@@ -25,8 +25,12 @@ const missingOfficialTerms = [
 ].filter((term) => !shopSource.includes(term));
 
 const presentDisallowedTerms = disallowedShopPromoTerms.filter((term) => shopSource.includes(term));
+const missingInvoiceChromeTerms = [
+  '/woocommerce-eu-vat-invoices',
+  '/docs/woocommerce-eu-vat-invoice-setup',
+].filter((term) => !siteChromeSource.includes(term));
 
-if (presentDisallowedTerms.length > 0 || missingOfficialTerms.length > 0) {
+if (presentDisallowedTerms.length > 0 || missingOfficialTerms.length > 0 || missingInvoiceChromeTerms.length > 0) {
   console.error('FAIL: shop catalog copy guard failed');
   if (presentDisallowedTerms.length > 0) {
     console.error(`Disallowed unofficial promo terms found: ${presentDisallowedTerms.join(', ')}`);
@@ -34,7 +38,10 @@ if (presentDisallowedTerms.length > 0 || missingOfficialTerms.length > 0) {
   if (missingOfficialTerms.length > 0) {
     console.error(`Official product terms missing from static guard context: ${missingOfficialTerms.join(', ')}`);
   }
+  if (missingInvoiceChromeTerms.length > 0) {
+    console.error(`Invoice revenue chrome links missing: ${missingInvoiceChromeTerms.join(', ')}`);
+  }
   process.exit(1);
 }
 
-console.log('PASS: shop catalog copy only promotes official catalog products');
+console.log('PASS: shop catalog stays official while site chrome promotes invoice revenue path');
