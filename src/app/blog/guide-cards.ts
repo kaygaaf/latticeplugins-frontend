@@ -598,4 +598,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Greek/EU stores that need ΦΠΑ invoice fields, AFM tax numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
     theme: "blue",
   },
+  {
+    href: "/blog/woocommerce-croatian-vat-invoices",
+    eyebrow: "Croatian PDV invoices",
+    title: "WooCommerce Croatian VAT invoices: PDV / OIB checklist",
+    description:
+      "A buyer-intent checklist for Croatian/EU stores that need PDV invoice fields, OIB tax numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "teal",
+  },
 ];
