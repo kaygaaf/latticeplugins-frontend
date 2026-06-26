@@ -5,7 +5,11 @@ const homeSource = readFileSync('src/app/page.tsx', 'utf8');
 
 const disallowedHomepageTerms = [
   'EU Invoice Workflow',
+  'View EU invoice workflow',
+  'Lattice Invoices',
+  'VAT/BTW invoices',
   'href="/woocommerce-eu-vat-invoices"',
+  'href="/docs/woocommerce-eu-vat-invoice-setup"',
 ];
 
 const requiredOfficialCtaTerms = [

@@ -39,10 +39,10 @@ export default async function Home() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/woocommerce-eu-vat-invoices"
+            href="/product/lattice-seo"
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
           >
-            View EU invoice workflow
+            View Lattice SEO
           </Link>
           <Link
             href="/shop"
@@ -56,34 +56,33 @@ export default async function Home() {
       <section className="mb-12 rounded-2xl border border-green-100 bg-green-50 p-6 md:p-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6 items-center">
           <div>
-            <p className="uppercase tracking-[0.2em] text-xs text-green-700 font-semibold mb-3">Primary product path</p>
-            <h2 className="text-3xl font-bold mb-3">Lattice Invoices: EU VAT/BTW invoices for WooCommerce.</h2>
+            <p className="uppercase tracking-[0.2em] text-xs text-green-700 font-semibold mb-3">Newest official plugin</p>
+            <h2 className="text-3xl font-bold mb-3">Lattice SEO: technical SEO for WooCommerce stores.</h2>
             <p className="text-slate-700 leading-relaxed mb-5">
-              Built for stores that lose time correcting business invoices after checkout. The offer covers B2B billing fields,
-              sequential invoice numbers, PDF delivery, My Account downloads, refund credit notes, and a practical setup guide.
+              Add XML sitemaps, Schema.org structured data, social previews, and WooCommerce metadata foundations without another monthly SaaS subscription.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/woocommerce-eu-vat-invoices"
+                href="/product/lattice-seo"
                 className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-center"
               >
-                See invoice offer
+                View Lattice SEO
               </Link>
               <Link
-                href="/docs/woocommerce-eu-vat-invoice-setup"
+                href="/shop"
                 className="border border-green-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-green-500 transition text-center"
               >
-                Read setup guide
+                Compare all 7 plugins
               </Link>
             </div>
           </div>
           <div className="rounded-2xl bg-white p-5 border border-green-100">
             <p className="font-semibold text-slate-900 mb-3">Best fit if you need:</p>
             <ul className="space-y-3 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Company and VAT/BTW fields before payment</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Invoice PDFs attached to order emails</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Credit notes for refunded WooCommerce orders</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Customer invoice downloads without support tickets</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>XML sitemap coverage for pages, posts, and products</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Schema.org structured data for richer search results</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Open Graph and Twitter Card preview control</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>WooCommerce product metadata improvements</span></li>
             </ul>
           </div>
         </div>
