@@ -34,33 +34,33 @@ export default async function ShopPage() {
       <section className="mb-10 overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-900 text-white shadow-lg">
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_0.9fr] gap-6 p-6 md:p-8 items-center">
           <div>
-            <p className="uppercase tracking-[0.25em] text-xs text-blue-200 mb-3">Newest official Lattice plugin</p>
-            <h2 className="text-3xl font-bold mb-3">Launch technical SEO without another subscription.</h2>
+            <p className="uppercase tracking-[0.25em] text-xs text-blue-200 mb-3">Most qualified WooCommerce pain</p>
+            <h2 className="text-3xl font-bold mb-3">Need EU VAT invoices, not another manual PDF workaround?</h2>
             <p className="text-blue-50 leading-relaxed mb-5">
-              Lattice SEO adds XML sitemaps, Schema.org structured data, Open Graph previews, and WooCommerce SEO foundations for a one-time €49 license.
+              Lattice Invoices is being qualified as the focused €49 workflow for VAT/BTW fields, sequential invoice numbers, PDF delivery, customer downloads, and refund credit notes.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/product/lattice-seo"
+                href="/woocommerce-eu-vat-invoices"
                 className="bg-green-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-400 transition text-center"
               >
-                View Lattice SEO
+                View invoice offer
               </Link>
               <Link
-                href="/shop"
+                href="/docs/woocommerce-eu-vat-invoice-setup"
                 className="border border-white/25 bg-white/10 px-6 py-3 rounded-xl font-semibold hover:bg-white/15 transition text-center"
               >
-                Compare all 7 plugins
+                Read setup guide
               </Link>
             </div>
           </div>
           <div className="rounded-2xl bg-white text-slate-900 p-5">
-            <p className="text-sm uppercase tracking-widest text-slate-500 mb-3">Included SEO foundations</p>
+            <p className="text-sm uppercase tracking-widest text-slate-500 mb-3">Invoice workflow checklist</p>
             <ul className="space-y-3 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Generate XML sitemaps for pages, posts, and products</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Add Schema.org structured data and breadcrumb signals</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Control Open Graph and Twitter Card previews</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Improve WooCommerce product metadata without SaaS pricing</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Collect company, VAT/BTW, PO/reference, and invoice email before payment</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Create locked invoice numbers from paid WooCommerce orders</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Attach PDFs to order emails and customer account downloads</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Generate separate credit notes when refunds happen</span></li>
             </ul>
           </div>
         </div>
