@@ -614,4 +614,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Croatian/EU stores that need PDV invoice fields, OIB tax numbers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
     theme: "teal",
   },
+  {
+    href: "/blog/woocommerce-slovak-vat-invoices",
+    eyebrow: "Slovak DPH invoices",
+    title: "WooCommerce Slovak VAT invoices: DPH / IČ DPH checklist",
+    description:
+      "A buyer-intent checklist for Slovak/EU stores that need DPH invoice fields, IČ DPH/DIČ/IČO identifiers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "sky",
+  },
 ];
