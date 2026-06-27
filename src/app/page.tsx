@@ -31,71 +31,58 @@ export default async function Home() {
     <main className="min-h-screen p-8 max-w-6xl mx-auto">
       {/* Hero Section */}
       <section className="text-center py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl mb-8">
-        <p className="uppercase tracking-[0.25em] text-sm text-blue-100 mb-4">WooCommerce revenue workflows</p>
-        <h1 className="text-5xl font-bold mb-4">Sell to EU business buyers without invoice support tickets.</h1>
+        <p className="uppercase tracking-[0.25em] text-sm text-blue-100 mb-4">WooCommerce plugin suite</p>
+        <h1 className="text-5xl font-bold mb-4">Launch faster with focused WooCommerce plugins.</h1>
         <p className="text-xl mb-8 max-w-3xl mx-auto">
-          Lattice Plugins helps WooCommerce stores capture VAT/BTW details, generate clean invoices,
-          and keep checkout, tax, and customer documents connected.
+          Lattice Plugins ships practical WooCommerce tools for checkout, CRM, Stripe payments,
+          subscriptions, migration, and technical SEO — without another monthly SaaS stack.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/woocommerce-eu-vat-invoices"
+            href="/product/lattice-seo"
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
           >
-            View EU invoice workflow
+            View Lattice SEO
           </Link>
-          <a
-            href="mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20early%20access%20-%20%E2%82%AC49%20license&body=Hi%20Lattice%2C%0A%0AI%20want%20early%20access%20to%20Lattice%20Invoices%20at%20the%20%E2%82%AC49%20license%20price.%0A%0AStore%20URL%3A%20%0ACountry%3A%20%0AB2B%20or%20B2C%3A%20%0AVAT%2FBTW%20fields%20needed%3A%20%0AInvoice%20number%20format%3A%20%0ACredit%20notes%20needed%3A%20"
-            className="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-400 transition inline-block"
-          >
-            Request €49 invoice access
-          </a>
           <Link
             href="/shop"
-            className="bg-white/10 border border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/15 transition inline-block"
+            className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition inline-block"
           >
-            Browse Plugins
+            Compare all 7 plugins
           </Link>
         </div>
       </section>
 
-      <section className="mb-12 rounded-2xl border border-blue-100 bg-blue-50 p-6 md:p-8">
+      <section className="mb-12 rounded-2xl border border-green-100 bg-green-50 p-6 md:p-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6 items-center">
           <div>
-            <p className="uppercase tracking-[0.2em] text-xs text-blue-700 font-semibold mb-3">Primary revenue focus</p>
-            <h2 className="text-3xl font-bold mb-3">Lattice Invoices: EU VAT/BTW invoice workflow for WooCommerce.</h2>
+            <p className="uppercase tracking-[0.2em] text-xs text-green-700 font-semibold mb-3">Newest official plugin</p>
+            <h2 className="text-3xl font-bold mb-3">Lattice SEO: technical SEO for WooCommerce stores.</h2>
             <p className="text-slate-700 leading-relaxed mb-5">
-              A €49 early-access path for stores that lose time on corrected invoices, missing VAT details,
-              refund credit notes, PDF attachments, and customer invoice download requests.
+              Add XML sitemaps, Schema.org structured data, social previews, and WooCommerce metadata foundations without another monthly SaaS subscription.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/woocommerce-eu-vat-invoices"
-                className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition text-center"
+                href="/product/lattice-seo"
+                className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-center"
               >
-                See invoice offer
-              </Link>
-              <Link
-                href="/docs/woocommerce-eu-vat-invoice-setup"
-                className="border border-blue-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-blue-500 transition text-center"
-              >
-                Read setup guide
+                View Lattice SEO
               </Link>
               <Link
                 href="/shop"
-                className="border border-blue-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-blue-500 transition text-center"
+                className="border border-green-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-green-500 transition text-center"
               >
                 Compare all 7 plugins
               </Link>
             </div>
           </div>
-          <div className="rounded-2xl bg-white p-5 border border-blue-100">
-            <p className="font-semibold text-slate-900 mb-3">Request early access if you need:</p>
+          <div className="rounded-2xl bg-white p-5 border border-green-100">
+            <p className="font-semibold text-slate-900 mb-3">Best fit if you need:</p>
             <ul className="space-y-3 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">✓</span><span>VAT/BTW and company fields before payment</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">✓</span><span>Sequential invoice numbers and PDF email attachments</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">✓</span><span>Credit notes tied to WooCommerce refunds</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">✓</span><span>Customer invoice downloads from My Account</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>XML sitemap coverage for pages, posts, and products</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Schema.org structured data for richer search results</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Open Graph and Twitter Card preview control</span></li>
+              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>WooCommerce product metadata improvements</span></li>
             </ul>
           </div>
         </div>

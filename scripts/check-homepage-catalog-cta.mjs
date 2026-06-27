@@ -7,24 +7,34 @@ const homeSource = [
   'src/components/Footer.tsx',
 ].map((path) => readFileSync(path, 'utf8')).join('\n');
 
-const requiredInvoiceRevenueTerms = [
-  'Sell to EU business buyers without invoice support tickets.',
-  'href="/woocommerce-eu-vat-invoices"',
-  'View EU invoice workflow',
-  'Request €49 invoice access',
-  'Lattice Invoices: EU VAT/BTW invoice workflow for WooCommerce.',
-  'Read setup guide',
-  'href="/docs/woocommerce-eu-vat-invoice-setup"',
-  'VAT/BTW and company fields before payment',
-  'Credit notes tied to WooCommerce refunds',
+const requiredOfficialCtaTerms = [
+  'href="/product/lattice-seo"',
+  'View Lattice SEO',
+  'Compare all 7 plugins',
 ];
 
-const missingInvoiceRevenueTerms = requiredInvoiceRevenueTerms.filter((term) => !homeSource.includes(term));
+const disallowedHomepageTerms = [
+  'Sell to EU business buyers without invoice support tickets.',
+  'View EU invoice workflow',
+  'Request €49 invoice access',
+  'Lattice Invoices',
+  'VAT/BTW invoice workflow',
+  'href="/woocommerce-eu-vat-invoices"',
+  'href="/docs/woocommerce-eu-vat-invoice-setup"',
+];
 
-if (missingInvoiceRevenueTerms.length > 0) {
-  console.error('FAIL: homepage invoice revenue CTA guard failed');
-  console.error(`Invoice revenue terms missing: ${missingInvoiceRevenueTerms.join(', ')}`);
+const missingOfficialCtaTerms = requiredOfficialCtaTerms.filter((term) => !homeSource.includes(term));
+const presentDisallowedTerms = disallowedHomepageTerms.filter((term) => homeSource.includes(term));
+
+if (missingOfficialCtaTerms.length > 0 || presentDisallowedTerms.length > 0) {
+  console.error('FAIL: homepage official catalog CTA guard failed');
+  if (missingOfficialCtaTerms.length > 0) {
+    console.error(`Official catalog CTA terms missing: ${missingOfficialCtaTerms.join(', ')}`);
+  }
+  if (presentDisallowedTerms.length > 0) {
+    console.error(`Disallowed invoice promo terms found: ${presentDisallowedTerms.join(', ')}`);
+  }
   process.exit(1);
 }
 
-console.log('PASS: homepage pushes the Lattice Invoices revenue path');
+console.log('PASS: homepage and site chrome stay within the official catalog');
