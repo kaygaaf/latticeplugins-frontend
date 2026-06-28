@@ -31,18 +31,18 @@ export default async function Home() {
     <main className="min-h-screen p-8 max-w-6xl mx-auto">
       {/* Hero Section */}
       <section className="text-center py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl mb-8">
-        <p className="uppercase tracking-[0.25em] text-sm text-blue-100 mb-4">WooCommerce EU invoicing</p>
-        <h1 className="text-5xl font-bold mb-4">Stop fixing WooCommerce invoices by hand.</h1>
+        <p className="uppercase tracking-[0.25em] text-sm text-blue-100 mb-4">Official 7-product WordPress plugin catalog</p>
+        <h1 className="text-5xl font-bold mb-4">Premium WordPress plugins for WooCommerce, CRM, SEO, and site operations.</h1>
         <p className="text-xl mb-8 max-w-3xl mx-auto">
-          Lattice Invoices is the focused €49 WooCommerce workflow for VAT/BTW checkout fields,
-          invoice PDFs, credit notes, customer downloads, and EU-ready order emails.
+          Build faster stores with Lattice Commerce Suite, Lattice CRM, Lattice Migrate,
+          Lattice Stripe Payments, Lattice Subscribify, Lattice Core, and Lattice SEO.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/woocommerce-eu-vat-invoices"
+            href="/product/lattice-seo"
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
           >
-            View EU invoice offer
+            View Lattice SEO
           </Link>
           <Link
             href="/shop"
@@ -53,36 +53,36 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mb-12 rounded-2xl border border-green-100 bg-green-50 p-6 md:p-8">
+      <section className="mb-12 rounded-2xl border border-blue-100 bg-blue-50 p-6 md:p-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6 items-center">
           <div>
-            <p className="uppercase tracking-[0.2em] text-xs text-green-700 font-semibold mb-3">Primary revenue offer</p>
-            <h2 className="text-3xl font-bold mb-3">Lattice Invoices: EU VAT invoice workflow for WooCommerce.</h2>
+            <p className="uppercase tracking-[0.2em] text-xs text-blue-700 font-semibold mb-3">New official product</p>
+            <h2 className="text-3xl font-bold mb-3">Lattice SEO: technical SEO tools without annual plugin bloat.</h2>
             <p className="text-slate-700 leading-relaxed mb-5">
-              Qualify your store for the invoice early-access path: VAT/BTW fields before payment, locked invoice numbers, PDF email attachments, refund credit notes, and customer downloads.
+              Ship the next official Lattice product with XML sitemaps, schema.org structured data,
+              Open Graph metadata, canonical controls, and WooCommerce-aware SEO foundations.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/woocommerce-eu-vat-invoices"
-                className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-center"
+                href="/product/lattice-seo"
+                className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition text-center"
               >
-                Request €49 invoice access
+                View Lattice SEO
               </Link>
               <Link
-                href="/docs/woocommerce-eu-vat-invoice-setup"
-                className="border border-green-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-green-500 transition text-center"
+                href="/shop"
+                className="border border-blue-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-blue-500 transition text-center"
               >
-                Read setup guide
+                Compare all 7 plugins
               </Link>
             </div>
           </div>
-          <div className="rounded-2xl bg-white p-5 border border-green-100">
-            <p className="font-semibold text-slate-900 mb-3">Best fit if you need:</p>
+          <div className="rounded-2xl bg-white p-5 border border-blue-100">
+            <p className="font-semibold text-slate-900 mb-3">Official catalog guardrails:</p>
             <ul className="space-y-3 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Business buyers asking for corrected VAT/BTW invoices</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Checkout missing VAT number, PO/reference, or invoice email fields</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Manual invoice PDFs or refund credit notes outside WooCommerce</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Customers emailing support because they cannot download invoices</span></li>
+              <li className="flex gap-2"><span className="text-blue-600 font-bold">✓</span><span>Only 7 official shop products appear in catalog promotion.</span></li>
+              <li className="flex gap-2"><span className="text-blue-600 font-bold">✓</span><span>SEO, CRM, commerce, payments, subscriptions, migrations, and core services stay first-class.</span></li>
+              <li className="flex gap-2"><span className="text-blue-600 font-bold">✓</span><span>Experimental landing pages stay available without confusing the main catalog.</span></li>
             </ul>
           </div>
         </div>
