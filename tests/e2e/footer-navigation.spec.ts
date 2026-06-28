@@ -1,25 +1,29 @@
 import { expect, test } from "@playwright/test";
 
-test("footer exposes the EU VAT invoice setup guide from the public site chrome", async ({ page }) => {
+const officialFooterLinks = [
+  { name: "Lattice Commerce Suite", href: "/product/lattice-commerce-suite" },
+  { name: "Lattice SEO", href: "/product/lattice-seo" },
+  { name: "Compare all plugins", href: "/shop" },
+];
+
+const disallowedFooterHrefs = [
+  "/woocommerce-eu-vat-invoices",
+  "/docs/woocommerce-eu-vat-invoice-setup",
+];
+
+test("footer keeps global navigation inside the official catalog", async ({ page }) => {
   await page.goto("/shop/", { waitUntil: "domcontentloaded" });
 
   const footer = page.locator("footer");
   await expect(footer).toBeVisible();
 
-  const docsLink = footer.getByRole("link", {
-    name: "EU VAT invoice setup guide",
-    exact: true,
-  });
+  for (const { name, href } of officialFooterLinks) {
+    const link = footer.getByRole("link", { name, exact: true });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute("href", href);
+  }
 
-  await expect(docsLink).toBeVisible();
-  await expect(docsLink).toHaveAttribute("href", "/docs/woocommerce-eu-vat-invoice-setup");
-
-  await docsLink.click();
-  await expect(page).toHaveURL(/\/docs\/woocommerce-eu-vat-invoice-setup\/?$/);
-  await expect(
-    page.getByRole("heading", {
-      name: "How to set up EU VAT invoices for WooCommerce without creating support tickets.",
-      exact: true,
-    }),
-  ).toBeVisible();
+  for (const href of disallowedFooterHrefs) {
+    await expect(footer.locator(`a[href="${href}"]`)).toHaveCount(0);
+  }
 });
