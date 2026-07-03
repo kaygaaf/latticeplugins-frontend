@@ -53,6 +53,42 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="mb-12 rounded-2xl border border-emerald-100 bg-emerald-50 p-6 md:p-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6 items-center">
+          <div>
+            <p className="uppercase tracking-[0.2em] text-xs text-emerald-700 font-semibold mb-3">High-intent WooCommerce problem</p>
+            <h2 className="text-3xl font-bold mb-3">Need EU VAT/BTW invoices, credit notes, and customer invoice downloads?</h2>
+            <p className="text-slate-700 leading-relaxed mb-5">
+              Lattice Invoices is the focused revenue path for WooCommerce stores that already take payments
+              but still create VAT invoices manually. See the €49 early-access offer, qualification checklist,
+              and setup guide before buying another generic PDF plugin.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/woocommerce-eu-vat-invoices"
+                className="bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition text-center"
+              >
+                View EU invoice workflow
+              </Link>
+              <Link
+                href="/docs/woocommerce-eu-vat-invoice-setup"
+                className="border border-emerald-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition text-center"
+              >
+                Read setup guide
+              </Link>
+            </div>
+          </div>
+          <div className="rounded-2xl bg-white p-5 border border-emerald-100">
+            <p className="font-semibold text-slate-900 mb-3">Invoice buyer signals:</p>
+            <ul className="space-y-3 text-sm text-slate-700">
+              <li className="flex gap-2"><span className="text-emerald-600 font-bold">✓</span><span>B2B customers ask for corrected VAT/BTW invoices after checkout.</span></li>
+              <li className="flex gap-2"><span className="text-emerald-600 font-bold">✓</span><span>Refunds need credit notes instead of manual PDF edits.</span></li>
+              <li className="flex gap-2"><span className="text-emerald-600 font-bold">✓</span><span>Accountants need invoice numbers, VAT IDs, PDF links, and export-ready metadata.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="mb-12 rounded-2xl border border-blue-100 bg-blue-50 p-6 md:p-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6 items-center">
           <div>

@@ -46,6 +46,25 @@ export default async function ShopPage() {
         </Link>
       </section>
 
+      <section className="mb-10 rounded-2xl border border-emerald-100 bg-emerald-50 p-6 md:p-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-center">
+          <div>
+            <p className="uppercase tracking-[0.25em] text-xs text-emerald-700 font-semibold mb-3">Invoice workflow early access</p>
+            <h2 className="text-3xl font-bold mb-3">Selling B2B in Europe? Check the EU VAT invoice workflow before checkout.</h2>
+            <p className="text-slate-700 leading-relaxed max-w-3xl">
+              The official catalog stays at 7 products, but buyers who need VAT/BTW fields, invoice PDFs,
+              refund credit notes, and My Account invoice downloads can qualify for the Lattice Invoices €49 early-access path.
+            </p>
+          </div>
+          <Link
+            href="/woocommerce-eu-vat-invoices"
+            className="inline-flex justify-center bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition"
+          >
+            View invoice offer
+          </Link>
+        </div>
+      </section>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product: any) => (
           <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition bg-white">

@@ -33,6 +33,12 @@ export default function Header() {
               Lattice SEO
             </Link>
             <Link
+              href="/woocommerce-eu-vat-invoices"
+              className="text-gray-700 hover:text-blue-600 font-medium transition"
+            >
+              EU Invoices
+            </Link>
+            <Link
               href="/blog"
               className="text-gray-700 hover:text-blue-600 font-medium transition"
             >
