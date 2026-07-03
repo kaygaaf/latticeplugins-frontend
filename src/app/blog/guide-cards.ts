@@ -630,4 +630,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Slovenian/EU stores that need DDV invoice fields, ID za DDV identifiers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
     theme: "emerald",
   },
+  {
+    href: "/blog/woocommerce-bulgarian-vat-invoices",
+    eyebrow: "Bulgarian DDS invoices",
+    title: "WooCommerce Bulgarian VAT invoices: DDS / EIK checklist",
+    description:
+      "A buyer-intent checklist for Bulgarian/EU stores that need DDS invoice fields, EIK/BULSTAT identifiers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "blue",
+  },
 ];
