@@ -638,4 +638,12 @@ export const blogGuideCards: BlogGuideCard[] = [
       "A buyer-intent checklist for Bulgarian/EU stores that need DDS invoice fields, EIK/BULSTAT identifiers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
     theme: "blue",
   },
+  {
+    href: "/blog/woocommerce-estonian-vat-invoices",
+    eyebrow: "Estonian VAT invoices",
+    title: "WooCommerce Estonian VAT invoices: KMKR / registry-code checklist",
+    description:
+      "A buyer-intent checklist for Estonian/EU stores that need registry-code fields, VAT/KMKR identifiers, reverse-charge evidence, retained PDFs, credit notes, and accountant export.",
+    theme: "cyan",
+  },
 ];
