@@ -247,6 +247,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "emerald",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-one-time-payment",
+    eyebrow: "One-time invoice plugin",
+    title: "WooCommerce invoice plugin with one-time payment: EU VAT buying guide",
+    description:
+      "A buyer-intent guide for stores comparing one-time invoice plugin pricing against subscriptions, VAT/BTW checkout fields, credit notes, customer downloads, and support cost.",
+    theme: "amber",
+  },
+  {
     href: "/blog/woocommerce-b2b-invoice-plugin",
     eyebrow: "B2B invoice plugin",
     title: "WooCommerce B2B invoice plugin for EU VAT stores",

@@ -254,6 +254,9 @@ export default function WooCommerceInvoicePluginCostPage() {
               <Link href="/woocommerce-eu-vat-invoices" className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3">
                 View Lattice Invoices
               </Link>
+              <Link href="/blog/woocommerce-invoice-plugin-one-time-payment" className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3">
+                One-time payment guide
+              </Link>
               <Link href="/blog/woocommerce-invoice-plugin-comparison" className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3">
                 Compare plugin options
               </Link>
