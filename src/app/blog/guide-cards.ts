@@ -159,6 +159,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "blue",
   },
   {
+    href: "/blog/woocommerce-ubl-invoices",
+    eyebrow: "UBL invoice readiness",
+    title: "WooCommerce UBL invoices for EU VAT stores",
+    description:
+      "A buyer-intent guide for stores that need UBL-ready invoice data, VAT/BTW fields, PDF invoices, credit notes, customer downloads, and accountant export.",
+    theme: "indigo",
+  },
+  {
     href: "/blog/woocommerce-invoice-export-accounting",
     eyebrow: "Accounting export guide",
     title: "WooCommerce invoice export for accounting and EU VAT handoff",
