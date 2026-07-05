@@ -53,6 +53,53 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="mb-12 rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-blue-50 p-6 md:p-8 shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-8 items-center">
+          <div>
+            <p className="uppercase tracking-[0.2em] text-xs text-emerald-700 font-semibold mb-3">Revenue focus: WooCommerce EU invoicing</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Need VAT/BTW invoices, credit notes, and customer PDF downloads in WooCommerce?</h2>
+            <p className="text-slate-700 leading-relaxed mb-5">
+              Lattice Invoices is the current €49 early-access product path for EU WooCommerce stores that lose time to manual invoice requests, missing VAT numbers, refund credit notes, and accountant export cleanup.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 text-sm">
+              <div className="rounded-xl bg-white border border-emerald-100 p-4"><strong>VAT fields</strong><br />Company + VAT/BTW capture before payment.</div>
+              <div className="rounded-xl bg-white border border-emerald-100 p-4"><strong>PDF workflow</strong><br />Invoice emails and My Account downloads.</div>
+              <div className="rounded-xl bg-white border border-emerald-100 p-4"><strong>Refund-ready</strong><br />Credit-note path tied to WooCommerce orders.</div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/woocommerce-eu-vat-invoices"
+                className="bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition text-center"
+              >
+                View Lattice Invoices offer
+              </Link>
+              <Link
+                href="/docs/woocommerce-eu-vat-invoice-setup"
+                className="border border-emerald-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition text-center"
+              >
+                Read setup guide
+              </Link>
+            </div>
+          </div>
+          <div className="rounded-2xl bg-slate-950 text-white p-6 shadow-lg">
+            <p className="text-sm uppercase tracking-widest text-emerald-200 mb-2">Early-access price</p>
+            <div className="flex items-end gap-2 mb-3">
+              <span className="text-5xl font-bold">€49</span>
+              <span className="text-slate-300 mb-2">one-time</span>
+            </div>
+            <p className="text-slate-200 leading-relaxed mb-5">
+              Best fit: EU B2B stores with recurring invoice correction emails, manual PDF creation, or refund credit-note friction.
+            </p>
+            <a
+              href="mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20early%20access%20from%20homepage&body=Hi%20Lattice%2C%0A%0AI%20want%20to%20check%20if%20Lattice%20Invoices%20fits%20my%20WooCommerce%20store.%0A%0AStore%20URL%3A%20%0ACountry%3A%20%0AB2B%2FB2C%20mix%3A%20%0AInvoice%20requests%20per%20month%3A%20%0AVAT%2FBTW%20fields%20needed%3A%20%0ACredit%20notes%20needed%3A%20"
+              className="block text-center bg-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-400 transition"
+            >
+              Request invoice fit check
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="mb-12 rounded-2xl border border-blue-100 bg-blue-50 p-6 md:p-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6 items-center">
           <div>
