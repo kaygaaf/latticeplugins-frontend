@@ -487,6 +487,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "cyan",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-for-online-courses",
+    eyebrow: "Course invoice workflow",
+    title: "WooCommerce invoice plugin for online courses and EU VAT",
+    description:
+      "A buyer-intent checklist for course creators selling WooCommerce courses, memberships, and training seats that need VAT fields, renewal PDFs, credit notes, and accountant export.",
+    theme: "purple",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-for-freelancers",
     eyebrow: "Freelancer invoice workflow",
     title: "WooCommerce invoice plugin for freelancers and solo stores",
