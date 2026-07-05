@@ -263,6 +263,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "amber",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-lifetime-deal",
+    eyebrow: "Lifetime deal buying guide",
+    title: "WooCommerce invoice plugin lifetime deal: EU VAT buying guide",
+    description:
+      "A buyer-intent guide for stores comparing lifetime invoice plugin deals against VAT/BTW checkout fields, invoice PDFs, credit notes, downloads, and accountant export.",
+    theme: "purple",
+  },
+  {
     href: "/blog/woocommerce-b2b-invoice-plugin",
     eyebrow: "B2B invoice plugin",
     title: "WooCommerce B2B invoice plugin for EU VAT stores",
