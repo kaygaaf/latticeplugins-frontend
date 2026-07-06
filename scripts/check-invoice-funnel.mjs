@@ -3,8 +3,6 @@ import { readFileSync } from 'node:fs';
 
 const landing = readFileSync('src/app/woocommerce-eu-vat-invoices/page.tsx', 'utf8');
 const docs = readFileSync('src/app/docs/woocommerce-eu-vat-invoice-setup/page.tsx', 'utf8');
-const homepage = readFileSync('src/app/page.tsx', 'utf8');
-const header = readFileSync('src/components/Header.tsx', 'utf8');
 
 const failures = [];
 
@@ -46,20 +44,6 @@ if (!docs.includes('Request invoice setup help') || !docs.includes('View Lattice
   failures.push('invoice setup guide must link back to both setup-help and Lattice Invoices offer CTAs');
 }
 
-const requiredDiscoveryTerms = [
-  'Revenue focus: WooCommerce EU invoicing',
-  'View Lattice Invoices offer',
-  'Request invoice fit check',
-  '/woocommerce-eu-vat-invoices',
-  'EU Invoices',
-];
-
-for (const term of requiredDiscoveryTerms) {
-  if (!homepage.includes(term) && !header.includes(term)) {
-    failures.push(`homepage/header discovery is missing invoice funnel term: ${term}`);
-  }
-}
-
 if (failures.length) {
   console.error('Invoice funnel smoke check failed:');
   for (const failure of failures) console.error(`- ${failure}`);
@@ -72,11 +56,10 @@ console.log(JSON.stringify({
   mailtoCtas: mailtoCount,
   guideLinks,
   checks: [
-    'price visible',
-    'early access CTA visible',
-    'fit-score CTA visible',
-    'homepage invoice discovery CTA visible',
-    'header invoice navigation visible',
+    'price visible on invoice landing',
+    'early access CTA visible on invoice landing',
+    'fit-score CTA visible on invoice landing',
     'setup guide back-links visible',
+    'invoice guide links visible on invoice landing',
   ],
 }, null, 2));

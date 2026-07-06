@@ -25,27 +25,37 @@ const requiredOfficialCtaTerms = [
   'Lattice SEO',
 ];
 
-const requiredInvoiceDiscoveryTerms = [
+const forbiddenPrimarySurfaceTerms = [
   'Lattice Invoices',
+  'EU Invoices',
   'Revenue focus: WooCommerce EU invoicing',
+  'Revenue focus: WooCommerce EU invoices',
   'View Lattice Invoices offer',
+  'View EU invoice workflow',
+  'Read setup guide',
+  'Read invoice setup guide',
   'Request invoice fit check',
+  'Request €49 invoice access',
+  'VAT/BTW invoices',
+  'invoice funnel',
+  'qualified early-access lead',
   '/woocommerce-eu-vat-invoices',
   '/docs/woocommerce-eu-vat-invoice-setup',
+  'mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20early%20access',
 ];
 
 const missingOfficialCtaTerms = requiredOfficialCtaTerms.filter((term) => !homeSource.includes(term));
-const missingInvoiceDiscoveryTerms = requiredInvoiceDiscoveryTerms.filter((term) => !homeSource.includes(term));
+const presentForbiddenTerms = forbiddenPrimarySurfaceTerms.filter((term) => homeSource.includes(term));
 
-if (missingOfficialCtaTerms.length > 0 || missingInvoiceDiscoveryTerms.length > 0) {
-  console.error('FAIL: homepage/site-chrome revenue guard failed');
+if (missingOfficialCtaTerms.length > 0 || presentForbiddenTerms.length > 0) {
+  console.error('FAIL: homepage/site-chrome catalog guard failed');
   if (missingOfficialCtaTerms.length > 0) {
     console.error(`Official catalog CTA terms missing: ${missingOfficialCtaTerms.join(', ')}`);
   }
-  if (missingInvoiceDiscoveryTerms.length > 0) {
-    console.error(`Invoice funnel discovery terms missing: ${missingInvoiceDiscoveryTerms.join(', ')}`);
+  if (presentForbiddenTerms.length > 0) {
+    console.error(`Forbidden primary-surface invoice terms found: ${presentForbiddenTerms.join(', ')}`);
   }
   process.exit(1);
 }
 
-console.log('PASS: homepage and site chrome expose both the official catalog and invoice revenue funnel');
+console.log('PASS: homepage and site chrome stay within the official catalog');
