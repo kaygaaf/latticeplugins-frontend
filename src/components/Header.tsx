@@ -27,6 +27,12 @@ export default function Header() {
               Shop
             </Link>
             <Link
+              href="/woocommerce-eu-vat-invoices"
+              className="text-gray-700 hover:text-blue-600 font-medium transition"
+            >
+              EU Invoices
+            </Link>
+            <Link
               href="/product/lattice-commerce-suite"
               className="text-gray-700 hover:text-blue-600 font-medium transition"
             >
