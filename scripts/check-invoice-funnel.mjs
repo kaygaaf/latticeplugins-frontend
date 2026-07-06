@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 
 const landing = readFileSync('src/app/woocommerce-eu-vat-invoices/page.tsx', 'utf8');
 const docs = readFileSync('src/app/docs/woocommerce-eu-vat-invoice-setup/page.tsx', 'utf8');
+const productAlias = readFileSync('src/app/product/lattice-invoices/page.tsx', 'utf8');
 
 const failures = [];
 
@@ -42,6 +43,10 @@ if (guideLinks < 20) {
 
 if (!docs.includes('Request invoice setup help') || !docs.includes('View Lattice Invoices offer')) {
   failures.push('invoice setup guide must link back to both setup-help and Lattice Invoices offer CTAs');
+}
+
+if (!productAlias.includes('redirect(TARGET)') || !productAlias.includes('/woocommerce-eu-vat-invoices')) {
+  failures.push('product/lattice-invoices must route buyers to the invoice landing page instead of 404ing');
 }
 
 if (failures.length) {
