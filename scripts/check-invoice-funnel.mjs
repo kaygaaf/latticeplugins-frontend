@@ -45,8 +45,8 @@ if (!docs.includes('Request invoice setup help') || !docs.includes('View Lattice
   failures.push('invoice setup guide must link back to both setup-help and Lattice Invoices offer CTAs');
 }
 
-if (!productAlias.includes('redirect(TARGET)') || !productAlias.includes('/woocommerce-eu-vat-invoices')) {
-  failures.push('product/lattice-invoices must route buyers to the invoice landing page instead of 404ing');
+if (!productAlias.includes('export { default } from "../../woocommerce-eu-vat-invoices/page"')) {
+  failures.push('product/lattice-invoices must render the invoice landing page instead of 404ing');
 }
 
 if (failures.length) {
