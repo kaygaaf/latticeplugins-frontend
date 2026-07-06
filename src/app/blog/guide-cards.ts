@@ -231,6 +231,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "indigo",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-alternative",
+    eyebrow: "Invoice plugin alternative",
+    title: "WooCommerce invoice plugin alternative for EU VAT stores",
+    description:
+      "A buyer-intent alternative checklist for stores replacing basic invoice plugins with VAT fields, credit notes, downloads, and a €49 Lattice Invoices path.",
+    theme: "amber",
+  },
+  {
     href: "/blog/woocommerce-pdf-invoices-packing-slips-alternative",
     eyebrow: "PDF invoice alternative",
     title: "WooCommerce PDF Invoices & Packing Slips alternative for EU VAT stores",
