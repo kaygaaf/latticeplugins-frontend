@@ -31,18 +31,18 @@ export default async function Home() {
     <main className="min-h-screen p-8 max-w-6xl mx-auto">
       {/* Hero Section */}
       <section className="text-center py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl mb-8">
-        <p className="uppercase tracking-[0.25em] text-sm text-blue-100 mb-4">Primary revenue focus: WooCommerce EU invoicing</p>
-        <h1 className="text-5xl font-bold mb-4">EU VAT invoices for WooCommerce stores that sell to businesses.</h1>
+        <p className="uppercase tracking-[0.25em] text-sm text-blue-100 mb-4">Official Lattice plugin catalog</p>
+        <h1 className="text-5xl font-bold mb-4">WooCommerce plugins for checkout, CRM, backups, payments, subscriptions, and SEO.</h1>
         <p className="text-xl mb-8 max-w-3xl mx-auto">
-          Lattice Invoices is the €49 early-access workflow for VAT/BTW checkout fields,
-          invoice PDFs, credit notes, customer downloads, and order-email attachments.
+          Compare the 7 official Lattice products: Commerce Suite, Core, CRM, Migrate, Stripe Payments, Subscribify, and SEO.
+          Lattice Commerce Suite, Lattice Core, Lattice CRM, Lattice Migrate, Lattice Stripe Payments, Lattice Subscribify, and Lattice SEO.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/woocommerce-eu-vat-invoices"
+            href="/product/lattice-seo"
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
           >
-            See the invoice workflow
+            View Lattice SEO
           </Link>
           <Link
             href="/shop"
@@ -50,40 +50,6 @@ export default async function Home() {
           >
             Compare all 7 plugins
           </Link>
-        </div>
-      </section>
-
-      <section className="mb-12 rounded-2xl border border-green-100 bg-green-50 p-6 md:p-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6 items-center">
-          <div>
-            <p className="uppercase tracking-[0.2em] text-xs text-green-700 font-semibold mb-3">Buyer-intent invoice offer</p>
-            <h2 className="text-3xl font-bold mb-3">Have customers asking for corrected VAT invoices?</h2>
-            <p className="text-slate-700 leading-relaxed mb-5">
-              The homepage now routes high-intent WooCommerce store owners straight to the invoice page instead of making them decode the full catalog first. If B2B buyers need company fields, VAT/BTW numbers, credit notes, or PDF invoice downloads, start with the invoice workflow.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/woocommerce-eu-vat-invoices"
-                className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-center"
-              >
-                Qualify for €49 early access
-              </Link>
-              <Link
-                href="/shop"
-                className="border border-green-200 bg-white px-6 py-3 rounded-xl font-semibold hover:border-green-500 transition text-center"
-              >
-                Shop official catalog
-              </Link>
-            </div>
-          </div>
-          <div className="rounded-2xl bg-white p-5 border border-green-100">
-            <p className="font-semibold text-slate-900 mb-3">Invoice pain signals:</p>
-            <ul className="space-y-3 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Business customers email VAT details after checkout.</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Refunds require manual credit notes outside WooCommerce.</span></li>
-              <li className="flex gap-2"><span className="text-green-600 font-bold">✓</span><span>Support sends invoice PDFs by hand when buyers ask.</span></li>
-            </ul>
-          </div>
         </div>
       </section>
 
