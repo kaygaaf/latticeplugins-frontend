@@ -527,6 +527,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "slate",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-for-coaches",
+    eyebrow: "Coach invoice workflow",
+    title: "WooCommerce invoice plugin for coaches selling calls and courses",
+    description:
+      "A buyer-intent coach checklist for VAT/BTW invoices, client billing fields, payment links, credit notes, customer downloads, and accountant handoff.",
+    theme: "purple",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-setup-checklist",
     eyebrow: "Invoice setup checklist",
     title: "WooCommerce invoice plugin setup checklist before launch",

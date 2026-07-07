@@ -25,6 +25,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-invoice-plugin-alternative',
   '/blog/woocommerce-pdf-invoices-packing-slips-alternative',
   '/blog/woocommerce-invoice-plugin-for-consultants',
+  '/blog/woocommerce-invoice-plugin-for-coaches',
 ];
 
 for (const term of requiredLandingTerms) {
