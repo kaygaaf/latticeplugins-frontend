@@ -697,6 +697,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Freelancer invoice plugin guide
               </Link>
               <Link
+                href="/blog/woocommerce-invoice-plugin-for-consultants"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Consultant invoice plugin guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-invoice-plugin-for-accountants"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >

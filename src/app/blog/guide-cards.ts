@@ -519,6 +519,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "emerald",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-for-consultants",
+    eyebrow: "Consultant invoice workflow",
+    title: "WooCommerce invoice plugin for consultants and advisors",
+    description:
+      "A buyer-intent consultant checklist for VAT/BTW fields, PO references, invoice PDFs, credit notes, payment evidence, and accountant handoff.",
+    theme: "slate",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-setup-checklist",
     eyebrow: "Invoice setup checklist",
     title: "WooCommerce invoice plugin setup checklist before launch",
