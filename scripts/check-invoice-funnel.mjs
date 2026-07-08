@@ -26,6 +26,8 @@ const requiredLandingTerms = [
   '/blog/woocommerce-pdf-invoices-packing-slips-alternative',
   '/blog/woocommerce-invoice-plugin-for-consultants',
   '/blog/woocommerce-invoice-plugin-for-coaches',
+  '/tools/woocommerce-invoice-roi-calculator',
+  'Calculate invoice ROI',
 ];
 
 for (const term of requiredLandingTerms) {

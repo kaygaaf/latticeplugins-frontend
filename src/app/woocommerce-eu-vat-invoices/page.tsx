@@ -541,6 +541,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Read setup guide
               </Link>
               <Link
+                href="/tools/woocommerce-invoice-roi-calculator"
+                className="block text-center bg-green-50 border border-green-200 text-green-800 px-6 py-3 rounded-xl font-semibold hover:border-green-500 transition mb-3"
+              >
+                Calculate invoice ROI
+              </Link>
+              <Link
                 href="/blog/woocommerce-factuur-plugin-mkb"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >
