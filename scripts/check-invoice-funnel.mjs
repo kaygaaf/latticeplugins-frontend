@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 const landing = readFileSync('src/app/woocommerce-eu-vat-invoices/page.tsx', 'utf8');
 const docs = readFileSync('src/app/docs/woocommerce-eu-vat-invoice-setup/page.tsx', 'utf8');
 const productAlias = readFileSync('src/app/product/lattice-invoices/page.tsx', 'utf8');
+const homepage = readFileSync('src/app/page.tsx', 'utf8');
 
 const failures = [];
 
@@ -54,6 +55,16 @@ if (!productAlias.includes('export { default } from "../../woocommerce-eu-vat-in
   failures.push('product/lattice-invoices must render the invoice landing page instead of 404ing');
 }
 
+for (const term of ['View Lattice Invoices offer', '/woocommerce-eu-vat-invoices']) {
+  if (!homepage.includes(term)) {
+    failures.push(`homepage is missing invoice funnel link/copy: ${term}`);
+  }
+}
+
+if (!homepage.includes('/tools/woocommerce-invoice-roi-calculator')) {
+  failures.push('homepage must link to the invoice ROI calculator from the invoice funnel section');
+}
+
 if (failures.length) {
   console.error('Invoice funnel smoke check failed:');
   for (const failure of failures) console.error(`- ${failure}`);
@@ -71,5 +82,6 @@ console.log(JSON.stringify({
     'fit-score CTA visible on invoice landing',
     'setup guide back-links visible',
     'invoice guide links visible on invoice landing',
+    'homepage links into invoice offer and ROI calculator',
   ],
 }, null, 2));
