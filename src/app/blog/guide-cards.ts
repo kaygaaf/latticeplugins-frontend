@@ -31,6 +31,14 @@ export const guideCardThemeClasses: Record<BlogGuideCard["theme"], string> = {
 
 export const blogGuideCards: BlogGuideCard[] = [
   {
+    href: "/blog/woocommerce-b2b-service-invoices",
+    eyebrow: "B2B service invoices",
+    title: "WooCommerce B2B service invoices: VAT, PO numbers, and PDF workflow",
+    description:
+      "A buyer-intent guide for service businesses using WooCommerce that need VAT fields, PO references, proformas, invoice PDFs, credit notes, and accountant handoff.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-factuur-plugin-mkb",
     eyebrow: "MKB factuur workflow",
     title: "WooCommerce factuur plugin voor MKB webshops: koop minder administratie",

@@ -32,6 +32,7 @@ const FRONTEND_URLS = [
   '/tools/woocommerce-invoice-roi-calculator',
   '/docs/woocommerce-eu-vat-invoice-setup',
   '/blog',
+  '/blog/woocommerce-b2b-service-invoices',
   '/blog/woocommerce-factuur-plugin-mkb',
   '/blog/woocommerce-btw-factuur-plugin-nederland',
   '/blog/woocommerce-vat-invoice-plugin-eu',
