@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 const landing = readFileSync('src/app/woocommerce-eu-vat-invoices/page.tsx', 'utf8');
 const docs = readFileSync('src/app/docs/woocommerce-eu-vat-invoice-setup/page.tsx', 'utf8');
 const productAlias = readFileSync('src/app/product/lattice-invoices/page.tsx', 'utf8');
-const homepage = readFileSync('src/app/page.tsx', 'utf8');
+const roiTool = readFileSync('src/app/tools/woocommerce-invoice-roi-calculator/page.tsx', 'utf8');
 
 const failures = [];
 
@@ -55,14 +55,10 @@ if (!productAlias.includes('export { default } from "../../woocommerce-eu-vat-in
   failures.push('product/lattice-invoices must render the invoice landing page instead of 404ing');
 }
 
-for (const term of ['View Lattice Invoices offer', '/woocommerce-eu-vat-invoices']) {
-  if (!homepage.includes(term)) {
-    failures.push(`homepage is missing invoice funnel link/copy: ${term}`);
+for (const term of ['Lattice Invoices', '/woocommerce-eu-vat-invoices', 'Calculate invoice ROI']) {
+  if (!roiTool.includes(term)) {
+    failures.push(`invoice ROI tool is missing direct invoice term: ${term}`);
   }
-}
-
-if (!homepage.includes('/tools/woocommerce-invoice-roi-calculator')) {
-  failures.push('homepage must link to the invoice ROI calculator from the invoice funnel section');
 }
 
 if (failures.length) {
@@ -82,6 +78,6 @@ console.log(JSON.stringify({
     'fit-score CTA visible on invoice landing',
     'setup guide back-links visible',
     'invoice guide links visible on invoice landing',
-    'homepage links into invoice offer and ROI calculator',
+    'invoice ROI tool links back to the direct invoice offer',
   ],
 }, null, 2));

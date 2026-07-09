@@ -53,47 +53,6 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mb-12 rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6 md:p-8 shadow-sm">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
-          <div>
-            <p className="uppercase tracking-[0.25em] text-xs text-emerald-700 font-semibold mb-3">
-              Primary WooCommerce revenue focus
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Need EU VAT invoices, BTW fields, PDF attachments, or credit notes?
-            </h2>
-            <p className="text-slate-700 leading-relaxed mb-5">
-              Lattice Invoices is the focused WooCommerce invoice workflow for EU stores that lose time on
-              corrected invoices, missing VAT numbers, accountant exports, and support requests for lost PDFs.
-              Request the €49 early-access license only if your store has a real B2B invoice problem.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/woocommerce-eu-vat-invoices"
-                className="bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition text-center"
-              >
-                View Lattice Invoices offer
-              </Link>
-              <Link
-                href="/tools/woocommerce-invoice-roi-calculator"
-                className="border border-emerald-300 text-emerald-800 px-6 py-3 rounded-xl font-semibold hover:bg-emerald-100 transition text-center"
-              >
-                Calculate invoice ROI
-              </Link>
-            </div>
-          </div>
-          <div className="rounded-2xl bg-white border border-emerald-100 p-5">
-            <p className="font-semibold text-slate-900 mb-3">Invoice-fit signals</p>
-            <ul className="space-y-3 text-sm text-slate-700">
-              <li>✓ Customers ask for corrected VAT/BTW invoices after payment</li>
-              <li>✓ Your checkout needs company, VAT ID, PO, or invoice-email fields</li>
-              <li>✓ Refunds require credit notes your accountant can trace</li>
-              <li>✓ Customers need My Account invoice downloads instead of support tickets</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* Products Grid */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Our Plugins</h2>

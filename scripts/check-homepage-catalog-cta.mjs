@@ -25,34 +25,28 @@ const requiredOfficialCatalogTerms = [
   'href="/product/lattice-commerce-suite"',
 ];
 
-const requiredInvoiceFunnelTerms = [
+const forbiddenPrimarySurfaceTerms = [
+  'Lattice Invoices',
+  'EU Invoices',
   'Primary WooCommerce revenue focus',
   'View Lattice Invoices offer',
+  'VAT/BTW invoices',
+  'VAT/BTW fields',
+  'invoice ROI',
   '/woocommerce-eu-vat-invoices',
-  '/tools/woocommerce-invoice-roi-calculator',
-];
-
-const forbiddenPrimarySurfaceTerms = [
-  'EU Invoices',
-  'Buyer-intent invoice offer',
-  'See the invoice workflow',
-  'Qualify for €49 early access',
   '/docs/woocommerce-eu-vat-invoice-setup',
-  'mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20early%20access',
+  '/tools/woocommerce-invoice-roi-calculator',
+  'mailto:support@latticeplugins.com?subject=Lattice%20Invoices',
   'href="/product/lattice-invoices"',
 ];
 
 const missingOfficialCatalogTerms = requiredOfficialCatalogTerms.filter((term) => !homeSource.includes(term));
-const missingInvoiceFunnelTerms = requiredInvoiceFunnelTerms.filter((term) => !homeSource.includes(term));
 const presentForbiddenTerms = forbiddenPrimarySurfaceTerms.filter((term) => homeSource.includes(term));
 
-if (missingOfficialCatalogTerms.length > 0 || missingInvoiceFunnelTerms.length > 0 || presentForbiddenTerms.length > 0) {
+if (missingOfficialCatalogTerms.length > 0 || presentForbiddenTerms.length > 0) {
   console.error('FAIL: homepage/site-chrome catalog guard failed');
   if (missingOfficialCatalogTerms.length > 0) {
     console.error(`Official catalog terms missing: ${missingOfficialCatalogTerms.join(', ')}`);
-  }
-  if (missingInvoiceFunnelTerms.length > 0) {
-    console.error(`Invoice funnel terms missing from homepage: ${missingInvoiceFunnelTerms.join(', ')}`);
   }
   if (presentForbiddenTerms.length > 0) {
     console.error(`Forbidden primary-surface invoice terms found: ${presentForbiddenTerms.join(', ')}`);
@@ -60,4 +54,4 @@ if (missingOfficialCatalogTerms.length > 0 || missingInvoiceFunnelTerms.length >
   process.exit(1);
 }
 
-console.log('PASS: homepage keeps official catalog CTAs and includes the invoice revenue funnel');
+console.log('PASS: homepage and site chrome stay within the official catalog');

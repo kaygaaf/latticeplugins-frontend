@@ -86,7 +86,7 @@ export default function WooCommerceInvoiceRoiCalculatorPage() {
 
       <section className="max-w-6xl mx-auto px-6 py-14 space-y-10">
         <div>
-          <p className="text-sm uppercase tracking-[0.25em] text-blue-600 font-semibold mb-2">Invoice ROI calculator</p>
+          <p className="text-sm uppercase tracking-[0.25em] text-blue-600 font-semibold mb-2">Calculate invoice ROI</p>
           <h2 className="text-3xl font-bold mb-4">Estimate the monthly admin leak</h2>
           <p className="text-slate-700 leading-relaxed max-w-3xl">
             The default values model a modest EU B2B WooCommerce store: 12 invoice-related requests per month,
