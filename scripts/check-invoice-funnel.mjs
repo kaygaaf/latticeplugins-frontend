@@ -5,6 +5,7 @@ const landing = readFileSync('src/app/woocommerce-eu-vat-invoices/page.tsx', 'ut
 const docs = readFileSync('src/app/docs/woocommerce-eu-vat-invoice-setup/page.tsx', 'utf8');
 const productAlias = readFileSync('src/app/product/lattice-invoices/page.tsx', 'utf8');
 const roiTool = readFileSync('src/app/tools/woocommerce-invoice-roi-calculator/page.tsx', 'utf8');
+const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 
 const failures = [];
 
@@ -28,6 +29,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-invoice-plugin-for-consultants',
   '/blog/woocommerce-invoice-plugin-for-coaches',
   '/tools/woocommerce-invoice-roi-calculator',
+  '/demo/lattice-invoices',
   'Calculate invoice ROI',
 ];
 
@@ -61,6 +63,28 @@ for (const term of ['Lattice Invoices', '/woocommerce-eu-vat-invoices', 'Calcula
   }
 }
 
+const requiredDemoTerms = [
+  'Lattice Invoices demo',
+  'Request €49 early-access review',
+  'B2B checkout captures invoice data before payment',
+  'Paid order gets a dedicated invoice sequence',
+  'Invoice PDF is attached and stored for download',
+  'Refunds create linked credit notes',
+  'Send demo fit-check request',
+  '/docs/woocommerce-eu-vat-invoice-setup',
+];
+
+for (const term of requiredDemoTerms) {
+  if (!demo.includes(term)) {
+    failures.push(`invoice demo is missing buyer proof term: ${term}`);
+  }
+}
+
+const demoMailtoCount = (demo.match(/mailto:support@latticeplugins\.com/g) || []).length;
+if (demoMailtoCount < 2) {
+  failures.push(`invoice demo has only ${demoMailtoCount} mailto CTAs; expected at least 2`);
+}
+
 if (failures.length) {
   console.error('Invoice funnel smoke check failed:');
   for (const failure of failures) console.error(`- ${failure}`);
@@ -70,7 +94,9 @@ if (failures.length) {
 console.log(JSON.stringify({
   ok: true,
   invoiceLanding: '/woocommerce-eu-vat-invoices',
+  demoPage: '/demo/lattice-invoices',
   mailtoCtas: mailtoCount,
+  demoMailtoCtas: demoMailtoCount,
   guideLinks,
   checks: [
     'price visible on invoice landing',
@@ -79,5 +105,6 @@ console.log(JSON.stringify({
     'setup guide back-links visible',
     'invoice guide links visible on invoice landing',
     'invoice ROI tool links back to the direct invoice offer',
+    'invoice demo page shows checkout, PDF, customer download, and credit-note proof points',
   ],
 }, null, 2));

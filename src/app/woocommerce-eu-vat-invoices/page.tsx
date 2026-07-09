@@ -240,10 +240,10 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Request early access
               </a>
               <Link
-                href="/product/lattice-commerce-suite"
+                href="/demo/lattice-invoices"
                 className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/15 transition text-center"
               >
-                View WooCommerce suite
+                View invoice workflow demo
               </Link>
             </div>
             <p className="text-sm text-blue-100 mt-4">
@@ -534,6 +534,12 @@ export default function WooCommerceEuVatInvoicesPage() {
               >
                 Request €49 early access
               </a>
+              <Link
+                href="/demo/lattice-invoices"
+                className="block text-center bg-blue-50 border border-blue-200 text-blue-800 px-6 py-3 rounded-xl font-semibold hover:border-blue-500 transition mb-3"
+              >
+                View invoice workflow demo
+              </Link>
               <Link
                 href="/docs/woocommerce-eu-vat-invoice-setup"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
