@@ -31,28 +31,6 @@ export default async function ShopPage() {
         Lattice Stripe Payments, Lattice Subscribify, and Lattice SEO.
       </p>
 
-      <section className="mb-10 rounded-2xl border border-green-100 bg-green-50 p-6 md:p-8 text-center">
-        <p className="uppercase tracking-[0.25em] text-xs text-green-700 font-semibold mb-3">Most revenue-ready path</p>
-        <h2 className="text-3xl font-bold mb-3">Need WooCommerce EU VAT invoices? Qualify Lattice Invoices first.</h2>
-        <p className="text-slate-700 leading-relaxed max-w-3xl mx-auto mb-5">
-          The strongest current sales offer is the €49 Lattice Invoices early-access workflow for VAT/BTW fields,
-          invoice PDFs, customer downloads, credit notes, and bookkeeping-ready WooCommerce order data.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            href="/woocommerce-eu-vat-invoices"
-            className="inline-block bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition"
-          >
-            View invoice offer
-          </Link>
-          <Link
-            href="/demo/lattice-invoices"
-            className="inline-block bg-white border border-green-200 px-6 py-3 rounded-xl font-semibold hover:border-green-500 transition"
-          >
-            See invoice demo
-          </Link>
-        </div>
-      </section>
 
       <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6 md:p-8 text-center">
         <p className="uppercase tracking-[0.25em] text-xs text-blue-700 font-semibold mb-3">Official 7-product catalog</p>

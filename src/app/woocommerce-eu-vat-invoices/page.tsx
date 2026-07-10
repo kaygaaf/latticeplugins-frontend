@@ -547,6 +547,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Read setup guide
               </Link>
               <Link
+                href="/tools/woocommerce-invoice-fit-check"
+                className="block text-center bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition mb-3"
+              >
+                Score invoice fit
+              </Link>
+              <Link
                 href="/tools/woocommerce-invoice-roi-calculator"
                 className="block text-center bg-green-50 border border-green-200 text-green-800 px-6 py-3 rounded-xl font-semibold hover:border-green-500 transition mb-3"
               >

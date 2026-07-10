@@ -5,6 +5,8 @@ const landing = readFileSync('src/app/woocommerce-eu-vat-invoices/page.tsx', 'ut
 const docs = readFileSync('src/app/docs/woocommerce-eu-vat-invoice-setup/page.tsx', 'utf8');
 const productAlias = readFileSync('src/app/product/lattice-invoices/page.tsx', 'utf8');
 const roiTool = readFileSync('src/app/tools/woocommerce-invoice-roi-calculator/page.tsx', 'utf8');
+const fitCheck = readFileSync('src/app/tools/woocommerce-invoice-fit-check/page.tsx', 'utf8');
+const fitCheckClient = readFileSync('src/app/tools/woocommerce-invoice-fit-check/InvoiceFitCheck.tsx', 'utf8');
 const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 
 const failures = [];
@@ -29,8 +31,10 @@ const requiredLandingTerms = [
   '/blog/woocommerce-invoice-plugin-for-consultants',
   '/blog/woocommerce-invoice-plugin-for-coaches',
   '/tools/woocommerce-invoice-roi-calculator',
+  '/tools/woocommerce-invoice-fit-check',
   '/demo/lattice-invoices',
   'Calculate invoice ROI',
+  'Score invoice fit',
 ];
 
 for (const term of requiredLandingTerms) {
@@ -61,6 +65,16 @@ for (const term of ['Lattice Invoices', '/woocommerce-eu-vat-invoices', 'Calcula
   if (!roiTool.includes(term)) {
     failures.push(`invoice ROI tool is missing direct invoice term: ${term}`);
   }
+}
+
+for (const term of ['WooCommerce Invoice Fit Check', 'Score invoice fit', 'Send this fit-check score', 'View Lattice Invoices offer']) {
+  if (!fitCheck.includes(term) && !fitCheckClient.includes(term)) {
+    failures.push(`invoice fit-check tool is missing conversion term: ${term}`);
+  }
+}
+
+if (!fitCheckClient.includes('mailto:support@latticeplugins.com') || !fitCheckClient.includes('Fit score:')) {
+  failures.push('invoice fit-check tool must generate a prefilled mailto with the computed score');
 }
 
 const requiredDemoTerms = [
@@ -105,6 +119,7 @@ console.log(JSON.stringify({
     'setup guide back-links visible',
     'invoice guide links visible on invoice landing',
     'invoice ROI tool links back to the direct invoice offer',
+    'invoice fit-check tool computes buyer qualification and generates a prefilled CTA email',
     'invoice demo page shows checkout, PDF, customer download, and credit-note proof points',
   ],
 }, null, 2));

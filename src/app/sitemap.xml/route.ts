@@ -30,6 +30,7 @@ const FRONTEND_URLS = [
   '/product/lattice-seo',
   '/woocommerce-eu-vat-invoices',
   '/demo/lattice-invoices',
+  '/tools/woocommerce-invoice-fit-check',
   '/tools/woocommerce-invoice-roi-calculator',
   '/docs/woocommerce-eu-vat-invoice-setup',
   '/blog',
