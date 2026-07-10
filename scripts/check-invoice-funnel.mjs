@@ -29,6 +29,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-invoice-plugin-alternative',
   '/blog/woocommerce-pdf-invoices-packing-slips-alternative',
   '/blog/woocommerce-invoice-plugin-for-consultants',
+  '/blog/woocommerce-wholesale-invoice-plugin',
   '/blog/woocommerce-invoice-plugin-for-coaches',
   '/tools/woocommerce-invoice-roi-calculator',
   '/tools/woocommerce-invoice-fit-check',

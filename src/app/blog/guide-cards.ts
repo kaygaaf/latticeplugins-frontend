@@ -535,6 +535,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "slate",
   },
   {
+    href: "/blog/woocommerce-wholesale-invoice-plugin",
+    eyebrow: "Wholesale invoice workflow",
+    title: "WooCommerce wholesale invoice plugin checklist for B2B VAT orders",
+    description:
+      "A buyer-intent wholesale checklist for PO numbers, VAT IDs, payment terms, invoice PDFs, credit notes, and accountant exports before choosing a plugin.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-for-coaches",
     eyebrow: "Coach invoice workflow",
     title: "WooCommerce invoice plugin for coaches selling calls and courses",
