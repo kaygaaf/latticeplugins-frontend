@@ -47,6 +47,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "emerald",
   },
   {
+    href: "/blog/woocommerce-factuur-plugin-zzp",
+    eyebrow: "ZZP factuur workflow",
+    title: "WooCommerce factuur plugin voor ZZP'ers: BTW-facturen zonder herstelwerk",
+    description:
+      "Een Nederlandse buyer-intent gids voor ZZP WooCommerce shops die BTW-nummer velden, PDF facturen, klantdownloads, creditnota's en boekhouder-overdracht willen automatiseren.",
+    theme: "teal",
+  },
+  {
     href: "/blog/woocommerce-btw-factuur-plugin-nederland",
     eyebrow: "Nederlandse BTW facturen",
     title: "WooCommerce BTW factuur plugin Nederland: checklist voor webshops",
