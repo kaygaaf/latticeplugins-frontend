@@ -7,6 +7,8 @@ const productAlias = readFileSync('src/app/product/lattice-invoices/page.tsx', '
 const roiTool = readFileSync('src/app/tools/woocommerce-invoice-roi-calculator/page.tsx', 'utf8');
 const fitCheck = readFileSync('src/app/tools/woocommerce-invoice-fit-check/page.tsx', 'utf8');
 const fitCheckClient = readFileSync('src/app/tools/woocommerce-invoice-fit-check/InvoiceFitCheck.tsx', 'utf8');
+const setupBrief = readFileSync('src/app/tools/woocommerce-invoice-setup-brief/page.tsx', 'utf8');
+const setupBriefClient = readFileSync('src/app/tools/woocommerce-invoice-setup-brief/InvoiceSetupBrief.tsx', 'utf8');
 const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 
 const failures = [];
@@ -33,9 +35,11 @@ const requiredLandingTerms = [
   '/blog/woocommerce-invoice-plugin-for-coaches',
   '/tools/woocommerce-invoice-roi-calculator',
   '/tools/woocommerce-invoice-fit-check',
+  '/tools/woocommerce-invoice-setup-brief',
   '/demo/lattice-invoices',
   'Calculate invoice ROI',
   'Score invoice fit',
+  'Generate setup brief',
 ];
 
 for (const term of requiredLandingTerms) {
@@ -76,6 +80,24 @@ for (const term of ['WooCommerce Invoice Fit Check', 'Score invoice fit', 'Send 
 
 if (!fitCheckClient.includes('mailto:support@latticeplugins.com') || !fitCheckClient.includes('Fit score:')) {
   failures.push('invoice fit-check tool must generate a prefilled mailto with the computed score');
+}
+
+for (const term of [
+  'WooCommerce Invoice Setup Brief Generator',
+  'Generate the invoice setup brief',
+  'Send setup brief for €49 early access',
+  'Lattice Invoices setup brief',
+  'VAT / checkout fields',
+  'Credit notes for refunds',
+  'View Lattice Invoices offer',
+]) {
+  if (!setupBrief.includes(term) && !setupBriefClient.includes(term)) {
+    failures.push(`invoice setup-brief tool is missing purchase-friction term: ${term}`);
+  }
+}
+
+if (!setupBriefClient.includes('mailto:support@latticeplugins.com') || !setupBriefClient.includes('Fit score:') || !setupBriefClient.includes('€49 Lattice Invoices early-access review')) {
+  failures.push('invoice setup-brief tool must generate a prefilled €49 early-access email with the computed score');
 }
 
 const requiredDemoTerms = [
@@ -121,6 +143,7 @@ console.log(JSON.stringify({
     'invoice guide links visible on invoice landing',
     'invoice ROI tool links back to the direct invoice offer',
     'invoice fit-check tool computes buyer qualification and generates a prefilled CTA email',
+    'invoice setup-brief tool turns buyer requirements into a prefilled €49 early-access email',
     'invoice demo page shows checkout, PDF, customer download, and credit-note proof points',
   ],
 }, null, 2));

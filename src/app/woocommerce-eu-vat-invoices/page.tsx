@@ -541,6 +541,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 View invoice workflow demo
               </Link>
               <Link
+                href="/tools/woocommerce-invoice-setup-brief"
+                className="block text-center bg-slate-950 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition mb-3"
+              >
+                Generate setup brief
+              </Link>
+              <Link
                 href="/docs/woocommerce-eu-vat-invoice-setup"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >
