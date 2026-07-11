@@ -745,6 +745,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Law firm invoice workflow guide
               </Link>
               <Link
+                href="/blog/woocommerce-invoice-plugin-for-architects"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Architecture invoice workflow guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-invoice-plugin-for-clinics"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >
