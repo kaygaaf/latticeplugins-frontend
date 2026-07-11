@@ -39,6 +39,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "indigo",
   },
   {
+    href: "/blog/woocommerce-invoice-plugin-for-clinics",
+    eyebrow: "Clinic invoice workflow",
+    title: "WooCommerce invoice plugin for clinics, therapists, and private practices",
+    description:
+      "A buyer-intent guide for private clinics, therapists, and healthcare practices that sell consults, packages, deposits, or memberships through WooCommerce and need VAT-ready PDF invoices.",
+    theme: "teal",
+  },
+  {
     href: "/blog/woocommerce-b2b-service-invoices",
     eyebrow: "B2B service invoices",
     title: "WooCommerce B2B service invoices: VAT, PO numbers, and PDF workflow",
