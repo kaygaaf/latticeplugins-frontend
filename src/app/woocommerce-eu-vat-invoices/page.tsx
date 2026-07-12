@@ -763,6 +763,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Photography invoice workflow guide
               </Link>
               <Link
+                href="/blog/woocommerce-event-ticket-invoices"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Event ticket invoice workflow guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-wholesale-invoice-plugin"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >
