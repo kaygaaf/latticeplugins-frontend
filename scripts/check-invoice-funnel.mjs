@@ -10,6 +10,9 @@ const fitCheckClient = readFileSync('src/app/tools/woocommerce-invoice-fit-check
 const setupBrief = readFileSync('src/app/tools/woocommerce-invoice-setup-brief/page.tsx', 'utf8');
 const setupBriefClient = readFileSync('src/app/tools/woocommerce-invoice-setup-brief/InvoiceSetupBrief.tsx', 'utf8');
 const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
+const membershipGuide = readFileSync('src/app/blog/woocommerce-invoice-plugin-for-memberships/page.tsx', 'utf8');
+const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
+const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
 const failures = [];
 
@@ -122,6 +125,31 @@ for (const term of requiredDemoTerms) {
 const demoMailtoCount = (demo.match(/mailto:support@latticeplugins\.com/g) || []).length;
 if (demoMailtoCount < 2) {
   failures.push(`invoice demo has only ${demoMailtoCount} mailto CTAs; expected at least 2`);
+}
+
+for (const term of [
+  'WooCommerce invoice plugin for memberships',
+  'Request €49 membership invoice review',
+  'renewal invoices',
+  'failed-payment',
+  'Customer-facing invoice PDF downloads inside My Account',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20membership%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-roi-calculator',
+  '/docs/woocommerce-eu-vat-invoice-setup',
+]) {
+  if (!membershipGuide.includes(term)) {
+    failures.push(`membership invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-invoice-plugin-for-memberships')) {
+    failures.push('membership invoice guide must be discoverable from blog cards and sitemap route');
+  }
+}
+
+if ((membershipGuide.match(/href=\{mailto\}/g) || []).length < 2) {
+  failures.push('membership invoice guide must include at least 2 prefilled email CTAs');
 }
 
 if (failures.length) {
