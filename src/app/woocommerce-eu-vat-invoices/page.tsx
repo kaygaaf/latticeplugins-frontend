@@ -775,6 +775,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Wholesale invoice plugin guide
               </Link>
               <Link
+                href="/blog/woocommerce-construction-vat-invoices"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Construction VAT invoice workflow guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-invoice-plugin-for-coaches"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >

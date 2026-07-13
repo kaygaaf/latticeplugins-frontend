@@ -599,6 +599,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "emerald",
   },
   {
+    href: "/blog/woocommerce-construction-vat-invoices",
+    eyebrow: "Construction VAT invoices",
+    title: "WooCommerce construction VAT invoices for contractors and trades",
+    description:
+      "A buyer-intent guide for contractors, installers, and trade suppliers using WooCommerce for deposits, milestones, PO numbers, VAT invoices, credit notes, and accountant exports.",
+    theme: "amber",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-for-coaches",
     eyebrow: "Coach invoice workflow",
     title: "WooCommerce invoice plugin for coaches selling calls and courses",
