@@ -11,6 +11,7 @@ const setupBrief = readFileSync('src/app/tools/woocommerce-invoice-setup-brief/p
 const setupBriefClient = readFileSync('src/app/tools/woocommerce-invoice-setup-brief/InvoiceSetupBrief.tsx', 'utf8');
 const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 const membershipGuide = readFileSync('src/app/blog/woocommerce-invoice-plugin-for-memberships/page.tsx', 'utf8');
+const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -37,6 +38,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-invoice-plugin-for-law-firms',
   '/blog/woocommerce-invoice-plugin-for-architects',
   '/blog/woocommerce-wholesale-invoice-plugin',
+  '/blog/woocommerce-rental-vat-invoices',
   '/blog/woocommerce-invoice-plugin-for-coaches',
   '/tools/woocommerce-invoice-roi-calculator',
   '/tools/woocommerce-invoice-fit-check',
@@ -150,6 +152,31 @@ for (const source of [guideCards, sitemapRoute]) {
 
 if ((membershipGuide.match(/href=\{mailto\}/g) || []).length < 2) {
   failures.push('membership invoice guide must include at least 2 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce rental VAT invoices',
+  'Request €49 rental invoice review',
+  'Deposits and security holds must stay separate from rental revenue',
+  'Damage fees and partial refunds need credit-note logic',
+  'Send rental invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20rental%20VAT%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/demo/lattice-invoices',
+]) {
+  if (!rentalGuide.includes(term)) {
+    failures.push(`rental invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-rental-vat-invoices')) {
+    failures.push('rental invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((rentalGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('rental invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {

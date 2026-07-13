@@ -607,6 +607,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "amber",
   },
   {
+    href: "/blog/woocommerce-rental-vat-invoices",
+    eyebrow: "Rental VAT invoices",
+    title: "WooCommerce rental VAT invoices for deposits, damage fees, and returns",
+    description:
+      "A buyer-intent guide for rental stores that need deposit handling, hire-period references, damage-fee corrections, VAT invoice PDFs, credit notes, and accountant exports.",
+    theme: "cyan",
+  },
+  {
     href: "/blog/woocommerce-invoice-plugin-for-coaches",
     eyebrow: "Coach invoice workflow",
     title: "WooCommerce invoice plugin for coaches selling calls and courses",
