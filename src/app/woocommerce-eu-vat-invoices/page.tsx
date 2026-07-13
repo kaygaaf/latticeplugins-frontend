@@ -661,6 +661,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 UBL invoice readiness guide
               </Link>
               <Link
+                href="/blog/woocommerce-e-invoicing-plugin"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                E-invoicing plugin buyer checklist
+              </Link>
+              <Link
                 href="/blog/woocommerce-partial-payment-invoices"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >

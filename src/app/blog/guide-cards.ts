@@ -239,6 +239,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "indigo",
   },
   {
+    href: "/blog/woocommerce-e-invoicing-plugin",
+    eyebrow: "E-invoicing plugin checklist",
+    title: "WooCommerce e-invoicing plugin: EU VAT buyer checklist",
+    description:
+      "A buyer-intent checklist for stores comparing e-invoicing plugins with VAT/BTW fields, PDF invoices, UBL/Peppol readiness, credit notes, customer downloads, and accounting export.",
+    theme: "cyan",
+  },
+  {
     href: "/blog/woocommerce-invoice-export-accounting",
     eyebrow: "Accounting export guide",
     title: "WooCommerce invoice export for accounting and EU VAT handoff",

@@ -12,6 +12,7 @@ const setupBriefClient = readFileSync('src/app/tools/woocommerce-invoice-setup-b
 const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 const membershipGuide = readFileSync('src/app/blog/woocommerce-invoice-plugin-for-memberships/page.tsx', 'utf8');
 const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/page.tsx', 'utf8');
+const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugin/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -39,6 +40,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-invoice-plugin-for-architects',
   '/blog/woocommerce-wholesale-invoice-plugin',
   '/blog/woocommerce-rental-vat-invoices',
+  '/blog/woocommerce-e-invoicing-plugin',
   '/blog/woocommerce-invoice-plugin-for-coaches',
   '/tools/woocommerce-invoice-roi-calculator',
   '/tools/woocommerce-invoice-fit-check',
@@ -177,6 +179,33 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((rentalGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('rental invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce e-invoicing plugin',
+  'Request e-invoicing fit check',
+  'View Lattice Invoices €49 offer',
+  'UBL/Peppol readiness',
+  'credit notes',
+  'accounting export',
+  'mailto:support@latticeplugins.com?subject=Lattice%20Invoices%20e-invoicing%20plugin%20fit%20check',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/blog/woocommerce-peppol-e-invoices',
+  '/blog/woocommerce-ubl-invoices',
+]) {
+  if (!eInvoicingGuide.includes(term)) {
+    failures.push(`e-invoicing plugin guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-e-invoicing-plugin')) {
+    failures.push('e-invoicing plugin guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((eInvoicingGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('e-invoicing plugin guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {
