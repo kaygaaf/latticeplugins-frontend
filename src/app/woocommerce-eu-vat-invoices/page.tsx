@@ -1023,6 +1023,18 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Pre-launch setup checklist
               </Link>
               <Link
+                href="/blog/woocommerce-invoice-plugin-for-online-courses"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Course invoice workflow guide
+              </Link>
+              <Link
+                href="/blog/woocommerce-training-company-invoices"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Training company invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-german-vat-invoices"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >

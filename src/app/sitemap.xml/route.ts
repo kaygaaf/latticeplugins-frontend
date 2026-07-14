@@ -108,6 +108,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-marketplace-vat-invoices',
   '/blog/woocommerce-invoice-plugin-for-saas',
   '/blog/woocommerce-invoice-plugin-for-online-courses',
+  '/blog/woocommerce-training-company-invoices',
   '/blog/woocommerce-invoice-plugin-for-freelancers',
   '/blog/woocommerce-invoice-plugin-for-consultants',
   '/blog/woocommerce-invoice-plugin-for-coaches',
