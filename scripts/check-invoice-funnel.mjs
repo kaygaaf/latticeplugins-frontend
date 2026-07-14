@@ -49,6 +49,13 @@ const requiredLandingTerms = [
   'Calculate invoice ROI',
   'Score invoice fit',
   'Generate setup brief',
+  'Ready-to-buy email',
+  'Turn invoice pain into a €49 early-access request in one email.',
+  'Send ready-to-buy request',
+  'Ready%20to%20buy%20Lattice%20Invoices%20%E2%82%AC49',
+  'Store URL + country',
+  'B2B/B2C mix and monthly invoice request volume',
+  'Credit-note, refund, and accountant export requirements',
 ];
 
 for (const term of requiredLandingTerms) {

@@ -173,6 +173,29 @@ const paidDeliverables = [
   "One store-specific setup reply for early-access buyers",
 ];
 
+const purchaseFrictionChecks = [
+  {
+    title: "Send the store context first",
+    text: "The fastest path to a useful reply is store URL, country, B2B/B2C mix, monthly invoice requests, and the exact VAT/BTW fields the checkout must collect.",
+  },
+  {
+    title: "Confirm the money problem",
+    text: "Mention how many corrected invoices, missing VAT details, refund credit notes, or accountant export cleanups happen each month so the €49 decision has a visible payback.",
+  },
+  {
+    title: "Ask for the activation checklist",
+    text: "Request the invoice-numbering, PDF delivery, customer-download, and credit-note checks before install. That removes uncertainty before a paid early-access license.",
+  },
+];
+
+const readyEmailLines = [
+  "Store URL + country",
+  "B2B/B2C mix and monthly invoice request volume",
+  "Company, VAT/BTW, PO, and invoice-email fields needed",
+  "Invoice number format such as INV-2026-000148",
+  "Credit-note, refund, and accountant export requirements",
+];
+
 const faqs = [
   {
     q: "Is this aimed at Dutch and EU WooCommerce stores?",
@@ -489,6 +512,39 @@ export default function WooCommerceEuVatInvoicesPage() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="bg-slate-950 text-white rounded-2xl shadow-sm p-8 overflow-hidden">
+              <p className="text-sm uppercase tracking-[0.25em] text-green-300 font-semibold mb-2">Ready-to-buy email</p>
+              <h2 className="text-3xl font-bold mb-4">Turn invoice pain into a €49 early-access request in one email.</h2>
+              <p className="text-slate-200 leading-relaxed mb-6">
+                This block removes the last purchase-friction step for qualified WooCommerce stores: it tells buyers exactly what to send, why it matters, and how the reply maps to setup.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                {purchaseFrictionChecks.map((item) => (
+                  <div key={item.title} className="rounded-xl border border-white/10 bg-white/5 p-5">
+                    <h3 className="font-bold text-white mb-3">{item.title}</h3>
+                    <p className="text-sm text-slate-200 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-2xl bg-white text-slate-900 p-6 mb-6">
+                <h3 className="text-xl font-bold mb-3">Copy this into the request:</h3>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  {readyEmailLines.map((line) => (
+                    <li key={line} className="flex gap-2">
+                      <span className="text-green-600 font-bold">✓</span>
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <a
+                href="mailto:support@latticeplugins.com?subject=Ready%20to%20buy%20Lattice%20Invoices%20%E2%82%AC49&body=Hi%20Lattice%2C%0A%0AI%20am%20ready%20to%20buy%20Lattice%20Invoices%20if%20my%20store%20fits.%0A%0AStore%20URL%20%2B%20country%3A%20%0AB2B%2FB2C%20mix%20and%20monthly%20invoice%20request%20volume%3A%20%0ACompany%2C%20VAT%2FBTW%2C%20PO%2C%20and%20invoice-email%20fields%20needed%3A%20%0AInvoice%20number%20format%3A%20%0ACredit-note%2C%20refund%2C%20and%20accountant%20export%20requirements%3A%20"
+                className="inline-flex justify-center bg-green-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-400 transition text-center"
+              >
+                Send ready-to-buy request
+              </a>
             </div>
 
             <div className="bg-white rounded-2xl border shadow-sm p-8">
