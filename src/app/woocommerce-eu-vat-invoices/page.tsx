@@ -718,9 +718,15 @@ export default function WooCommerceEuVatInvoicesPage() {
               </Link>
               <Link
                 href="/blog/woocommerce-e-invoicing-plugin"
-                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition"
               >
                 E-invoicing plugin buyer checklist
+              </Link>
+              <Link
+                href="/blog/woocommerce-software-license-invoices"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Software license invoice guide
               </Link>
               <Link
                 href="/blog/woocommerce-partial-payment-invoices"

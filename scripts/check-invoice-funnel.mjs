@@ -13,6 +13,7 @@ const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 const membershipGuide = readFileSync('src/app/blog/woocommerce-invoice-plugin-for-memberships/page.tsx', 'utf8');
 const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/page.tsx', 'utf8');
 const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugin/page.tsx', 'utf8');
+const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-license-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -213,6 +214,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((eInvoicingGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('e-invoicing plugin guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce software license invoices',
+  'Request €49 software invoice review',
+  'license metadata',
+  'renewal invoice PDFs',
+  'credit notes',
+  'Send software invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20software%20license%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/demo/lattice-invoices',
+]) {
+  if (!softwareLicenseGuide.includes(term)) {
+    failures.push(`software license invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-software-license-invoices')) {
+    failures.push('software license invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((softwareLicenseGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('software license invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {

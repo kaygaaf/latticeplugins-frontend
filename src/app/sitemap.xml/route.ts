@@ -62,6 +62,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-peppol-e-invoices',
   '/blog/woocommerce-ubl-invoices',
   '/blog/woocommerce-e-invoicing-plugin',
+  '/blog/woocommerce-software-license-invoices',
   '/blog/woocommerce-invoice-export-accounting',
   '/blog/woocommerce-invoice-approval-workflow',
   '/blog/woocommerce-recurring-invoices-subscriptions',
