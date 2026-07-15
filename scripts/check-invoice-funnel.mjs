@@ -15,6 +15,7 @@ const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/p
 const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugin/page.tsx', 'utf8');
 const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-license-invoices/page.tsx', 'utf8');
 const trainingCompanyGuide = readFileSync('src/app/blog/woocommerce-training-company-invoices/page.tsx', 'utf8');
+const businessCustomerGuide = readFileSync('src/app/blog/woocommerce-business-customer-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -269,6 +270,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((trainingCompanyGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('training company invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce business customer invoices',
+  'Request €49 business invoice review',
+  'VAT IDs, PO references, invoice emails',
+  'accounts payable',
+  'credit notes',
+  'Send business invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20business%20customer%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-fit-check',
+  '/blog/woocommerce-purchase-order-invoices',
+]) {
+  if (!businessCustomerGuide.includes(term)) {
+    failures.push(`business customer invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-business-customer-invoices')) {
+    failures.push('business customer invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((businessCustomerGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('business customer invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {

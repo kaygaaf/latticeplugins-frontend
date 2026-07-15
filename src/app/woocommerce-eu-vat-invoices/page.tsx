@@ -627,6 +627,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 B2B service invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-business-customer-invoices"
+                className="block text-center bg-cyan-50 border border-cyan-200 text-cyan-800 px-6 py-3 rounded-xl font-semibold hover:border-cyan-500 transition mb-3"
+              >
+                Business customer invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-factuur-plugin-mkb"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >
