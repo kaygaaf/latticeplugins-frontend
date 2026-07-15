@@ -36,6 +36,7 @@ const FRONTEND_URLS = [
   '/docs/woocommerce-eu-vat-invoice-setup',
   '/blog',
   '/blog/woocommerce-b2b-service-invoices',
+  '/blog/woocommerce-nonprofit-donation-invoices',
   '/blog/woocommerce-business-customer-invoices',
   '/blog/woocommerce-public-sector-invoices',
   '/blog/woocommerce-invoice-plugin-for-memberships',

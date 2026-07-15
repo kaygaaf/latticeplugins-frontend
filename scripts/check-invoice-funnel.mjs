@@ -17,6 +17,7 @@ const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-lic
 const trainingCompanyGuide = readFileSync('src/app/blog/woocommerce-training-company-invoices/page.tsx', 'utf8');
 const businessCustomerGuide = readFileSync('src/app/blog/woocommerce-business-customer-invoices/page.tsx', 'utf8');
 const publicSectorGuide = readFileSync('src/app/blog/woocommerce-public-sector-invoices/page.tsx', 'utf8');
+const nonprofitDonationGuide = readFileSync('src/app/blog/woocommerce-nonprofit-donation-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -325,6 +326,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((publicSectorGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('public-sector invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce nonprofit donation invoices',
+  'Request €49 nonprofit invoice review',
+  'Donation receipt vs VAT invoice decision',
+  'charity ID',
+  'credit notes',
+  'Send nonprofit invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20nonprofit%20donation%20invoice%20workflow%20review',
+  '/blog/woocommerce-vat-exempt-invoices',
+  '/blog/woocommerce-invoice-plugin-for-memberships',
+]) {
+  if (!nonprofitDonationGuide.includes(term)) {
+    failures.push(`nonprofit donation invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-nonprofit-donation-invoices')) {
+    failures.push('nonprofit donation invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((nonprofitDonationGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('nonprofit donation invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {
