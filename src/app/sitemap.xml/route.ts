@@ -37,6 +37,7 @@ const FRONTEND_URLS = [
   '/blog',
   '/blog/woocommerce-b2b-service-invoices',
   '/blog/woocommerce-business-customer-invoices',
+  '/blog/woocommerce-public-sector-invoices',
   '/blog/woocommerce-invoice-plugin-for-memberships',
   '/blog/woocommerce-factuur-plugin-mkb',
   '/blog/woocommerce-factuur-plugin-zzp',

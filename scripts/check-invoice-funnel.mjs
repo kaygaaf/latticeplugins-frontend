@@ -16,6 +16,7 @@ const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugi
 const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-license-invoices/page.tsx', 'utf8');
 const trainingCompanyGuide = readFileSync('src/app/blog/woocommerce-training-company-invoices/page.tsx', 'utf8');
 const businessCustomerGuide = readFileSync('src/app/blog/woocommerce-business-customer-invoices/page.tsx', 'utf8');
+const publicSectorGuide = readFileSync('src/app/blog/woocommerce-public-sector-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -45,6 +46,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-rental-vat-invoices',
   '/blog/woocommerce-e-invoicing-plugin',
   '/blog/woocommerce-training-company-invoices',
+  '/blog/woocommerce-public-sector-invoices',
   '/blog/woocommerce-invoice-plugin-for-coaches',
   '/tools/woocommerce-invoice-roi-calculator',
   '/tools/woocommerce-invoice-fit-check',
@@ -296,6 +298,33 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((businessCustomerGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('business customer invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce public-sector invoices',
+  'Request €49 public-sector invoice review',
+  'PO references',
+  'buyer IDs',
+  'UBL/Peppol',
+  'credit notes',
+  'Send public-sector invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20public%20sector%20invoice%20workflow%20review',
+  '/blog/woocommerce-peppol-e-invoices',
+  '/blog/woocommerce-purchase-order-invoices',
+]) {
+  if (!publicSectorGuide.includes(term)) {
+    failures.push(`public-sector invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-public-sector-invoices')) {
+    failures.push('public-sector invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((publicSectorGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('public-sector invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {

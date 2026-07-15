@@ -39,6 +39,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "cyan",
   },
   {
+    href: "/blog/woocommerce-public-sector-invoices",
+    eyebrow: "Public-sector invoices",
+    title: "WooCommerce public sector invoices: PO, Peppol, and VAT workflow",
+    description:
+      "A buyer-intent guide for stores selling to schools, municipalities, hospitals, NGOs, and public agencies that need PO references, buyer IDs, invoice PDFs, credit notes, and Peppol-ready data.",
+    theme: "blue",
+  },
+  {
     href: "/blog/woocommerce-software-license-invoices",
     eyebrow: "Software license invoices",
     title: "WooCommerce software license invoices: VAT, renewals, and credit notes",
