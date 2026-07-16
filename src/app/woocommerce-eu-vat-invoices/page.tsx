@@ -639,6 +639,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Real-estate invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-travel-agency-invoices"
+                className="block text-center bg-sky-50 border border-sky-200 text-sky-800 px-6 py-3 rounded-xl font-semibold hover:border-sky-500 transition mb-3"
+              >
+                Travel agency invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-public-sector-invoices"
                 className="block text-center bg-blue-50 border border-blue-200 text-blue-800 px-6 py-3 rounded-xl font-semibold hover:border-blue-500 transition mb-3"
               >
