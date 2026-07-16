@@ -639,6 +639,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Public-sector invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-school-course-invoices"
+                className="block text-center bg-emerald-50 border border-emerald-200 text-emerald-800 px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition mb-3"
+              >
+                School course invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-nonprofit-donation-invoices"
                 className="block text-center bg-emerald-50 border border-emerald-200 text-emerald-800 px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition mb-3"
               >
