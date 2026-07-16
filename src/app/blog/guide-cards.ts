@@ -55,6 +55,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "cyan",
   },
   {
+    href: "/blog/woocommerce-real-estate-invoices",
+    eyebrow: "Real-estate invoices",
+    title: "WooCommerce real estate invoices: deposits, VAT, and property PDFs",
+    description:
+      "A buyer-intent guide for real-estate agencies, property managers, and rental businesses that need VAT fields, property references, PDF invoices, refunds, and credit notes.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-public-sector-invoices",
     eyebrow: "Public-sector invoices",
     title: "WooCommerce public sector invoices: PO, Peppol, and VAT workflow",

@@ -16,6 +16,7 @@ const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugi
 const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-license-invoices/page.tsx', 'utf8');
 const trainingCompanyGuide = readFileSync('src/app/blog/woocommerce-training-company-invoices/page.tsx', 'utf8');
 const businessCustomerGuide = readFileSync('src/app/blog/woocommerce-business-customer-invoices/page.tsx', 'utf8');
+const realEstateGuide = readFileSync('src/app/blog/woocommerce-real-estate-invoices/page.tsx', 'utf8');
 const publicSectorGuide = readFileSync('src/app/blog/woocommerce-public-sector-invoices/page.tsx', 'utf8');
 const nonprofitDonationGuide = readFileSync('src/app/blog/woocommerce-nonprofit-donation-invoices/page.tsx', 'utf8');
 const schoolCourseGuide = readFileSync('src/app/blog/woocommerce-school-course-invoices/page.tsx', 'utf8');
@@ -300,6 +301,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((businessCustomerGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('business customer invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce invoices for real-estate deposits, bookings, and property services',
+  'Request €49 real-estate invoice review',
+  'property services, viewing fees, deposits, or documents',
+  'Property reference fields',
+  'Refund credit notes',
+  'Send real-estate invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20real%20estate%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-roi-calculator',
+  '/blog/woocommerce-rental-vat-invoices',
+]) {
+  if (!realEstateGuide.includes(term)) {
+    failures.push(`real-estate invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-real-estate-invoices')) {
+    failures.push('real-estate invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((realEstateGuide.match(/href=\{mailto\}/g) || []).length < 2) {
+  failures.push('real-estate invoice guide must include at least 2 prefilled email CTAs');
 }
 
 for (const term of [
