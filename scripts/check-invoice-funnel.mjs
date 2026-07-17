@@ -20,6 +20,7 @@ const realEstateGuide = readFileSync('src/app/blog/woocommerce-real-estate-invoi
 const publicSectorGuide = readFileSync('src/app/blog/woocommerce-public-sector-invoices/page.tsx', 'utf8');
 const nonprofitDonationGuide = readFileSync('src/app/blog/woocommerce-nonprofit-donation-invoices/page.tsx', 'utf8');
 const schoolCourseGuide = readFileSync('src/app/blog/woocommerce-school-course-invoices/page.tsx', 'utf8');
+const hotelBookingGuide = readFileSync('src/app/blog/woocommerce-hotel-booking-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -406,6 +407,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((schoolCourseGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('school course invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce hotel booking invoices',
+  'Request €49 hotel invoice review',
+  'Corporate billing fields',
+  'Tourist tax and extras visibility',
+  'Refund credit notes',
+  'Send hotel invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20hotel%20booking%20invoice%20workflow%20review',
+  '/blog/woocommerce-travel-agency-invoices',
+  '/tools/woocommerce-invoice-roi-calculator',
+]) {
+  if (!hotelBookingGuide.includes(term)) {
+    failures.push(`hotel booking invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-hotel-booking-invoices')) {
+    failures.push('hotel booking invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((hotelBookingGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('hotel booking invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {
