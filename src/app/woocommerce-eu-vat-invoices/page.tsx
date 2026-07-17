@@ -627,6 +627,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 B2B service invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-restaurant-takeaway-invoices"
+                className="block text-center bg-amber-50 border border-amber-200 text-amber-800 px-6 py-3 rounded-xl font-semibold hover:border-amber-500 transition mb-3"
+              >
+                Restaurant takeaway invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-catering-event-invoices"
                 className="block text-center bg-emerald-50 border border-emerald-200 text-emerald-800 px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition mb-3"
               >
