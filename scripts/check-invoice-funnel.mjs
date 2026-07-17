@@ -21,6 +21,7 @@ const publicSectorGuide = readFileSync('src/app/blog/woocommerce-public-sector-i
 const nonprofitDonationGuide = readFileSync('src/app/blog/woocommerce-nonprofit-donation-invoices/page.tsx', 'utf8');
 const schoolCourseGuide = readFileSync('src/app/blog/woocommerce-school-course-invoices/page.tsx', 'utf8');
 const hotelBookingGuide = readFileSync('src/app/blog/woocommerce-hotel-booking-invoices/page.tsx', 'utf8');
+const cateringEventGuide = readFileSync('src/app/blog/woocommerce-catering-event-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -433,6 +434,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((hotelBookingGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('hotel booking invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce catering event invoices',
+  'Request €49 catering invoice review',
+  'Corporate billing fields',
+  'Event and delivery metadata',
+  'Refund credit notes',
+  'Send catering invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20catering%20event%20invoice%20workflow%20review',
+  '/blog/woocommerce-event-ticket-invoices',
+  '/tools/woocommerce-invoice-roi-calculator',
+]) {
+  if (!cateringEventGuide.includes(term)) {
+    failures.push(`catering event invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-catering-event-invoices')) {
+    failures.push('catering event invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((cateringEventGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('catering event invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {
