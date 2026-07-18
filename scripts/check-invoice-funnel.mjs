@@ -23,6 +23,7 @@ const schoolCourseGuide = readFileSync('src/app/blog/woocommerce-school-course-i
 const hotelBookingGuide = readFileSync('src/app/blog/woocommerce-hotel-booking-invoices/page.tsx', 'utf8');
 const cateringEventGuide = readFileSync('src/app/blog/woocommerce-catering-event-invoices/page.tsx', 'utf8');
 const repairServiceGuide = readFileSync('src/app/blog/woocommerce-repair-service-invoices/page.tsx', 'utf8');
+const cleaningServiceGuide = readFileSync('src/app/blog/woocommerce-cleaning-service-invoices/page.tsx', 'utf8');
 const restaurantTakeawayGuide = readFileSync('src/app/blog/woocommerce-restaurant-takeaway-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
@@ -170,6 +171,31 @@ for (const source of [guideCards, sitemapRoute]) {
   if (!source.includes('/blog/woocommerce-invoice-plugin-for-memberships')) {
     failures.push('membership invoice guide must be discoverable from blog cards and sitemap route');
   }
+}
+
+for (const term of [
+  'WooCommerce cleaning service invoices',
+  'Request €49 cleaning invoice review',
+  'Service-site metadata',
+  'Recurring and contract context',
+  'Send cleaning invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20cleaning%20service%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/demo/lattice-invoices',
+]) {
+  if (!cleaningServiceGuide.includes(term)) {
+    failures.push(`cleaning service invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-cleaning-service-invoices')) {
+    failures.push('cleaning service invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((cleaningServiceGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('cleaning service invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if ((membershipGuide.match(/href=\{mailto\}/g) || []).length < 2) {
