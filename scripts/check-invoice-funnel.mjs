@@ -23,6 +23,7 @@ const schoolCourseGuide = readFileSync('src/app/blog/woocommerce-school-course-i
 const hotelBookingGuide = readFileSync('src/app/blog/woocommerce-hotel-booking-invoices/page.tsx', 'utf8');
 const cateringEventGuide = readFileSync('src/app/blog/woocommerce-catering-event-invoices/page.tsx', 'utf8');
 const repairServiceGuide = readFileSync('src/app/blog/woocommerce-repair-service-invoices/page.tsx', 'utf8');
+const maintenanceContractGuide = readFileSync('src/app/blog/woocommerce-maintenance-contract-invoices/page.tsx', 'utf8');
 const cleaningServiceGuide = readFileSync('src/app/blog/woocommerce-cleaning-service-invoices/page.tsx', 'utf8');
 const restaurantTakeawayGuide = readFileSync('src/app/blog/woocommerce-restaurant-takeaway-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
@@ -51,6 +52,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-invoice-plugin-for-law-firms',
   '/blog/woocommerce-invoice-plugin-for-architects',
   '/blog/woocommerce-wholesale-invoice-plugin',
+  '/blog/woocommerce-maintenance-contract-invoices',
   '/blog/woocommerce-rental-vat-invoices',
   '/blog/woocommerce-e-invoicing-plugin',
   '/blog/woocommerce-training-company-invoices',
@@ -514,6 +516,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((repairServiceGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('repair service invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce maintenance contract invoices',
+  'Request €49 maintenance invoice review',
+  'Contract and SLA metadata',
+  'Asset and service-site context',
+  'Refund credit notes',
+  'Send maintenance invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20maintenance%20contract%20invoice%20workflow%20review',
+  '/blog/woocommerce-recurring-invoices-subscriptions',
+  '/tools/woocommerce-invoice-fit-check',
+]) {
+  if (!maintenanceContractGuide.includes(term)) {
+    failures.push(`maintenance contract invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-maintenance-contract-invoices')) {
+    failures.push('maintenance contract invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((maintenanceContractGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('maintenance contract invoice guide must include at least 3 prefilled email CTAs');
 }
 
 for (const term of [

@@ -645,6 +645,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Repair service invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-maintenance-contract-invoices"
+                className="block text-center bg-indigo-50 border border-indigo-200 text-indigo-800 px-6 py-3 rounded-xl font-semibold hover:border-indigo-500 transition mb-3"
+              >
+                Maintenance contract invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-cleaning-service-invoices"
                 className="block text-center bg-emerald-50 border border-emerald-200 text-emerald-800 px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition mb-3"
               >
