@@ -38,6 +38,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-b2b-service-invoices',
   '/blog/woocommerce-restaurant-takeaway-invoices',
   '/blog/woocommerce-catering-event-invoices',
+  '/blog/woocommerce-repair-service-invoices',
   '/blog/woocommerce-hotel-booking-invoices',
   '/blog/woocommerce-travel-agency-invoices',
   '/blog/woocommerce-school-course-invoices',

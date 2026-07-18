@@ -47,6 +47,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "emerald",
   },
   {
+    href: "/blog/woocommerce-repair-service-invoices",
+    eyebrow: "Repair service invoices",
+    title: "WooCommerce repair service invoices: diagnostics, VAT, and PDFs",
+    description:
+      "A buyer-intent guide for repair shops, service desks, and equipment maintenance stores that need service tickets, serial numbers, diagnostic deposits, VAT fields, PDF delivery, refunds, and credit notes.",
+    theme: "cyan",
+  },
+  {
     href: "/blog/woocommerce-hotel-booking-invoices",
     eyebrow: "Hotel booking invoices",
     title: "WooCommerce hotel booking invoices: deposits, VAT, and stay PDFs",

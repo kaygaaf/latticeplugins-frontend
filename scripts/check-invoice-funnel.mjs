@@ -22,6 +22,7 @@ const nonprofitDonationGuide = readFileSync('src/app/blog/woocommerce-nonprofit-
 const schoolCourseGuide = readFileSync('src/app/blog/woocommerce-school-course-invoices/page.tsx', 'utf8');
 const hotelBookingGuide = readFileSync('src/app/blog/woocommerce-hotel-booking-invoices/page.tsx', 'utf8');
 const cateringEventGuide = readFileSync('src/app/blog/woocommerce-catering-event-invoices/page.tsx', 'utf8');
+const repairServiceGuide = readFileSync('src/app/blog/woocommerce-repair-service-invoices/page.tsx', 'utf8');
 const restaurantTakeawayGuide = readFileSync('src/app/blog/woocommerce-restaurant-takeaway-invoices/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
@@ -461,6 +462,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((cateringEventGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('catering event invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce repair service invoices',
+  'Request €49 repair invoice review',
+  'Repair and device metadata',
+  'Diagnostic and deposit visibility',
+  'Refund credit notes',
+  'Send repair invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20repair%20service%20invoice%20workflow%20review',
+  '/blog/woocommerce-b2b-service-invoices',
+  '/tools/woocommerce-invoice-fit-check',
+]) {
+  if (!repairServiceGuide.includes(term)) {
+    failures.push(`repair service invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-repair-service-invoices')) {
+    failures.push('repair service invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((repairServiceGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('repair service invoice guide must include at least 3 prefilled email CTAs');
 }
 
 for (const term of [
