@@ -31,6 +31,14 @@ export const guideCardThemeClasses: Record<BlogGuideCard["theme"], string> = {
 
 export const blogGuideCards: BlogGuideCard[] = [
   {
+    href: "/blog/woocommerce-medical-supply-invoices",
+    eyebrow: "Medical supply invoices",
+    title: "WooCommerce medical supply invoices: PO, VAT, and PDFs",
+    description:
+      "A buyer-intent guide for medical supply, dental supply, lab equipment, and healthcare product stores that need B2B VAT fields, PO references, product context, PDF delivery, refunds, and credit notes.",
+    theme: "teal",
+  },
+  {
     href: "/blog/woocommerce-cleaning-service-invoices",
     eyebrow: "Cleaning service invoices",
     title: "WooCommerce cleaning service invoices: jobs, VAT, and PDFs",

@@ -909,6 +909,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Event ticket invoice workflow guide
               </Link>
               <Link
+                href="/blog/woocommerce-medical-supply-invoices"
+                className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
+              >
+                Medical supply invoice workflow guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-wholesale-invoice-plugin"
                 className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-blue-400 transition mb-3"
               >
