@@ -79,6 +79,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "indigo",
   },
   {
+    href: "/blog/woocommerce-subscription-invoice-plugin",
+    eyebrow: "Subscription invoice plugin",
+    title: "WooCommerce subscription invoice plugin: renewals, VAT, and PDFs",
+    description:
+      "A buyer-intent guide for subscription, membership, SaaS, support-plan, and recurring-service stores that need renewal invoice PDFs, failed-payment evidence, VAT fields, credit notes, and accountant export.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-hotel-booking-invoices",
     eyebrow: "Hotel booking invoices",
     title: "WooCommerce hotel booking invoices: deposits, VAT, and stay PDFs",

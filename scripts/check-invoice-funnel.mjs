@@ -24,6 +24,7 @@ const hotelBookingGuide = readFileSync('src/app/blog/woocommerce-hotel-booking-i
 const cateringEventGuide = readFileSync('src/app/blog/woocommerce-catering-event-invoices/page.tsx', 'utf8');
 const repairServiceGuide = readFileSync('src/app/blog/woocommerce-repair-service-invoices/page.tsx', 'utf8');
 const maintenanceContractGuide = readFileSync('src/app/blog/woocommerce-maintenance-contract-invoices/page.tsx', 'utf8');
+const subscriptionInvoiceGuide = readFileSync('src/app/blog/woocommerce-subscription-invoice-plugin/page.tsx', 'utf8');
 const cleaningServiceGuide = readFileSync('src/app/blog/woocommerce-cleaning-service-invoices/page.tsx', 'utf8');
 const restaurantTakeawayGuide = readFileSync('src/app/blog/woocommerce-restaurant-takeaway-invoices/page.tsx', 'utf8');
 const medicalSupplyGuide = readFileSync('src/app/blog/woocommerce-medical-supply-invoices/page.tsx', 'utf8');
@@ -543,6 +544,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((maintenanceContractGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('maintenance contract invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce subscription invoice plugin',
+  'Request €49 subscription invoice review',
+  'Subscription and renewal metadata',
+  'Paid and unpaid invoice states',
+  'credit notes',
+  'Send subscription invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20subscription%20invoice%20plugin%20workflow%20review',
+  '/blog/woocommerce-recurring-invoices-subscriptions',
+  '/tools/woocommerce-invoice-fit-check',
+]) {
+  if (!subscriptionInvoiceGuide.includes(term)) {
+    failures.push(`subscription invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-subscription-invoice-plugin')) {
+    failures.push('subscription invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((subscriptionInvoiceGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('subscription invoice guide must include at least 3 prefilled email CTAs');
 }
 
 for (const term of [
