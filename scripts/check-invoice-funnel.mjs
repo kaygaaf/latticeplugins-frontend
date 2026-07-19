@@ -28,6 +28,7 @@ const subscriptionInvoiceGuide = readFileSync('src/app/blog/woocommerce-subscrip
 const cleaningServiceGuide = readFileSync('src/app/blog/woocommerce-cleaning-service-invoices/page.tsx', 'utf8');
 const restaurantTakeawayGuide = readFileSync('src/app/blog/woocommerce-restaurant-takeaway-invoices/page.tsx', 'utf8');
 const medicalSupplyGuide = readFileSync('src/app/blog/woocommerce-medical-supply-invoices/page.tsx', 'utf8');
+const quoteToInvoiceGuide = readFileSync('src/app/blog/woocommerce-quote-to-invoice-plugin/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -56,6 +57,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-wholesale-invoice-plugin',
   '/blog/woocommerce-maintenance-contract-invoices',
   '/blog/woocommerce-rental-vat-invoices',
+  '/blog/woocommerce-quote-to-invoice-plugin',
   '/blog/woocommerce-e-invoicing-plugin',
   '/blog/woocommerce-training-company-invoices',
   '/blog/woocommerce-public-sector-invoices',
@@ -621,6 +623,33 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((medicalSupplyGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('medical supply invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce quote to invoice plugin',
+  'Request €49 quote-to-invoice review',
+  'quote references',
+  'proforma approval',
+  'final invoice timing',
+  'credit notes',
+  'Send quote-to-invoice setup',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20quote%20to%20invoice%20workflow%20review',
+  '/blog/woocommerce-proforma-invoice',
+  '/blog/woocommerce-purchase-order-invoices',
+]) {
+  if (!quoteToInvoiceGuide.includes(term)) {
+    failures.push(`quote-to-invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-quote-to-invoice-plugin')) {
+    failures.push('quote-to-invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((quoteToInvoiceGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('quote-to-invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {
