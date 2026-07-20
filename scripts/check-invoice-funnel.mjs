@@ -12,6 +12,7 @@ const setupBriefClient = readFileSync('src/app/tools/woocommerce-invoice-setup-b
 const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 const membershipGuide = readFileSync('src/app/blog/woocommerce-invoice-plugin-for-memberships/page.tsx', 'utf8');
 const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/page.tsx', 'utf8');
+const dropshippingGuide = readFileSync('src/app/blog/woocommerce-dropshipping-vat-invoices/page.tsx', 'utf8');
 const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugin/page.tsx', 'utf8');
 const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-license-invoices/page.tsx', 'utf8');
 const trainingCompanyGuide = readFileSync('src/app/blog/woocommerce-training-company-invoices/page.tsx', 'utf8');
@@ -57,6 +58,7 @@ const requiredLandingTerms = [
   '/blog/woocommerce-wholesale-invoice-plugin',
   '/blog/woocommerce-maintenance-contract-invoices',
   '/blog/woocommerce-rental-vat-invoices',
+  '/blog/woocommerce-dropshipping-vat-invoices',
   '/blog/woocommerce-quote-to-invoice-plugin',
   '/blog/woocommerce-e-invoicing-plugin',
   '/blog/woocommerce-training-company-invoices',
@@ -231,6 +233,31 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((rentalGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('rental invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce dropshipping VAT invoices',
+  'Request €49 dropshipping invoice review',
+  'Supplier and fulfillment references must not disappear after payment',
+  'Refunds, reships, and supplier failures need credit-note logic',
+  'Send dropshipping invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20dropshipping%20VAT%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/demo/lattice-invoices',
+]) {
+  if (!dropshippingGuide.includes(term)) {
+    failures.push(`dropshipping invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-dropshipping-vat-invoices')) {
+    failures.push('dropshipping invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((dropshippingGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('dropshipping invoice guide must include at least 3 prefilled email CTAs');
 }
 
 for (const term of [

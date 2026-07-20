@@ -31,6 +31,14 @@ export const guideCardThemeClasses: Record<BlogGuideCard["theme"], string> = {
 
 export const blogGuideCards: BlogGuideCard[] = [
   {
+    href: "/blog/woocommerce-dropshipping-vat-invoices",
+    eyebrow: "Dropshipping VAT invoices",
+    title: "WooCommerce dropshipping VAT invoices: suppliers, shipping, and refunds",
+    description:
+      "A buyer-intent guide for dropshipping stores that need VAT fields, seller-of-record clarity, supplier references, tracking evidence, customer PDFs, refunds, credit notes, and accountant export.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-manufacturing-parts-invoices",
     eyebrow: "Manufacturing parts invoices",
     title: "WooCommerce manufacturing parts invoices: PO, VAT, and PDFs",
