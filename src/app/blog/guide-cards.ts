@@ -31,6 +31,14 @@ export const guideCardThemeClasses: Record<BlogGuideCard["theme"], string> = {
 
 export const blogGuideCards: BlogGuideCard[] = [
   {
+    href: "/blog/woocommerce-automotive-parts-invoices",
+    eyebrow: "Automotive parts invoices",
+    title: "WooCommerce automotive parts invoices: VIN, PO, VAT, and PDFs",
+    description:
+      "A buyer-intent guide for automotive parts, fleet supply, garage, and vehicle accessory stores that need VIN/fitment fields, PO references, VAT invoices, warranty credits, PDFs, and accountant export.",
+    theme: "blue",
+  },
+  {
     href: "/blog/woocommerce-dropshipping-vat-invoices",
     eyebrow: "Dropshipping VAT invoices",
     title: "WooCommerce dropshipping VAT invoices: suppliers, shipping, and refunds",

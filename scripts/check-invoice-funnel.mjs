@@ -13,6 +13,7 @@ const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 const membershipGuide = readFileSync('src/app/blog/woocommerce-invoice-plugin-for-memberships/page.tsx', 'utf8');
 const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/page.tsx', 'utf8');
 const dropshippingGuide = readFileSync('src/app/blog/woocommerce-dropshipping-vat-invoices/page.tsx', 'utf8');
+const automotivePartsGuide = readFileSync('src/app/blog/woocommerce-automotive-parts-invoices/page.tsx', 'utf8');
 const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugin/page.tsx', 'utf8');
 const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-license-invoices/page.tsx', 'utf8');
 const trainingCompanyGuide = readFileSync('src/app/blog/woocommerce-training-company-invoices/page.tsx', 'utf8');
@@ -258,6 +259,32 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((dropshippingGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('dropshipping invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce automotive parts invoices',
+  'Request €49 automotive invoice review',
+  'VIN, registration number, make/model/year',
+  'PO references and VAT-ready PDFs',
+  'warranty decisions',
+  'Send automotive invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20automotive%20parts%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/demo/lattice-invoices',
+]) {
+  if (!automotivePartsGuide.includes(term)) {
+    failures.push(`automotive parts invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-automotive-parts-invoices')) {
+    failures.push('automotive parts invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((automotivePartsGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('automotive parts invoice guide must include at least 3 prefilled email CTAs');
 }
 
 for (const term of [
