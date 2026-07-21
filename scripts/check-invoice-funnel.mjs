@@ -11,6 +11,7 @@ const setupBrief = readFileSync('src/app/tools/woocommerce-invoice-setup-brief/p
 const setupBriefClient = readFileSync('src/app/tools/woocommerce-invoice-setup-brief/InvoiceSetupBrief.tsx', 'utf8');
 const demo = readFileSync('src/app/demo/lattice-invoices/page.tsx', 'utf8');
 const membershipGuide = readFileSync('src/app/blog/woocommerce-invoice-plugin-for-memberships/page.tsx', 'utf8');
+const gymMembershipGuide = readFileSync('src/app/blog/woocommerce-gym-membership-invoices/page.tsx', 'utf8');
 const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/page.tsx', 'utf8');
 const dropshippingGuide = readFileSync('src/app/blog/woocommerce-dropshipping-vat-invoices/page.tsx', 'utf8');
 const automotivePartsGuide = readFileSync('src/app/blog/woocommerce-automotive-parts-invoices/page.tsx', 'utf8');
@@ -180,6 +181,31 @@ for (const source of [guideCards, sitemapRoute]) {
   if (!source.includes('/blog/woocommerce-invoice-plugin-for-memberships')) {
     failures.push('membership invoice guide must be discoverable from blog cards and sitemap route');
   }
+}
+
+for (const term of [
+  'WooCommerce gym membership invoices',
+  'Request €49 gym invoice review',
+  'Members ask for monthly invoice PDFs',
+  'Corporate wellness buyers need company name',
+  'Send gym invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20gym%20membership%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-fit-check',
+  '/demo/lattice-invoices',
+]) {
+  if (!gymMembershipGuide.includes(term)) {
+    failures.push(`gym membership invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-gym-membership-invoices')) {
+    failures.push('gym membership invoice guide must be discoverable from invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((gymMembershipGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('gym membership invoice guide must include at least 3 prefilled email CTAs');
 }
 
 for (const term of [

@@ -199,6 +199,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "blue",
   },
   {
+    href: "/blog/woocommerce-gym-membership-invoices",
+    eyebrow: "Gym membership invoices",
+    title: "WooCommerce gym membership invoices: VAT, renewals, and PDF workflow",
+    description:
+      "A buyer-intent guide for gyms, fitness studios, and wellness clubs that need membership-period invoices, corporate billing fields, renewal PDFs, refunds, credit notes, and customer downloads.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-event-ticket-invoices",
     eyebrow: "Event ticket invoice workflow",
     title: "WooCommerce event ticket invoices: VAT, groups, and PDF workflow",
