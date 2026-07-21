@@ -651,6 +651,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Automotive parts invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-preorder-vat-invoices"
+                className="block text-center bg-emerald-50 border border-emerald-200 text-emerald-800 px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition mb-3"
+              >
+                Preorder VAT invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-maintenance-contract-invoices"
                 className="block text-center bg-indigo-50 border border-indigo-200 text-indigo-800 px-6 py-3 rounded-xl font-semibold hover:border-indigo-500 transition mb-3"
               >
