@@ -15,6 +15,7 @@ const gymMembershipGuide = readFileSync('src/app/blog/woocommerce-gym-membership
 const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/page.tsx', 'utf8');
 const dropshippingGuide = readFileSync('src/app/blog/woocommerce-dropshipping-vat-invoices/page.tsx', 'utf8');
 const automotivePartsGuide = readFileSync('src/app/blog/woocommerce-automotive-parts-invoices/page.tsx', 'utf8');
+const veterinaryClinicGuide = readFileSync('src/app/blog/woocommerce-veterinary-clinic-invoices/page.tsx', 'utf8');
 const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugin/page.tsx', 'utf8');
 const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-license-invoices/page.tsx', 'utf8');
 const trainingCompanyGuide = readFileSync('src/app/blog/woocommerce-training-company-invoices/page.tsx', 'utf8');
@@ -703,6 +704,31 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((medicalSupplyGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('medical supply invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce veterinary clinic invoices',
+  'Request €49 veterinary invoice review',
+  'Pet owners ask for invoice PDFs',
+  'Insurance reimbursement needs pet name',
+  'Send veterinary invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20veterinary%20clinic%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/blog/woocommerce-invoice-plugin-for-clinics',
+]) {
+  if (!veterinaryClinicGuide.includes(term)) {
+    failures.push(`veterinary clinic invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-veterinary-clinic-invoices')) {
+    failures.push('veterinary clinic invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((veterinaryClinicGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('veterinary clinic invoice guide must include at least 3 prefilled email CTAs');
 }
 
 for (const term of [
