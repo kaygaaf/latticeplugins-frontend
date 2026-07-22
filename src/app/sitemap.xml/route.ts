@@ -38,6 +38,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-bookkeeper-invoice-export',
   '/blog/woocommerce-preorder-vat-invoices',
   '/blog/woocommerce-veterinary-clinic-invoices',
+  '/blog/woocommerce-dental-clinic-invoices',
   '/blog/woocommerce-automotive-parts-invoices',
   '/blog/woocommerce-medical-supply-invoices',
   '/blog/woocommerce-manufacturing-parts-invoices',

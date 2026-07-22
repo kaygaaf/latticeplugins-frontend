@@ -16,6 +16,7 @@ const rentalGuide = readFileSync('src/app/blog/woocommerce-rental-vat-invoices/p
 const dropshippingGuide = readFileSync('src/app/blog/woocommerce-dropshipping-vat-invoices/page.tsx', 'utf8');
 const automotivePartsGuide = readFileSync('src/app/blog/woocommerce-automotive-parts-invoices/page.tsx', 'utf8');
 const veterinaryClinicGuide = readFileSync('src/app/blog/woocommerce-veterinary-clinic-invoices/page.tsx', 'utf8');
+const dentalClinicGuide = readFileSync('src/app/blog/woocommerce-dental-clinic-invoices/page.tsx', 'utf8');
 const eInvoicingGuide = readFileSync('src/app/blog/woocommerce-e-invoicing-plugin/page.tsx', 'utf8');
 const softwareLicenseGuide = readFileSync('src/app/blog/woocommerce-software-license-invoices/page.tsx', 'utf8');
 const trainingCompanyGuide = readFileSync('src/app/blog/woocommerce-training-company-invoices/page.tsx', 'utf8');
@@ -314,6 +315,31 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((automotivePartsGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('automotive parts invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce dental clinic invoices',
+  'Request €49 dental invoice review',
+  'patient/treatment or reimbursement context',
+  'Insurance and reimbursement metadata',
+  'Send dental invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20dental%20clinic%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/demo/lattice-invoices',
+]) {
+  if (!dentalClinicGuide.includes(term)) {
+    failures.push(`dental clinic invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-dental-clinic-invoices')) {
+    failures.push('dental clinic invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((dentalClinicGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('dental clinic invoice guide must include at least 3 prefilled email CTAs');
 }
 
 for (const term of [

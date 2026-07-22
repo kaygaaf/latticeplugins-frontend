@@ -657,6 +657,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Veterinary clinic invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-dental-clinic-invoices"
+                className="block text-center bg-cyan-50 border border-cyan-200 text-cyan-800 px-6 py-3 rounded-xl font-semibold hover:border-cyan-500 transition mb-3"
+              >
+                Dental clinic invoice guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-preorder-vat-invoices"
                 className="block text-center bg-emerald-50 border border-emerald-200 text-emerald-800 px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition mb-3"
               >

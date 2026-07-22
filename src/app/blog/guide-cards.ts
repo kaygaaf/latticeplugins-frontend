@@ -47,6 +47,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "teal",
   },
   {
+    href: "/blog/woocommerce-dental-clinic-invoices",
+    eyebrow: "Dental clinic invoices",
+    title: "WooCommerce dental clinic invoices: patients, insurance, VAT, and PDFs",
+    description:
+      "A buyer-intent guide for dental clinics that sell consult deposits, whitening, retainers, memberships, or products through WooCommerce and need patient/insurance metadata, VAT PDFs, refunds, and credit notes.",
+    theme: "cyan",
+  },
+  {
     href: "/blog/woocommerce-preorder-vat-invoices",
     eyebrow: "Preorder VAT invoices",
     title: "WooCommerce preorder VAT invoices: deposits, backorders, and PDFs",
