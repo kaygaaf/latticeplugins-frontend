@@ -33,6 +33,7 @@ const cleaningServiceGuide = readFileSync('src/app/blog/woocommerce-cleaning-ser
 const restaurantTakeawayGuide = readFileSync('src/app/blog/woocommerce-restaurant-takeaway-invoices/page.tsx', 'utf8');
 const medicalSupplyGuide = readFileSync('src/app/blog/woocommerce-medical-supply-invoices/page.tsx', 'utf8');
 const quoteToInvoiceGuide = readFileSync('src/app/blog/woocommerce-quote-to-invoice-plugin/page.tsx', 'utf8');
+const bookkeeperExportGuide = readFileSync('src/app/blog/woocommerce-bookkeeper-invoice-export/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -756,6 +757,31 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((quoteToInvoiceGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('quote-to-invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce bookkeeper invoice export',
+  'Request €49 bookkeeper export review',
+  'invoice PDF links',
+  'Credit-note relationship',
+  'Send bookkeeper invoice export fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20bookkeeper%20invoice%20export%20workflow%20review',
+  '/tools/woocommerce-invoice-roi-calculator',
+  '/blog/woocommerce-invoice-export-accounting',
+]) {
+  if (!bookkeeperExportGuide.includes(term)) {
+    failures.push(`bookkeeper invoice export guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-bookkeeper-invoice-export')) {
+    failures.push('bookkeeper invoice export guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((bookkeeperExportGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('bookkeeper invoice export guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {

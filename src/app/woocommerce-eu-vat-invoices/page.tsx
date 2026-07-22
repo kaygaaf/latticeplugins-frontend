@@ -693,6 +693,12 @@ export default function WooCommerceEuVatInvoicesPage() {
                 Business customer invoice guide
               </Link>
               <Link
+                href="/blog/woocommerce-bookkeeper-invoice-export"
+                className="block text-center bg-indigo-50 border border-indigo-200 text-indigo-800 px-6 py-3 rounded-xl font-semibold hover:border-indigo-500 transition mb-3"
+              >
+                Bookkeeper invoice export guide
+              </Link>
+              <Link
                 href="/blog/woocommerce-real-estate-invoices"
                 className="block text-center bg-emerald-50 border border-emerald-200 text-emerald-800 px-6 py-3 rounded-xl font-semibold hover:border-emerald-500 transition mb-3"
               >
