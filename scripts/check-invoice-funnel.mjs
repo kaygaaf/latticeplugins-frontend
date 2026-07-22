@@ -34,6 +34,7 @@ const restaurantTakeawayGuide = readFileSync('src/app/blog/woocommerce-restauran
 const medicalSupplyGuide = readFileSync('src/app/blog/woocommerce-medical-supply-invoices/page.tsx', 'utf8');
 const quoteToInvoiceGuide = readFileSync('src/app/blog/woocommerce-quote-to-invoice-plugin/page.tsx', 'utf8');
 const bookkeeperExportGuide = readFileSync('src/app/blog/woocommerce-bookkeeper-invoice-export/page.tsx', 'utf8');
+const reminderEmailTemplateGuide = readFileSync('src/app/blog/woocommerce-invoice-reminder-email-template/page.tsx', 'utf8');
 const guideCards = readFileSync('src/app/blog/guide-cards.ts', 'utf8');
 const sitemapRoute = readFileSync('src/app/sitemap.xml/route.ts', 'utf8');
 
@@ -782,6 +783,33 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((bookkeeperExportGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('bookkeeper invoice export guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce invoice reminder email template for B2B stores',
+  'Request €49 reminder workflow review',
+  'First unpaid invoice reminder',
+  'Final pre-cancellation reminder',
+  'Paid invoice delivery note',
+  'Do not call every reminder a final invoice',
+  'Send reminder workflow for review',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20invoice%20reminder%20email%20template%20workflow%20review',
+  '/blog/woocommerce-invoice-payment-reminders',
+  '/tools/woocommerce-invoice-setup-brief',
+]) {
+  if (!reminderEmailTemplateGuide.includes(term)) {
+    failures.push(`invoice reminder email template guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-invoice-reminder-email-template')) {
+    failures.push('invoice reminder email template guide must be discoverable from blog cards and sitemap route');
+  }
+}
+
+if ((reminderEmailTemplateGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('invoice reminder email template guide must include at least 3 prefilled email CTAs');
 }
 
 if (failures.length) {

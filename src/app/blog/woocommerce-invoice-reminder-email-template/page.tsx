@@ -2,91 +2,96 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const SITE_URL = "https://latticeplugins.com";
+const SLUG = "/blog/woocommerce-invoice-reminder-email-template";
 
 export const metadata: Metadata = {
   title: "WooCommerce Invoice Reminder Email Template for B2B Stores",
   description:
-    "A buyer-intent guide for WooCommerce stores that need invoice reminder email templates, BACS payment follow-ups, due-date evidence, customer download links, and EU VAT invoice audit trails.",
+    "Copy-ready WooCommerce invoice reminder email templates for B2B stores using bank transfer, proforma invoices, VAT/BTW fields, due dates, and PDF invoice links.",
   alternates: {
-    canonical: `${SITE_URL}/blog/woocommerce-invoice-reminder-email-template`,
+    canonical: `${SITE_URL}${SLUG}`,
   },
   openGraph: {
-    title: "WooCommerce invoice reminder email template for B2B stores",
+    title: "WooCommerce invoice reminder email template",
     description:
-      "Plan BACS/proforma invoice reminders with clear payment terms, PDF links, VAT invoice references, resend logs, and accountant-ready evidence.",
-    url: `${SITE_URL}/blog/woocommerce-invoice-reminder-email-template`,
+      "Use these reminder email templates to follow up unpaid WooCommerce B2B invoices without breaking VAT invoice timing, PDF delivery, or accountant handoff.",
+    url: `${SITE_URL}${SLUG}`,
     siteName: "Lattice Plugins",
     type: "article",
   },
 };
 
-const checklist = [
+const mailto =
+  "mailto:support@latticeplugins.com?subject=WooCommerce%20invoice%20reminder%20email%20template%20workflow%20review&body=Hi%20Lattice%2C%0A%0AI%20need%20a%20WooCommerce%20invoice%20reminder%20email%20workflow%20for%20Lattice%20Invoices%20early%20access.%0A%0AStore%20URL%3A%20%0ACountry%3A%20%0APayment%20method%20%28BACS%2Fbank%20transfer%2Fmanual%20invoice%29%3A%20%0AB2B%20invoice%20fields%20needed%3A%20%0ADue-date%20rules%3A%20%0AReminder%20schedule%3A%20%0APDF%20invoice%20or%20proforma%20before%20payment%3A%20%0ACredit-note%2Fwrite-off%20requirements%3A%20";
+
+const templateStages = [
   {
-    title: "1. Include the invoice number and retained PDF link",
-    detail:
-      "The reminder should point to the issued invoice number and a stable customer-download URL. Do not rely on a generic order link when the finance team needs the actual VAT invoice PDF.",
-    buyerQuestion: "Can every reminder include the correct invoice PDF link and show that the PDF was already issued?",
+    title: "First unpaid invoice reminder",
+    timing: "2–3 days after a pending BACS or manual invoice order",
+    subject: "Reminder: payment needed for WooCommerce order #{order_number}",
+    body:
+      "Hi {billing_first_name}, this is a friendly reminder that order #{order_number} for {order_total} is still waiting for payment. Please use the payment details below and include reference {order_number}. If your finance team needs a proforma, VAT number, PO reference, or invoice email updated before payment, reply to this message.",
   },
   {
-    title: "2. Make payment terms visible before the overdue notice",
-    detail:
-      "For BACS, proforma, Net 14, and Net 30 flows, the first reminder should show payment terms and due date. Later reminders should clearly say why the invoice is overdue.",
-    buyerQuestion: "Does the plugin store due date and payment terms per invoice so email text is not guessed from the order date?",
+    title: "Final pre-cancellation reminder",
+    timing: "6–7 days after the order, before stock/license/service access is released",
+    subject: "Final reminder before order #{order_number} is cancelled",
+    body:
+      "Hi {billing_first_name}, order #{order_number} is still unpaid. We will cancel the order on {due_date} unless payment arrives or your team confirms that finance approval is in progress. The final VAT invoice PDF will be issued after payment so the invoice number, VAT totals, and customer download remain correct.",
   },
   {
-    title: "3. Keep a send, fail, and resend log",
-    detail:
-      "A reminder template only helps if support can see whether it was sent, bounced, manually resent, or followed by a customer download. Log each event on the invoice workflow timeline.",
-    buyerQuestion: "Can support prove that a reminder was sent and resend it without changing the issued invoice?",
-  },
-  {
-    title: "4. Separate proforma requests from final invoice reminders",
-    detail:
-      "A proforma payment request before payment is not the same as a reminder for an already issued final VAT invoice. The template wording and PDF links should reflect that distinction.",
-    buyerQuestion: "Can the workflow choose different templates for proforma, final invoice, overdue invoice, and credit-note follow-up?",
-  },
-  {
-    title: "5. Give accounting a clean handoff",
-    detail:
-      "Exported reminder evidence should include invoice number, customer, due date, payment method, send timestamps, resend notes, payment date, and any credit-note or correction link.",
-    buyerQuestion: "Will the accountant receive reminder history alongside invoice PDFs and payment reconciliation data?",
+    title: "Paid invoice delivery note",
+    timing: "Immediately after the bank transfer is matched and the order becomes processing/completed",
+    subject: "Paid invoice for WooCommerce order #{order_number}",
+    body:
+      "Hi {billing_first_name}, thank you — payment for order #{order_number} has been received. The final invoice PDF is attached and also available from My Account. If you need a credit note later for a refund, please reference invoice {invoice_number}.",
   },
 ];
 
-const templates = [
+const fields = [
+  "Order number and payment reference",
+  "Company name, VAT/BTW number, and billing country",
+  "PO/reference field and invoice email address",
+  "Due date and reminder stage",
+  "Payment instructions or proforma PDF link",
+  "Final invoice timing: only after payment, unless accountant rules require otherwise",
+];
+
+const workflowRules = [
   {
-    title: "Friendly pre-due reminder",
-    when: "3–5 days before a Net 14/30 due date or after a proforma has been accepted.",
-    include: "Invoice number, PDF download link, due date, bank details, VAT number reference, and support contact.",
+    title: "Do not call every reminder a final invoice",
+    text: "For many EU B2B stores the safer pattern is payment request or proforma before payment, then final VAT invoice once the order is paid. That avoids gaps in invoice numbering and confused customers.",
   },
   {
-    title: "First overdue reminder",
-    when: "1–3 days after the due date when the invoice is unpaid and no failed-send issue is known.",
-    include: "Original invoice link, due date, outstanding amount, payment method, and a clear but neutral overdue line.",
+    title: "Keep the reminder tied to WooCommerce order status",
+    text: "The template should know whether the order is pending, on-hold, processing, completed, refunded, or cancelled. Generic marketing emails create support work because they cannot explain invoice state.",
   },
   {
-    title: "Finance handoff / final notice",
-    when: "After internal review, not automatically for every store. Especially useful for B2B accounts-payable workflows.",
-    include: "Reminder history, payment terms, invoice PDF, purchase order reference, customer download evidence, and next action.",
+    title: "Collect finance-team fields before the reminder fires",
+    text: "If the checkout does not capture VAT/BTW number, company name, invoice email, and PO reference, every reminder becomes a request for corrected paperwork.",
+  },
+  {
+    title: "Log what was sent for accountant handoff",
+    text: "A B2B store should be able to prove when reminders were sent, which PDF/proforma was linked, and when the paid final invoice was issued.",
   },
 ];
 
 const faq = [
   {
-    q: "Can WooCommerce send automatic invoice reminder emails?",
-    a: "WooCommerce can send order emails, but invoice reminder workflows usually need extra due-date metadata, PDF invoice links, BACS payment details, failed-send logs, customer download fallbacks, and accounting evidence.",
+    q: "Can I copy these WooCommerce invoice reminder email templates?",
+    a: "Yes. Treat them as starting copy for BACS, bank-transfer, or manual invoice payment workflows. Replace placeholders like order number, due date, amount, invoice number, and payment reference with live WooCommerce data.",
   },
   {
-    q: "What should a WooCommerce invoice reminder email template include?",
-    a: "Include invoice number, retained PDF download link, due date, payment terms, outstanding amount, bank details or payment link, customer VAT/reference details, support contact, and a short explanation of why the message was sent.",
+    q: "Should the reminder attach a PDF invoice before payment?",
+    a: "Only if the store intentionally uses proforma/payment-request PDFs before payment. The final VAT invoice is often cleaner after payment, because invoice numbering, paid date, VAT evidence, and customer downloads stay aligned.",
   },
   {
-    q: "Should reminder emails change the issued VAT invoice?",
-    a: "No. The reminder should reference the retained invoice and payment timeline. If a fee, correction, or credit note is needed later, create explicit follow-up evidence instead of modifying the original PDF silently.",
+    q: "What does this have to do with Lattice Invoices?",
+    a: "This is a buyer-intent workflow Lattice Invoices can own: invoice-ready checkout fields, proforma/payment reminders, final paid invoice PDFs, customer downloads, and refund credit-note links.",
   },
   {
-    q: "Where does Lattice Invoices fit?",
-    a: "Lattice Invoices is the early-access WooCommerce EU invoicing path for stores that need invoice PDFs, BACS/proforma workflows, due dates, reminders, resend logs, customer downloads, credit notes, corrections, and accountant-ready exports.",
+    q: "How do I request early access for this reminder workflow?",
+    a: "Send store URL, country, payment method, required VAT fields, due-date rules, reminder schedule, and whether you need proforma PDFs before payment. The CTA on this page pre-fills that request.",
   },
 ];
 
@@ -95,8 +100,8 @@ const articleSchema = {
   "@type": "Article",
   headline: "WooCommerce invoice reminder email template for B2B stores",
   description:
-    "A practical guide to WooCommerce invoice reminder email templates, BACS payment follow-ups, due dates, retained invoice PDFs, customer download links, and EU VAT invoice audit evidence.",
-  mainEntityOfPage: `${SITE_URL}/blog/woocommerce-invoice-reminder-email-template`,
+    "Copy-ready reminder email templates and workflow rules for WooCommerce B2B invoice, bank-transfer, proforma, and VAT PDF workflows.",
+  mainEntityOfPage: `${SITE_URL}${SLUG}`,
   publisher: {
     "@type": "Organization",
     name: "Lattice Plugins",
@@ -117,27 +122,26 @@ const faqSchema = {
   })),
 };
 
-const mailto =
-  "mailto:support@latticeplugins.com?subject=WooCommerce%20invoice%20reminder%20email%20template%20review&body=Hi%20Lattice%2C%0A%0AI%20want%20a%20WooCommerce%20invoice%20reminder%20email%20workflow%20review.%0A%0AStore%20URL%3A%20%0ACountry%3A%20%0ACurrent%20invoice%20plugin%3A%20%0APayment%20methods%20(BACS%2FStripe%2FPayPal)%3A%20%0APayment%20terms%20(Net%207%2F14%2F30)%3A%20%0AReminder%20templates%20used%20today%3A%20%0APDF%20download%20needs%3A%20%0AAccounting%20handoff%20needs%3A%20";
-
 export default function WooCommerceInvoiceReminderEmailTemplatePage() {
   return (
     <main className="min-h-screen bg-slate-50">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-slate-950 via-blue-950 to-cyan-900 text-white">
+      <section className="bg-gradient-to-br from-slate-950 via-cyan-950 to-blue-900 text-white">
         <div className="max-w-5xl mx-auto px-6 py-16 lg:py-20">
-          <p className="uppercase tracking-[0.3em] text-sm text-cyan-200 mb-4">WooCommerce invoice reminder template</p>
+          <p className="uppercase tracking-[0.3em] text-sm text-cyan-200 mb-4">WooCommerce invoice reminder email template</p>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Send invoice reminders without losing VAT PDF, BACS, or audit-trail evidence.
+            Copy-ready invoice reminder emails for unpaid WooCommerce B2B orders.
           </h1>
           <p className="text-xl text-cyan-50 leading-relaxed max-w-3xl mb-8">
-            A useful reminder email is more than “please pay”. EU B2B stores need invoice numbers, retained PDF links, due dates, payment terms, resend logs, customer-download fallback, and accountant-ready proof.
+            A reminder email should help finance pay faster, not create corrected VAT invoices later. Use these templates
+            for BACS, bank transfer, proforma, and manual invoice workflows — then qualify the store for the €49 Lattice
+            Invoices early-access path.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={mailto} className="bg-cyan-400 text-slate-950 px-8 py-4 rounded-xl font-semibold hover:bg-cyan-300 transition shadow-lg text-center">
-              Request €49 reminder-template review
+            <a href={mailto} className="bg-cyan-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-cyan-400 transition shadow-lg text-center">
+              Request €49 reminder workflow review
             </a>
             <Link href="/woocommerce-eu-vat-invoices" className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/15 transition text-center">
               View Lattice Invoices offer
@@ -150,48 +154,68 @@ export default function WooCommerceInvoiceReminderEmailTemplatePage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <article className="lg:col-span-2 space-y-8">
             <div className="bg-white rounded-2xl border shadow-sm p-8">
-              <h2 className="text-3xl font-bold mb-4">Why invoice reminders fail in WooCommerce</h2>
+              <h2 className="text-3xl font-bold mb-4">Why invoice reminder copy is a purchase-intent problem</h2>
               <p className="text-slate-700 leading-relaxed mb-4">
-                Many stores send a normal order email and call it an invoice reminder. That breaks down when the customer asks for the original PDF, the accountant asks for payment terms, or support needs proof that a resend happened.
+                Stores searching for a WooCommerce invoice reminder email template usually have an active B2B cash-flow
+                problem: unpaid bank-transfer orders, finance teams asking for VAT details, or customers that need a
+                proforma before payment. That makes this a strong wedge for Lattice Invoices.
               </p>
               <p className="text-slate-700 leading-relaxed">
-                Use this guide when evaluating a WooCommerce invoice plugin, replacing a PDF invoice tool, or preparing BACS/proforma reminder workflows for EU VAT customers.
+                The template is only half the solution. The workflow also needs invoice-ready checkout fields, clean order
+                status rules, PDF/proforma links, reminder logging, final invoice delivery, and credit-note handling after refunds.
               </p>
             </div>
 
-            <div className="bg-cyan-50 border border-cyan-100 rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-5">Reminder-template readiness checklist</h2>
-              <div className="space-y-4">
-                {checklist.map((item) => (
-                  <div key={item.title} className="bg-white rounded-xl border border-cyan-100 p-5">
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-slate-700 leading-relaxed mb-2">{item.detail}</p>
-                    <p className="text-slate-600 leading-relaxed"><strong>Buyer question:</strong> {item.buyerQuestion}</p>
+            <div className="space-y-5">
+              {templateStages.map((stage) => (
+                <div key={stage.title} className="bg-white rounded-2xl border shadow-sm p-8">
+                  <p className="text-sm uppercase tracking-[0.25em] text-cyan-700 font-semibold mb-2">{stage.timing}</p>
+                  <h2 className="text-2xl font-bold mb-3">{stage.title}</h2>
+                  <div className="rounded-xl bg-slate-50 border border-slate-200 p-5 mb-4">
+                    <p className="text-sm text-slate-500 mb-1">Subject</p>
+                    <p className="font-semibold text-slate-900">{stage.subject}</p>
+                  </div>
+                  <div className="rounded-xl bg-cyan-50 border border-cyan-100 p-5">
+                    <p className="text-sm text-cyan-700 font-semibold mb-2">Template copy</p>
+                    <p className="text-slate-800 leading-relaxed">{stage.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-white rounded-2xl border shadow-sm p-8">
+              <h2 className="text-3xl font-bold mb-5">Fields the email must pull from WooCommerce</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {fields.map((field) => (
+                  <div key={field} className="flex gap-3 rounded-xl bg-slate-50 border border-slate-100 p-4">
+                    <span className="text-cyan-700 font-bold">✓</span>
+                    <span className="text-slate-800">{field}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="bg-white rounded-2xl border shadow-sm p-8">
-              <h2 className="text-3xl font-bold mb-5">Three reminder templates to map before buying</h2>
-              <div className="grid gap-4">
-                {templates.map((item) => (
-                  <div key={item.title} className="border rounded-xl p-5">
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-slate-700 leading-relaxed mb-2"><strong>When to send:</strong> {item.when}</p>
-                    <p className="text-slate-700 leading-relaxed"><strong>Must include:</strong> {item.include}</p>
+              <h2 className="text-3xl font-bold mb-6">Workflow rules before using the template</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {workflowRules.map((rule) => (
+                  <div key={rule.title} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                    <h3 className="text-xl font-bold mb-3">{rule.title}</h3>
+                    <p className="text-slate-700 leading-relaxed">{rule.text}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-4">Early-access offer: €49 reminder-template workflow review</h2>
+            <div className="bg-cyan-50 border border-cyan-100 rounded-2xl p-8">
+              <h2 className="text-3xl font-bold mb-4">Turn reminder copy into a €49 early-access request</h2>
               <p className="text-slate-700 leading-relaxed mb-5">
-                Send your current reminder emails, payment terms, invoice plugin, BACS/proforma setup, and customer-download requirements. Lattice will map the missing invoice evidence before you automate reminders on live orders.
+                If the store already sends invoice reminders manually, the next paid step is not another generic email plugin.
+                It is a WooCommerce invoice workflow that knows when to send proforma requests, when to issue final VAT PDFs,
+                and how to keep reminder history useful for bookkeeping.
               </p>
-              <a href={mailto} className="inline-flex bg-blue-600 text-white px-7 py-3 rounded-xl font-semibold hover:bg-blue-700 transition">
-                Send my reminder workflow
+              <a href={mailto} className="inline-flex bg-cyan-600 text-white px-7 py-3 rounded-xl font-semibold hover:bg-cyan-700 transition">
+                Send reminder workflow for review
               </a>
             </div>
 
@@ -210,29 +234,30 @@ export default function WooCommerceInvoiceReminderEmailTemplatePage() {
 
           <aside className="space-y-6">
             <div className="bg-white rounded-2xl border shadow-sm p-6 sticky top-6">
-              <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-3">Lattice Invoices early access</p>
-              <h2 className="text-2xl font-bold mb-3">Need invoice reminders that finance can trust?</h2>
-              <p className="text-slate-600 mb-5">
-                Get a focused review for reminder templates, PDF links, BACS payment terms, resend logs, customer downloads, credit notes, and accountant exports.
+              <p className="text-sm uppercase tracking-[0.2em] text-cyan-700 font-semibold mb-2">Template + workflow</p>
+              <h2 className="text-2xl font-bold mb-3">Need invoice reminder emails that match VAT invoice timing?</h2>
+              <p className="text-slate-700 mb-5">
+                Send the store URL, country, payment method, due-date rules, reminder schedule, and whether the store sends
+                proforma PDFs before payment. This qualifies the Lattice Invoices early-access workflow.
               </p>
-              <a href={mailto} className="block text-center bg-slate-950 text-white px-5 py-3 rounded-xl font-semibold hover:bg-slate-800 transition mb-3">
-                Request reminder review
+              <a href={mailto} className="block text-center bg-cyan-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-cyan-700 transition mb-3">
+                Request reminder template review
               </a>
-              <Link href="/docs/woocommerce-eu-vat-invoice-setup" className="block text-center border border-slate-200 px-5 py-3 rounded-xl font-semibold hover:bg-slate-50 transition">
-                Read setup guide
+              <Link href="/blog/woocommerce-invoice-payment-reminders" className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-cyan-400 transition mb-3">
+                Payment reminder workflow guide
               </Link>
-            </div>
-
-            <div className="bg-white rounded-2xl border shadow-sm p-6">
-              <h3 className="font-bold text-lg mb-3">Related invoice guides</h3>
-              <ul className="space-y-3 text-sm text-slate-700">
-                <li><Link href="/blog/woocommerce-invoice-payment-reminders" className="text-blue-700 hover:underline">Invoice payment reminders</Link></li>
-                <li><Link href="/blog/woocommerce-invoice-email-deliverability" className="text-blue-700 hover:underline">Invoice email deliverability</Link></li>
-                <li><Link href="/blog/woocommerce-bank-transfer-invoice" className="text-blue-700 hover:underline">Bank transfer invoices</Link></li>
-                <li><Link href="/blog/woocommerce-invoice-due-dates" className="text-blue-700 hover:underline">Invoice due dates</Link></li>
-                <li><Link href="/blog/woocommerce-customer-invoice-downloads" className="text-blue-700 hover:underline">Customer invoice downloads</Link></li>
-                <li><Link href="/blog/woocommerce-invoice-audit-trail" className="text-blue-700 hover:underline">Invoice audit trail</Link></li>
-              </ul>
+              <Link href="/blog/woocommerce-bank-transfer-invoice" className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-cyan-400 transition mb-3">
+                Bank transfer invoice guide
+              </Link>
+              <Link href="/blog/woocommerce-proforma-invoice" className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-cyan-400 transition mb-3">
+                Proforma invoice workflow
+              </Link>
+              <Link href="/tools/woocommerce-invoice-setup-brief" className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-cyan-400 transition mb-3">
+                Generate setup brief
+              </Link>
+              <Link href="/woocommerce-eu-vat-invoices" className="block text-center border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:border-cyan-400 transition">
+                View Lattice Invoices offer
+              </Link>
             </div>
           </aside>
         </div>
