@@ -48,6 +48,7 @@ const FRONTEND_URLS = [
   '/blog/woocommerce-restaurant-takeaway-invoices',
   '/blog/woocommerce-catering-event-invoices',
   '/blog/woocommerce-repair-service-invoices',
+  '/blog/woocommerce-it-support-invoices',
   '/blog/woocommerce-maintenance-contract-invoices',
   '/blog/woocommerce-subscription-invoice-plugin',
   '/blog/woocommerce-cleaning-service-invoices',

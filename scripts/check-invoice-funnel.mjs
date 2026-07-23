@@ -28,6 +28,7 @@ const schoolCourseGuide = readFileSync('src/app/blog/woocommerce-school-course-i
 const hotelBookingGuide = readFileSync('src/app/blog/woocommerce-hotel-booking-invoices/page.tsx', 'utf8');
 const cateringEventGuide = readFileSync('src/app/blog/woocommerce-catering-event-invoices/page.tsx', 'utf8');
 const repairServiceGuide = readFileSync('src/app/blog/woocommerce-repair-service-invoices/page.tsx', 'utf8');
+const itSupportGuide = readFileSync('src/app/blog/woocommerce-it-support-invoices/page.tsx', 'utf8');
 const maintenanceContractGuide = readFileSync('src/app/blog/woocommerce-maintenance-contract-invoices/page.tsx', 'utf8');
 const subscriptionInvoiceGuide = readFileSync('src/app/blog/woocommerce-subscription-invoice-plugin/page.tsx', 'utf8');
 const cleaningServiceGuide = readFileSync('src/app/blog/woocommerce-cleaning-service-invoices/page.tsx', 'utf8');
@@ -235,6 +236,31 @@ for (const source of [landing, guideCards, sitemapRoute]) {
 
 if ((cleaningServiceGuide.match(/href=\{mailto\}/g) || []).length < 3) {
   failures.push('cleaning service invoice guide must include at least 3 prefilled email CTAs');
+}
+
+for (const term of [
+  'WooCommerce IT support invoices',
+  'Request €49 IT invoice review',
+  'support ticket',
+  'SLA period',
+  'Send IT support invoice fit request',
+  'mailto:support@latticeplugins.com?subject=WooCommerce%20IT%20support%20invoice%20workflow%20review',
+  '/tools/woocommerce-invoice-setup-brief',
+  '/demo/lattice-invoices',
+]) {
+  if (!itSupportGuide.includes(term)) {
+    failures.push(`IT support invoice guide is missing buyer-intent term: ${term}`);
+  }
+}
+
+for (const source of [landing, guideCards, sitemapRoute]) {
+  if (!source.includes('/blog/woocommerce-it-support-invoices')) {
+    failures.push('IT support invoice guide must be discoverable from the invoice landing, blog cards, and sitemap route');
+  }
+}
+
+if ((itSupportGuide.match(/href=\{mailto\}/g) || []).length < 3) {
+  failures.push('IT support invoice guide must include at least 3 prefilled email CTAs');
 }
 
 if ((membershipGuide.match(/href=\{mailto\}/g) || []).length < 2) {

@@ -135,6 +135,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "cyan",
   },
   {
+    href: "/blog/woocommerce-it-support-invoices",
+    eyebrow: "IT support invoices",
+    title: "WooCommerce IT support invoices: SLA, tickets, VAT, and PDFs",
+    description:
+      "A buyer-intent guide for IT support, MSP, helpdesk, and managed-service stores that need ticket references, SLA periods, PO fields, VAT invoice PDFs, customer downloads, refunds, and credit notes.",
+    theme: "cyan",
+  },
+  {
     href: "/blog/woocommerce-maintenance-contract-invoices",
     eyebrow: "Maintenance contract invoices",
     title: "WooCommerce maintenance contract invoices: SLA, VAT, and PDFs",
