@@ -14,6 +14,7 @@ const homeSource = primarySurfaceFiles
 const requiredOfficialCatalogTerms = [
   'href="/shop"',
   'Compare all 7 plugins',
+  'Official 7-product catalog',
   'Lattice Commerce Suite',
   'Lattice Core',
   'Lattice CRM',
@@ -25,33 +26,40 @@ const requiredOfficialCatalogTerms = [
   'href="/product/lattice-commerce-suite"',
 ];
 
-const forbiddenPrimarySurfaceTerms = [
+const requiredRevenueFocusTerms = [
   'Lattice Invoices',
-  'EU Invoices',
-  'Primary WooCommerce revenue focus',
+  'WooCommerce EU invoice workflow',
   'View Lattice Invoices offer',
-  'VAT/BTW invoices',
-  'VAT/BTW fields',
-  'invoice ROI',
-  '/woocommerce-eu-vat-invoices',
-  '/docs/woocommerce-eu-vat-invoice-setup',
-  '/tools/woocommerce-invoice-roi-calculator',
-  'mailto:support@latticeplugins.com?subject=Lattice%20Invoices',
+  'Score invoice fit',
+  'View invoice demo',
+  'Send ready-to-buy request',
+  'href="/woocommerce-eu-vat-invoices"',
+  'href="/tools/woocommerce-invoice-fit-check"',
+  'href="/demo/lattice-invoices"',
+  'mailto:support@latticeplugins.com?subject=Ready%20to%20buy%20Lattice%20Invoices%20%E2%82%AC49',
+];
+
+const stillForbiddenPrimarySurfaceTerms = [
   'href="/product/lattice-invoices"',
+  'Primary WooCommerce revenue focus',
 ];
 
 const missingOfficialCatalogTerms = requiredOfficialCatalogTerms.filter((term) => !homeSource.includes(term));
-const presentForbiddenTerms = forbiddenPrimarySurfaceTerms.filter((term) => homeSource.includes(term));
+const missingRevenueFocusTerms = requiredRevenueFocusTerms.filter((term) => !homeSource.includes(term));
+const presentForbiddenTerms = stillForbiddenPrimarySurfaceTerms.filter((term) => homeSource.includes(term));
 
-if (missingOfficialCatalogTerms.length > 0 || presentForbiddenTerms.length > 0) {
-  console.error('FAIL: homepage/site-chrome catalog guard failed');
+if (missingOfficialCatalogTerms.length > 0 || missingRevenueFocusTerms.length > 0 || presentForbiddenTerms.length > 0) {
+  console.error('FAIL: homepage catalog + invoice revenue guard failed');
   if (missingOfficialCatalogTerms.length > 0) {
     console.error(`Official catalog terms missing: ${missingOfficialCatalogTerms.join(', ')}`);
   }
+  if (missingRevenueFocusTerms.length > 0) {
+    console.error(`Invoice revenue-focus terms missing: ${missingRevenueFocusTerms.join(', ')}`);
+  }
   if (presentForbiddenTerms.length > 0) {
-    console.error(`Forbidden primary-surface invoice terms found: ${presentForbiddenTerms.join(', ')}`);
+    console.error(`Forbidden primary-surface terms found: ${presentForbiddenTerms.join(', ')}`);
   }
   process.exit(1);
 }
 
-console.log('PASS: homepage and site chrome stay within the official catalog');
+console.log('PASS: homepage preserves the official catalog while promoting the invoice revenue path');
