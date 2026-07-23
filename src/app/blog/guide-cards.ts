@@ -143,6 +143,14 @@ export const blogGuideCards: BlogGuideCard[] = [
     theme: "cyan",
   },
   {
+    href: "/blog/woocommerce-web-design-agency-invoices",
+    eyebrow: "Web design agency invoices",
+    title: "WooCommerce web design agency invoices: deposits, VAT, and project PDFs",
+    description:
+      "A buyer-intent guide for web design, SEO, and digital agencies selling deposits, retainers, hosting, audits, or care plans through WooCommerce and needing VAT-ready invoice PDFs.",
+    theme: "indigo",
+  },
+  {
     href: "/blog/woocommerce-maintenance-contract-invoices",
     eyebrow: "Maintenance contract invoices",
     title: "WooCommerce maintenance contract invoices: SLA, VAT, and PDFs",
