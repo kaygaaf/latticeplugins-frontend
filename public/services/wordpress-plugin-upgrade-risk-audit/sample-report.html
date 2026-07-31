@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WordPress Plugin Upgrade Risk Audit — Sample WooCommerce Store</title>
+<style>
+body{font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17202a;max-width:1180px;margin:40px auto;padding:0 24px}h1{margin-bottom:4px}.muted{color:#58636f}.cards{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.card{border:1px solid #dfe4ea;border-radius:9px;padding:14px 18px;min-width:130px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #dfe4ea;padding:10px;text-align:left;vertical-align:top}th{background:#f4f6f8}.badge{font-weight:700;border-radius:12px;padding:3px 8px;background:#e8edf2}.high{background:#ffd7d7;color:#8d1616}.medium{background:#fff0be;color:#715500}.low{background:#dff4e5;color:#176332}code{font-size:12px}.notice{background:#f4f6f8;border-left:4px solid #56606b;padding:14px;margin:24px 0}@media print{body{margin:0;max-width:none}a{color:inherit}}
+</style></head><body>
+<h1>WordPress Plugin Upgrade Risk Audit</h1>
+<p class="muted">Prepared for Sample WooCommerce Store · Target WordPress 6.8 · Generated 2026-07-24 22:19 UTC</p>
+<div class="cards"><div class="card"><strong>2</strong><br>plugins reviewed</div><div class="card"><strong>1</strong><br>high signals</div><div class="card"><strong>0</strong><br>medium signals</div><div class="card"><strong>1</strong><br>low signals</div></div>
+<div class="notice"><strong>Decision rule:</strong> directory metadata is a pre-flight signal, not a compatibility or security guarantee. Back up the database and files, verify that the backup is usable, and test critical site flows on staging before production updates.</div>
+<table><thead><tr><th>Plugin</th><th>Version</th><th>Min WP / PHP</th><th>Tested to</th><th>Signal</th><th>Observed change/signal</th><th>Recommended action</th></tr></thead><tbody>
+          <tr>
+            <td><strong>WooCommerce</strong><br><code>woocommerce</code></td>
+            <td>10.9.4</td>
+            <td>6.9 / 7.4</td>
+            <td>7.0.2</td>
+            <td><span class="badge high">HIGH</span></td>
+            <td>requires_wordpress_above_target</td>
+            <td>Do not update on this target: the plugin requires a newer WordPress version. Review the upgrade sequence first.<br><a href="https://wordpress.org/plugins/woocommerce/">Official directory record</a></td>
+          </tr>
+          <tr>
+            <td><strong>Wordfence Security</strong><br><code>wordfence</code></td>
+            <td>8.2.2</td>
+            <td>4.7 / 7.0</td>
+            <td>7.0.2</td>
+            <td><span class="badge low">LOW</span></td>
+            <td>None detected</td>
+            <td>No directory-metadata warning detected; still back up and test the update before production.<br><a href="https://wordpress.org/plugins/wordfence/">Official directory record</a></td>
+          </tr></tbody></table>
+<h2>Method and limitations</h2><ul><li>Source: fixed official WordPress.org Plugin Information API and public directory records.</li><li>No WordPress admin credentials, customer records, or site access were used.</li><li>Review target: WordPress 6.8. Requested: 2; successful snapshots: 2; fetch errors: 0.</li><li>This report does not scan plugin code, detect vulnerabilities, test premium/private plugins, or guarantee production compatibility.</li></ul>
+<p class="muted">Independent technical report. Not affiliated with WordPress.org, the WordPress Foundation, Automattic, or any plugin vendor.</p>
+</body></html>

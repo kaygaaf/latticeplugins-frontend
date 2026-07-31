@@ -39,6 +39,12 @@ export default function Header() {
               Lattice SEO
             </Link>
             <Link
+              href="/services/wordpress-plugin-upgrade-risk-audit"
+              className="text-gray-700 hover:text-blue-600 font-medium transition"
+            >
+              Services
+            </Link>
+            <Link
               href="/blog"
               className="text-gray-700 hover:text-blue-600 font-medium transition"
             >

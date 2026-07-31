@@ -29,6 +29,7 @@ const FRONTEND_URLS = [
   '/product/lattice-subscribify',
   '/product/lattice-seo',
   '/woocommerce-eu-vat-invoices',
+  '/services/wordpress-plugin-upgrade-risk-audit',
   '/demo/lattice-invoices',
   '/tools/woocommerce-invoice-fit-check',
   '/tools/woocommerce-invoice-roi-calculator',
