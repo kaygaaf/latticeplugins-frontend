@@ -3,7 +3,15 @@
 **Date:** 2026-07-09
 **Product:** Lattice Plugins frontend
 **Severity:** High catalog/source-of-truth regression
-**Status:** Ready for Developer
+**Status:** Resolved 2026-07-31
+
+## Resolution (2026-07-31)
+
+- `scripts/check-homepage-catalog-cta.mjs` rewritten: invoice-funnel terms are now **forbidden** on `src/app/page.tsx`, `src/components/Header.tsx`, and `src/components/Footer.tsx` (previously required). Verified RED against the promo section before removal.
+- Lattice Invoices promo section removed from `src/app/page.tsx`; official hero and 7-product grid untouched.
+- `scripts/check-invoice-funnel.mjs` already validated only direct invoice surfaces — no homepage requirement present, no change needed.
+- Verified: `node scripts/check-homepage-catalog-cta.mjs`, `npm run test:health`, `npm run test:seo`, `npm run build` all pass.
+- Deployed via `ceo-deploy lattice` (commit `94acefbc`). Backend live smoke passes: homepage/shop official catalog 7/7, `unofficial_promos=none`. Direct invoice pages still HTTP 200.
 
 ## Summary
 
