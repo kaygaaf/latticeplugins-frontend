@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getProducts } from "@/lib/woocommerce";
 import { getPosts } from "@/lib/wordpress";
 import { stripHtml } from "@/lib/text";
+import { blogGuideCards, guideCardThemeClasses } from "./blog/guide-cards";
 
 export const dynamic = "force-dynamic";
 
@@ -26,6 +27,11 @@ export default async function Home() {
     getProducts(),
     getPosts(3)
   ]);
+  // Never surface the WordPress "Hello world!" placeholder on the homepage.
+  const realPosts = (Array.isArray(posts) ? posts : []).filter(
+    (post: any) => post?.slug !== "hello-world"
+  );
+  const featuredGuides = blogGuideCards.slice(0, 3);
 
   return (
     <main className="min-h-screen p-8 max-w-6xl mx-auto">
@@ -101,11 +107,11 @@ export default async function Home() {
       </section>
 
       {/* Recent Blog Posts */}
-      {posts.length > 0 && (
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Latest from the Blog</h2>
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-8 text-center">Latest from the Blog</h2>
+        {realPosts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {posts.map((post: any) => (
+            {realPosts.map((post: any) => (
               <article key={post.id} className="border rounded-lg p-6 bg-white">
                 <h3 className="text-xl font-semibold mb-2">
                   <Link href={`/blog/${post.slug}`} className="hover:text-blue-600 transition">
@@ -118,8 +124,37 @@ export default async function Home() {
               </article>
             ))}
           </div>
-        </section>
-      )}
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredGuides.map((card) => {
+              const [backgroundClasses, borderClass, eyebrowClass] =
+                guideCardThemeClasses[card.theme].split(" ");
+
+              return (
+                <article
+                  key={card.href}
+                  className={`border rounded-lg p-6 hover:shadow-lg transition ${backgroundClasses} ${borderClass}`}
+                >
+                  <p className={`text-sm uppercase tracking-[0.2em] ${eyebrowClass} font-semibold mb-2`}>
+                    {card.eyebrow}
+                  </p>
+                  <h3 className="text-xl font-semibold mb-2">
+                    <Link href={card.href} className="hover:text-blue-600 transition">
+                      {card.title}
+                    </Link>
+                  </h3>
+                  <p className="text-gray-600 line-clamp-3">{card.description}</p>
+                </article>
+              );
+            })}
+          </div>
+        )}
+        <p className="text-center mt-8">
+          <Link href="/blog" className="text-blue-600 font-semibold hover:underline">
+            Browse all guides and articles →
+          </Link>
+        </p>
+      </section>
     </main>
   );
 }
