@@ -4,6 +4,7 @@ const SITE_URL = "https://latticeplugins.com";
 const PAGE_URL = `${SITE_URL}/services/wordpress-plugin-upgrade-risk-audit`;
 const MAILTO =
   "mailto:info@kayorama.nl?subject=WordPress%20plugin%20upgrade%20risk%20audit&body=Company%20or%20site%20alias%3A%0ATarget%20WordPress%20version%3A%0ATarget%20PHP%20version%3A%0APublic%20WordPress.org%20plugin%20slugs%20(max%2025)%3A%0ACritical%20flows%20to%20protect%3A%0ADesired%20delivery%20date%3A%0A%0AI%20will%20not%20send%20credentials%20or%20customer%20data.";
+const ORDER_URL = `${SITE_URL}/cart/?add-to-cart=24`;
 
 export const metadata: Metadata = {
   title: "WordPress Plugin Upgrade Risk Audit — €149 fixed scope",
@@ -52,8 +53,8 @@ const deliverables = [
 ];
 
 const steps = [
-  "Use Request an audit and send the non-sensitive intake fields.",
-  "The plugin list, fixed scope, delivery date, and payment route are confirmed in writing.",
+  "Order now to place the order directly, or request intake by email to confirm scope first with the non-sensitive intake fields.",
+  "The plugin list, fixed scope, and delivery date are confirmed in writing; the manual invoice is paid by bank transfer.",
   "Work starts only after verified prepayment or funded escrow.",
   "The report is delivered within two business days after valid intake and payment.",
 ];
@@ -86,10 +87,16 @@ export default function WordPressPluginUpgradeRiskAuditPage() {
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href={MAILTO}
+              href={ORDER_URL}
               className="bg-white text-blue-950 font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition"
             >
-              Request an audit
+              Order now — €149
+            </a>
+            <a
+              href={MAILTO}
+              className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition"
+            >
+              Request intake by email
             </a>
             <a
               href="/services/wordpress-plugin-upgrade-risk-audit/sample-report.html"
@@ -99,9 +106,10 @@ export default function WordPressPluginUpgradeRiskAuditPage() {
             </a>
           </div>
           <p className="text-sm text-blue-200 mt-6 max-w-2xl">
-            Scope and delivery date are confirmed before a payment request is
-            sent. Never email passwords, API keys, database exports, customer
-            data, or administrator access.
+            Order now and we email a manual invoice for prepayment by bank
+            transfer; work starts only after payment is verified. Prefer to
+            confirm scope first? Use the email intake. Never send passwords,
+            API keys, database exports, customer data, or administrator access.
           </p>
         </div>
       </section>
@@ -181,10 +189,10 @@ export default function WordPressPluginUpgradeRiskAuditPage() {
             report your clients and stakeholders can act on.
           </p>
           <a
-            href={MAILTO}
+            href={ORDER_URL}
             className="inline-block bg-white text-blue-700 font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition"
           >
-            Request an audit — €149
+            Order now — €149
           </a>
         </div>
       </section>
