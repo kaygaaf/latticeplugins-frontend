@@ -21,6 +21,7 @@ function buildWordPressSitemapUrl(origin = WORDPRESS_ORIGIN) {
 const FRONTEND_URLS = [
   '/',
   '/shop',
+  '/compare',
   '/product/lattice-commerce-suite',
   '/product/lattice-core',
   '/product/lattice-crm',

@@ -45,7 +45,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-white transition">
+                <Link href="/compare" className="hover:text-white transition">
                   Compare all plugins
                 </Link>
               </li>

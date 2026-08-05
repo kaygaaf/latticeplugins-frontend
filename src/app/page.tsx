@@ -45,7 +45,7 @@ export default async function Home() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/shop"
+            href="/compare"
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
           >
             Compare all 7 plugins
