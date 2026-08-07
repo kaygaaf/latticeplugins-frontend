@@ -10,7 +10,7 @@
     "test": "npm run lint && npm run test:health && npm run test:seo",
     "health:prod": "node scripts/prod-health.mjs",
     "health:infra": "node scripts/prod-infra-health.mjs",
-    "test:health": "node scripts/check-wc-rest-auth.mjs && node scripts/check-prod-health-coverage.mjs && node scripts/check-shop-catalog-copy.mjs && node scripts/check-homepage-catalog-cta.mjs && node scripts/check-homepage-blog-section.mjs && node scripts/check-invoice-funnel.mjs && node scripts/check-compare-page.mjs",
+    "test:health": "node scripts/check-wc-rest-auth.mjs && node scripts/check-prod-health-coverage.mjs && node scripts/check-shop-catalog-copy.mjs && node scripts/check-homepage-catalog-cta.mjs && node scripts/check-homepage-blog-section.mjs && node scripts/check-invoice-funnel.mjs && node scripts/check-compare-page.mjs && node scripts/check-abandoned-cart-guide.mjs",
     "test:seo": "node scripts/check-product-seo.mjs && node scripts/check-sitemap-route-origin.mjs",
     "test:e2e": "playwright test --pass-with-no-tests",
     "test:e2e:headed": "playwright test --pass-with-no-tests --headed"

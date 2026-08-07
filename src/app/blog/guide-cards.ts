@@ -31,6 +31,14 @@ export const guideCardThemeClasses: Record<BlogGuideCard["theme"], string> = {
 
 export const blogGuideCards: BlogGuideCard[] = [
   {
+    href: "/blog/woocommerce-abandoned-cart-recovery",
+    eyebrow: "Abandoned cart recovery",
+    title: "WooCommerce abandoned cart recovery: emails, upsells, and checkout fixes",
+    description:
+      "A buyer-intent guide for WooCommerce stores losing checkouts: diagnose cart abandonment, automate recovery emails, remove checkout friction, and lift recovered order value with Lattice Commerce Suite.",
+    theme: "emerald",
+  },
+  {
     href: "/blog/woocommerce-bookkeeper-invoice-export",
     eyebrow: "Bookkeeper invoice export",
     title: "WooCommerce bookkeeper invoice export: VAT, PDFs, and credit notes",
