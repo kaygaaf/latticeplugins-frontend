@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 const canDo = [
   "Browse every plugin's real admin screens",
+  "Use all premium features — no free-tier limits",
   "Change plugin settings and see them live",
   "Explore WooCommerce products, orders, and settings",
   "Test Lattice SEO, CRM, Commerce Suite, Migrate, Subscribify, and Stripe Payments",
@@ -37,7 +38,8 @@ export default function TryDemoPage() {
               Try every Lattice plugin in a safe WordPress demo.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              A real WordPress + WooCommerce admin with all 7 Lattice plugins installed. No signup, no
+              A real WordPress + WooCommerce admin with all 7 Lattice plugins installed — fully
+              unlocked (premium), so you see every feature, not the free tier. No signup, no
               password, nothing you can break — the whole environment resets to a clean snapshot every hour.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
