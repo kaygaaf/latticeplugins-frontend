@@ -22,6 +22,9 @@ function getCartUrl(productId: number): string {
 
 export default async function ShopPage() {
   const products = await getProducts();
+  const catalogProducts = (Array.isArray(products) ? products : []).filter(
+    (product: any) => product?.slug !== "wordpress-plugin-upgrade-risk-audit"
+  );
 
   return (
     <main className="min-h-screen p-8 max-w-6xl mx-auto">
@@ -48,7 +51,7 @@ export default async function ShopPage() {
       </section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product: any) => (
+        {catalogProducts.map((product: any) => (
           <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition bg-white">
             {product.images?.[0] && (
               <Image

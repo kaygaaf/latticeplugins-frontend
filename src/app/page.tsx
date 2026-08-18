@@ -32,6 +32,9 @@ export default async function Home() {
     (post: any) => post?.slug !== "hello-world"
   );
   const featuredGuides = blogGuideCards.slice(0, 3);
+  const catalogProducts = (Array.isArray(products) ? products : []).filter(
+    (product: any) => product?.slug !== "wordpress-plugin-upgrade-risk-audit"
+  );
 
   return (
     <main className="min-h-screen p-8 max-w-6xl mx-auto">
@@ -63,7 +66,7 @@ export default async function Home() {
       <section className="mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Official 7-product catalog</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-          {products.map((product: any) => (
+          {catalogProducts.map((product: any) => (
             <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition bg-white w-full max-w-sm">
               {product.images?.[0] && (
                 <Image

@@ -1,19 +1,20 @@
 import Link from "next/link";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
-    <header className="bg-white border-b shadow-sm">
+    <header className="bg-white border-b shadow-sm relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Lattice Plugins
             </span>
           </Link>
 
-          {/* Navigation */}
-          <nav className="flex items-center gap-6">
+          {/* Desktop navigation */}
+          <nav className="hidden md:flex items-center gap-6">
             <Link
               href="/"
               className="text-gray-700 hover:text-blue-600 font-medium transition"
@@ -51,6 +52,7 @@ export default function Header() {
               Blog
             </Link>
           </nav>
+          <MobileNav />
         </div>
       </div>
     </header>
