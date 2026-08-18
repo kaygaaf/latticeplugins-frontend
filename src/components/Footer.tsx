@@ -25,6 +25,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Catalog</h4>
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link href="/shop" className="transition hover:text-white">Shop all plugins</Link></li>
+              <li><Link href="/try" className="transition hover:text-white">Live demo</Link></li>
               <li><Link href="/compare" className="transition hover:text-white">Compare plugins</Link></li>
               <li><Link href="/product/lattice-commerce-suite" className="transition hover:text-white">Lattice Commerce Suite</Link></li>
               <li><Link href="/product/lattice-seo" className="transition hover:text-white">Lattice SEO</Link></li>
