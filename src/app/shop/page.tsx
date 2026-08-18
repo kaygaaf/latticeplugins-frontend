@@ -45,7 +45,7 @@ export default async function ShopPage() {
       </section>
 
       <section className="container-x pb-20">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:[&>*:last-child]:col-start-2 xl:[&>*:last-child]:col-start-auto">
           {catalogProducts.map((product: any) => (
             <ProductCard key={product.id} product={product} />
           ))}

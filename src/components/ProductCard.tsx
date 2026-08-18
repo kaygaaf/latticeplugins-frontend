@@ -25,8 +25,19 @@ function initials(name = ""): string {
     .join("") || "LP";
 }
 
+const ACCENTS: Record<string, string> = {
+  "lattice-seo": "border-blue-100 bg-blue-50 text-blue-300",
+  "lattice-subscribify": "border-violet-100 bg-violet-50 text-violet-300",
+  "lattice-stripe-payments": "border-slate-200 bg-slate-50 text-slate-400",
+  "lattice-migrate": "border-emerald-100 bg-emerald-50 text-emerald-300",
+  "lattice-crm": "border-indigo-100 bg-indigo-50 text-indigo-300",
+  "lattice-core": "border-slate-200 bg-slate-50 text-slate-400",
+  "lattice-commerce-suite": "border-sky-100 bg-sky-50 text-sky-300",
+};
+
 export default function ProductCard({ product }: { product: any }) {
   const description = (product?.short_description || product?.description || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  const accent = ACCENTS[product?.slug] || "border-slate-100 bg-slate-50 text-slate-300";
 
   return (
     <article className="group flex h-full w-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-card">
@@ -40,8 +51,10 @@ export default function ProductCard({ product }: { product: any }) {
             className="mb-5 h-44 w-full rounded-xl border border-slate-100 object-cover"
           />
         ) : (
-          <div className="mb-5 flex h-44 w-full items-center justify-center rounded-xl border border-slate-100 bg-slate-50">
-            <span className="font-display text-3xl font-bold text-slate-300">{initials(product.name)}</span>
+          <div className={`mb-5 flex h-44 w-full items-center justify-center rounded-xl border ${accent}`}>
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/85 font-display text-2xl font-bold shadow-sm">
+              {initials(product.name)}
+            </span>
           </div>
         )}
       </Link>

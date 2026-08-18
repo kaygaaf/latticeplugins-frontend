@@ -35,7 +35,7 @@ export default async function Home() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
               WordPress and WooCommerce plugins
             </p>
-            <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-balance text-4xl font-bold leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-5xl xl:text-6xl">
               Practical plugins for WooCommerce stores and WordPress businesses.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
@@ -94,7 +94,7 @@ export default async function Home() {
             Compare features →
           </Link>
         </div>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:[&>*:last-child]:col-start-2 xl:[&>*:last-child]:col-start-auto">
           {catalogProducts.map((product: any) => (
             <ProductCard key={product.id} product={product} />
           ))}
