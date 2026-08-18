@@ -41,7 +41,7 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="text-center py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl mb-8">
         <p className="uppercase tracking-[0.25em] text-sm text-blue-100 mb-4">WordPress and WooCommerce plugins</p>
-        <h1 className="text-5xl font-bold mb-4">Practical plugins for WooCommerce stores and WordPress businesses.</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight break-words">Practical plugins for WooCommerce stores and WordPress businesses.</h1>
         <p className="text-xl mb-8 max-w-3xl mx-auto">
           Browse the official 7-product Lattice catalog: Lattice Commerce Suite, Lattice Core, Lattice CRM,
           Lattice Migrate, Lattice Stripe Payments, Lattice Subscribify, and Lattice SEO.
