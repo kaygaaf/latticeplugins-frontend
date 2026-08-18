@@ -62,7 +62,7 @@ export default function ProductCard({ product }: { product: any }) {
             className="mb-5 h-44 w-full rounded-xl border border-slate-100 object-cover"
           />
         ) : (
-          <div className={`mb-5 flex h-44 w-full items-center justify-center rounded-xl border ${accent}`}>
+          <div className={`lattice-grid-light mb-5 flex h-44 w-full items-center justify-center rounded-xl border ${accent}`}>
             <span className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-white/85 font-display font-bold shadow-sm ${badge.length > 3 ? "text-lg" : "text-2xl"}`}>
               {badge}
             </span>

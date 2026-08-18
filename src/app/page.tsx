@@ -30,28 +30,29 @@ export default async function Home() {
   return (
     <main className="min-h-screen">
       <section className="container-x pb-16 pt-14 lg:pt-20">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="lattice-grid relative overflow-hidden rounded-3xl bg-slate-950 px-6 py-12 text-white sm:px-10 lg:px-12 lg:py-16">
+        <div className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">
               WordPress and WooCommerce plugins
             </p>
-            <h1 className="font-display text-balance text-4xl font-bold leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-5xl xl:text-6xl">
+            <h1 className="font-display text-balance text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-5xl xl:text-6xl">
               Practical plugins for WooCommerce stores and WordPress businesses.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
               Browse the official 7-product Lattice catalog: Lattice Commerce Suite, Lattice Core, Lattice CRM,
               Lattice Migrate, Lattice Stripe Payments, Lattice Subscribify, and Lattice SEO.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/compare"
-                className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300"
               >
                 Compare all 7 plugins
               </Link>
               <Link
                 href="/product/lattice-commerce-suite"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-white"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 View Commerce Suite
               </Link>
@@ -82,12 +83,13 @@ export default async function Home() {
             </div>
           </aside>
         </div>
+        </div>
       </section>
 
       <section className="container-x pb-16">
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Catalog</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-600">Catalog</p>
             <h2 className="mt-2 font-display text-3xl font-bold text-slate-950">Official 7-product catalog</h2>
           </div>
           <Link href="/compare" className="text-sm font-semibold text-blue-700 hover:underline">
@@ -104,7 +106,7 @@ export default async function Home() {
       <section className="container-x pb-20">
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Guides</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-600">Guides</p>
             <h2 className="mt-2 font-display text-3xl font-bold text-slate-950">Latest from the Blog</h2>
           </div>
           <Link href="/blog" className="text-sm font-semibold text-blue-700 hover:underline">

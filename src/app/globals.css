@@ -45,4 +45,19 @@ h4 {
   .container-x {
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
+
+  .lattice-grid {
+    background-image:
+      radial-gradient(circle at 20% 0%, rgb(251 191 36 / 0.16), transparent 34%),
+      linear-gradient(rgb(255 255 255 / 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.055) 1px, transparent 1px);
+    background-size: auto, 30px 30px, 30px 30px;
+  }
+
+  .lattice-grid-light {
+    background-image:
+      linear-gradient(rgb(15 23 42 / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(15 23 42 / 0.045) 1px, transparent 1px);
+    background-size: 22px 22px, 22px 22px;
+  }
 }
