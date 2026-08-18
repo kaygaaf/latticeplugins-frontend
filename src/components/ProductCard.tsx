@@ -93,7 +93,7 @@ export default function ProductCard({ product }: { product: any }) {
             Details
           </Link>
         </div>
-        <p className="mt-3 text-center text-xs text-slate-500">One-time price · Lifetime updates</p>
+        <p className="mt-3 text-center text-xs text-slate-500">{isFree(product.price) ? "Free forever · Lifetime updates" : "One-time price · Lifetime updates"}</p>
       </div>
     </article>
   );

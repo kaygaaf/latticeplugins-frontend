@@ -94,7 +94,7 @@ export default async function Home() {
             Compare features →
           </Link>
         </div>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child]:col-span-2 lg:[&>*:last-child]:col-span-1 lg:[&>*:last-child]:col-start-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child]:col-span-2 lg:[&>*:last-child]:col-span-3">
           {catalogProducts.map((product: any) => (
             <ProductCard key={product.id} product={product} />
           ))}
