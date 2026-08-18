@@ -105,17 +105,19 @@ const PRODUCT_META: Record<string, ProductMeta> = {
   },
   "lattice-seo": {
     eyebrow: "Premium SEO suite",
-    headline: "A focused SEO toolkit for WordPress sites that need technical SEO without subscription pricing.",
+    headline: "Technical SEO for WordPress and WooCommerce without subscription pricing.",
     features: [
-      "XML sitemap generation",
-      "Schema.org structured data",
-      "Open Graph and Twitter Cards",
-      "SEO title and meta templates",
-      "404 monitoring and redirects",
-      "WooCommerce SEO foundations",
+      "XML sitemap generation for posts, pages, and products",
+      "Schema.org JSON-LD for Organization, WebSite, WebPage, Breadcrumbs, and Product",
+      "Open Graph and Twitter Cards with per-post overrides",
+      "SEO title and meta templates for posts, pages, products, search, categories, and tags",
+      "Canonical URLs with self-referencing paginated archives",
+      "rel=prev / rel=next pagination hints and clean robots control",
+      "Per-term SEO fields for category and tag pages",
+      "404 monitoring and redirect management",
     ],
     idealFor: ["WordPress publishers", "WooCommerce catalogs", "Agencies replacing subscription SEO tools"],
-    outcomes: ["Cleaner technical SEO", "Better social previews", "More control over indexation"],
+    outcomes: ["Cleaner technical SEO", "Better archive snippets", "More control over indexation and pagination"],
   },
 };
 
