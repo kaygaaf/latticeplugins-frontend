@@ -228,34 +228,34 @@ export default async function ProductPage({ params }: ProductPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
-      <section className="bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 text-white">
-        <div className="max-w-6xl mx-auto px-6 py-14">
-          <Link href="/shop" className="text-blue-100 hover:text-white underline underline-offset-4 mb-8 inline-block">
+      <section className="border-b border-slate-200 bg-white">
+        <div className="container-x py-12 lg:py-16">
+          <Link href="/shop" className="mb-8 inline-block text-sm font-semibold text-slate-500 underline underline-offset-4 transition hover:text-slate-950">
             ← Back to Shop
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="uppercase tracking-[0.3em] text-sm text-blue-100 mb-4">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
                 {meta?.eyebrow || "Lattice WordPress Plugin"}
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">{product.name}</h1>
-              <p className="text-xl text-blue-50 mb-8 leading-relaxed">
+              <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-slate-950 md:text-5xl">{product.name}</h1>
+              <p className="mt-5 text-xl leading-8 text-slate-600">
                 {meta?.headline || fallbackDescription || "Premium WordPress tooling for serious site owners."}
               </p>
 
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="bg-white/15 border border-white/20 rounded-full px-4 py-2 text-sm">Lifetime updates</span>
-                <span className="bg-white/15 border border-white/20 rounded-full px-4 py-2 text-sm">WordPress + WooCommerce ready</span>
-                <span className="bg-white/15 border border-white/20 rounded-full px-4 py-2 text-sm">Built in Europe</span>
+              <div className="mt-7 flex flex-wrap gap-2">
+                <span className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700">Lifetime updates</span>
+                <span className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700">WordPress + WooCommerce ready</span>
+                <span className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700">Built in Europe</span>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                <div className="text-4xl font-bold">{formatPrice(product.price)}</div>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <div className="font-display text-4xl font-bold text-slate-950">{formatPrice(product.price)}</div>
                 {variations.length === 0 && (
                   <a
                     href={getCartUrl(product.id)}
-                    className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition shadow-lg"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
                   >
                     {parseFloat(product.price || "0") <= 0 ? "Download Free" : "Add to Cart"}
                   </a>
@@ -263,7 +263,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
 
-            <div className="bg-white/10 border border-white/20 rounded-2xl p-6 shadow-2xl backdrop-blur">
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-card">
               {product.images?.[0] ? (
                 <Image
                   src={product.images[0].src}
@@ -273,8 +273,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   className="w-full rounded-xl bg-white"
                 />
               ) : (
-                <div className="aspect-[4/3] rounded-xl bg-white text-slate-900 flex flex-col items-center justify-center text-center p-8">
-                  <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">LP</div>
+                <div className="aspect-[4/3] rounded-xl bg-white text-slate-900 flex flex-col items-center justify-center text-center p-8 border border-slate-100">
+                  <div className="font-display text-5xl font-bold text-slate-300 mb-4">LP</div>
                   <p className="text-2xl font-semibold">{product.name}</p>
                   <p className="text-slate-500 mt-2">Premium WordPress plugin</p>
                 </div>
@@ -287,7 +287,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <section className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm border">
+            <div className="bg-white rounded-3xl p-8 shadow-card border border-slate-200">
               <h2 className="text-2xl font-bold mb-4">What it does</h2>
               {product.description ? (
                 <div
@@ -299,7 +299,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               )}
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-sm border">
+            <div className="bg-white rounded-3xl p-8 shadow-card border border-slate-200">
               <h2 className="text-2xl font-bold mb-6">Key features</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {(meta?.features || []).map((feature) => (
@@ -313,7 +313,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             {meta && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white rounded-2xl p-8 shadow-sm border">
+                <div className="bg-white rounded-3xl p-8 shadow-card border border-slate-200">
                   <h2 className="text-2xl font-bold mb-4">Best for</h2>
                   <ul className="space-y-3">
                     {meta.idealFor.map((item) => (
@@ -321,7 +321,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     ))}
                   </ul>
                 </div>
-                <div className="bg-white rounded-2xl p-8 shadow-sm border">
+                <div className="bg-white rounded-3xl p-8 shadow-card border border-slate-200">
                   <h2 className="text-2xl font-bold mb-4">Expected outcomes</h2>
                   <ul className="space-y-3">
                     {meta.outcomes.map((item) => (
@@ -334,7 +334,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
 
           <aside className="space-y-6">
-            <div className="bg-white rounded-2xl p-6 shadow-sm border sticky top-6">
+            <div className="bg-white rounded-3xl p-6 shadow-card border border-slate-200 sticky top-6">
               <h2 className="text-xl font-bold mb-2">Get {product.name}</h2>
               <p className="text-slate-600 mb-5">Secure checkout through WooCommerce.</p>
               <div className="text-3xl font-bold text-blue-600 mb-5">{formatPrice(product.price)}</div>
@@ -358,7 +358,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               ) : (
                 <a
                   href={getCartUrl(product.id)}
-                  className="block text-center bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+                  className="block rounded-full bg-slate-900 px-8 py-3 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
                 >
                   {parseFloat(product.price || "0") <= 0 ? "Download Free" : "Add to Cart"}
                 </a>

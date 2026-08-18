@@ -1,24 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { getProducts } from "@/lib/woocommerce";
-import { stripHtml } from "@/lib/text";
+import ProductCard from "@/components/ProductCard";
 
 export const dynamic = "force-dynamic";
-
-function formatPrice(price: string | number): string {
-  const num = typeof price === "string" ? parseFloat(price) : price;
-  if (isNaN(num) || num <= 0) return "Free";
-  return `€${num.toFixed(2)}`;
-}
-
-function isFree(price: string | number): boolean {
-  const num = typeof price === "string" ? parseFloat(price) : price;
-  return isNaN(num) || num <= 0;
-}
-
-function getCartUrl(productId: number): string {
-  return `https://latticeplugins.com/cart/?add-to-cart=${productId}`;
-}
 
 export default async function ShopPage() {
   const products = await getProducts();
@@ -27,71 +11,46 @@ export default async function ShopPage() {
   );
 
   return (
-    <main className="min-h-screen p-8 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-center">Shop</h1>
-      <p className="sr-only">
-        Official Lattice catalog: Lattice Commerce Suite, Lattice Core, Lattice CRM, Lattice Migrate,
-        Lattice Stripe Payments, Lattice Subscribify, and Lattice SEO.
-      </p>
+    <main className="min-h-screen">
+      <section className="container-x pb-12 pt-14 lg:pt-20">
+        <div className="max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Shop</p>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+            Choose the Lattice plugin that removes your next bottleneck.
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Compare Lattice Commerce Suite, Lattice Core, Lattice CRM, Lattice Migrate,
+            Lattice Stripe Payments, Lattice Subscribify, and Lattice SEO from one clean catalog.
+          </p>
+        </div>
 
-
-      <section className="mb-10 rounded-2xl border border-blue-100 bg-blue-50 p-6 md:p-8 text-center">
-        <p className="uppercase tracking-[0.25em] text-xs text-blue-700 font-semibold mb-3">Official 7-product catalog</p>
-        <h2 className="text-3xl font-bold mb-3">Choose the Lattice plugin that matches your next WooCommerce or WordPress bottleneck.</h2>
-        <p className="text-slate-700 leading-relaxed max-w-3xl mx-auto mb-5">
-          Compare Lattice Commerce Suite, Lattice Core, Lattice CRM, Lattice Migrate,
-          Lattice Stripe Payments, Lattice Subscribify, and Lattice SEO from one clean catalog.
-        </p>
-        <Link
-          href="/product/lattice-seo"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition"
-        >
-          View Lattice SEO
-        </Link>
+        <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-card sm:p-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Official 7-product catalog</p>
+              <h2 className="mt-2 font-display text-2xl font-bold text-slate-950">Start with the newest addition: Lattice SEO.</h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                Technical SEO for WordPress and WooCommerce without subscription pricing: sitemaps, schema,
+                Open Graph, canonical pagination, robots control, and archive SEO fields.
+              </p>
+            </div>
+            <Link
+              href="/product/lattice-seo"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+            >
+              View Lattice SEO
+            </Link>
+          </div>
+        </div>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {catalogProducts.map((product: any) => (
-          <div key={product.id} className="border rounded-lg p-6 hover:shadow-lg transition bg-white">
-            {product.images?.[0] && (
-              <Image
-                src={product.images[0].src}
-                alt={product.name}
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover rounded mb-4"
-              />
-            )}
-            <h2 className="text-xl font-semibold mb-2">
-              <Link href={`/product/${product.slug}`} className="hover:text-blue-600 transition">
-                {product.name}
-              </Link>
-            </h2>
-            <p className="text-gray-600 mb-4 line-clamp-2">
-              {stripHtml(product.short_description || product.description)}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-              <span className="text-2xl font-bold text-blue-600">
-                {formatPrice(product.price)}
-              </span>
-              <div className="flex flex-col sm:flex-row gap-2">
-                <a
-                  href={getCartUrl(product.id)}
-                  className="bg-green-600 text-white px-4 py-2 rounded text-center font-semibold hover:bg-green-700 transition"
-                >
-                  {isFree(product.price) ? "Download Free" : "Add to Cart"}
-                </a>
-                <Link
-                  href={`/product/${product.slug}`}
-                  className="border border-slate-200 px-4 py-2 rounded text-center hover:border-blue-500 hover:text-blue-600 transition"
-                >
-                  Details
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <section className="container-x pb-20">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {catalogProducts.map((product: any) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
