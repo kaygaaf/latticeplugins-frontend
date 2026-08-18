@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProductIcon from "./ProductIcon";
 
 function formatPrice(price: string | number): string {
   const num = typeof price === "string" ? parseFloat(price) : price;
@@ -16,15 +17,6 @@ function getCartUrl(productId: number): string {
   return `https://latticeplugins.com/cart/?add-to-cart=${productId}`;
 }
 
-function initials(name = ""): string {
-  return name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase())
-    .join("") || "LP";
-}
-
 const ACCENTS: Record<string, string> = {
   "lattice-seo": "border-blue-100 bg-blue-50 text-blue-300",
   "lattice-subscribify": "border-violet-100 bg-violet-50 text-violet-300",
@@ -35,20 +27,9 @@ const ACCENTS: Record<string, string> = {
   "lattice-commerce-suite": "border-sky-100 bg-sky-50 text-sky-300",
 };
 
-const BADGES: Record<string, string> = {
-  "lattice-seo": "SEO",
-  "lattice-subscribify": "SUB",
-  "lattice-stripe-payments": "PAY",
-  "lattice-migrate": "MIG",
-  "lattice-crm": "CRM",
-  "lattice-core": "CORE",
-  "lattice-commerce-suite": "CS",
-};
-
 export default function ProductCard({ product }: { product: any }) {
   const description = (product?.short_description || product?.description || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
   const accent = ACCENTS[product?.slug] || "border-slate-100 bg-slate-50 text-slate-300";
-  const badge = BADGES[product?.slug] || initials(product.name);
 
   return (
     <article className="group flex h-full w-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-card">
@@ -63,8 +44,8 @@ export default function ProductCard({ product }: { product: any }) {
           />
         ) : (
           <div className={`lattice-grid-light mb-5 flex h-44 w-full items-center justify-center rounded-xl border ${accent}`}>
-            <span className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-white/85 font-display font-bold shadow-sm ${badge.length > 3 ? "text-lg" : "text-2xl"}`}>
-              {badge}
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/85 shadow-sm">
+              <ProductIcon slug={product?.slug} className="h-8 w-8" />
             </span>
           </div>
         )}
