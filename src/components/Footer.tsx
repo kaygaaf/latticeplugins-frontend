@@ -36,7 +36,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Support</h4>
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link href="/blog" className="transition hover:text-white">Guides & articles</Link></li>
-              <li><a href="mailto:support@latticeplugins.com" className="transition hover:text-white">support@latticeplugins.com</a></li>
+              <li><a href="mailto:support@latticeplugins.com" className="break-all transition hover:text-white">support@latticeplugins.com</a></li>
               <li><a href="https://latticeplugins.com/wp/my-account/" className="transition hover:text-white">My Account</a></li>
             </ul>
           </div>
